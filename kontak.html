@@ -20,14 +20,13 @@
         <nav class="navbar navbar-expand-lg container">
             <a class="navbar-brand" href="index.html">
                 <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
-                <span class="brand-text">Cherry Blossom<span class="brand-sub">LANGKAH MANIS SETIAP HARI</span></span>
+                <span class="brand-text">Cherry Blossom<span class="brand-sub">STEP INTO CUTE COMFORT</span></span>
             </a>
-            <!-- Tombol keranjang: ikon + tulisan (disembunyikan di layar kecil) + jumlah barang -->
-            <a class="bag ms-auto me-2 me-lg-0 order-lg-last" href="keranjang.html" aria-label="Keranjang belanja">
+            <!-- Tombol keranjang: ikon tas bulat + angka jumlah barang (badge di pojok kanan atas) -->
+            <a class="bag ms-auto me-2 me-lg-0 order-lg-last" href="keranjang.html" aria-label="Keranjang" title="Keranjang">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16" aria-hidden="true">
                     <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
                 </svg>
-                <span class="d-none d-md-inline">Keranjang</span>
                 <span id="cart-count" class="bag-count">0</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Buka menu">
@@ -153,10 +152,10 @@
                                 <textarea id="message" name="pesan" class="form-control" rows="5" minlength="10" maxlength="1000" placeholder="Ceritakan kebutuhanmu (minimal 10 karakter)…" required></textarea>
                             </div>
                             <div class="col-12">
-                                <!-- Checkbox opsional (tidak wajib dicentang) -->
+                                <!-- Checkbox wajib (required): divalidasi bawaan HTML -->
                                 <div class="form-check">
-                                    <input id="promo" name="promo" class="form-check-input" type="checkbox">
-                                    <label class="form-check-label" for="promo">Kirimi aku info promo dan koleksi terbaru</label>
+                                    <input id="setuju" name="setuju" class="form-check-input" type="checkbox" required>
+                                    <label class="form-check-label" for="setuju">Aku setuju data di atas digunakan untuk membalas pesanku.</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -172,12 +171,17 @@
 
         <!-- ===== KUNJUNGI TOKO KAMI (alamat + peta) ===== -->
         <section class="container pb-5" aria-labelledby="judul-toko">
-            <div class="toko-box">
+            <!-- Gaya kotak sama dengan banner promo di Beranda (promo-banner) -->
+            <div class="promo-banner has-decor">
+                <!-- Dekorasi di tepi kotak (disembunyikan di HP) -->
+                <img class="decor toko-maskot d-none d-md-block" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                <img class="decor decor-awan kecil toko-awan d-none d-md-block" src="images/dekor/awan.svg" alt="" aria-hidden="true">
+
                 <div class="row g-4 align-items-center">
 
                     <!-- Alamat, jam buka, kontak -->
                     <div class="col-md-5">
-                        <div class="badge eyebrow">MAMPIR, YUK!</div>
+                        <div class="badge eyebrow eyebrow-pink">MAMPIR, YUK!</div>
                         <h2 id="judul-toko">Kunjungi toko kami</h2>
                         <ul class="list-unstyled info-toko mb-0">
                             <li>

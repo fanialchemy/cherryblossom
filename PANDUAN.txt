@@ -68,7 +68,7 @@ tentang.html   : kolase foto produk + cerita merek, tiga nilai merek,
                  tombol "Jelajahi koleksi", dan penjelasan proyek.
 kontak.html    : FAQ 5 pertanyaan (Accordion Bootstrap, satu terbuka
                  sekaligus), formulir (required, email, minlength,
-                 checkbox promo opsional) dengan
+                 checkbox persetujuan wajib) dengan
                  validasi tambahan JavaScript dan pop-up (Modal Bootstrap)
                  "Pesan terkirim!"; section "Kunjungi toko kami"
                  berisi alamat, jam buka, nomor contoh, dan peta Google Maps.
@@ -84,11 +84,11 @@ di kontak.html (spasi ditulis %20, koma ditulis %2C), lalu ubah juga teks
 alamat di atasnya.
 
 ISI CAROUSEL BERANDA (5 SLIDE)
-1. Koleksi pastel       -> produk.html                   (images/banner/hero-1.jpg)
-2. Sandal warna-warni   -> detail.html?id=niji-pyon      (images/banner/hero-2.jpg)
-3. Koleksi anak         -> produk.html?kategori=Anak     (images/banner/hero-3.jpg)
-4. Koleksi dewasa       -> produk.html?kategori=Dewasa   (images/banner/hero-4.jpg)
-5. Produk terbaru       -> detail.html?id=riri-chuu      (images/banner/hero-5.jpg)
+1. Koleksi pastel       -> produk.html                   (images/banner/hero-1.png)
+2. Sandal warna-warni   -> detail.html?id=niji-pyon      (images/banner/hero-2.png)
+3. Koleksi anak         -> produk.html?kategori=Anak     (images/banner/hero-3.png)
+4. Koleksi dewasa       -> produk.html?kategori=Dewasa   (images/banner/hero-4.png)
+5. Produk terbaru       -> detail.html?id=riri-chuu      (images/banner/hero-5.png)
 
 STRUKTUR FOLDER
 CHERRYBLOSSOM/
@@ -106,7 +106,7 @@ CHERRYBLOSSOM/
 ├── images/
 │   ├── logo.png                   -> logo navbar & footer + semua hiasan maskot
 │   ├── banner/
-│   │   └── hero-1.jpg ... hero-5.jpg   -> gambar 5 slide carousel
+│   │   └── hero-1.png ... hero-5.png   -> gambar 5 slide carousel
 │   ├── produk/
 │   │   └── <id-produk>.jpg        -> 16 file, satu per produk
 │   └── dekor/
@@ -124,8 +124,8 @@ sama pada tiap halaman agar mudah dipelajari. Hiasan dipanggil dengan
 MENGGANTI FOTO
 Setiap produk punya file gambar sendiri di images/produk/ dengan nama sesuai id
 (misalnya images/produk/sakura-puni.jpg). Gambar carousel ada di
-images/banner/hero-1.jpg sampai hero-5.jpg. Cukup timpa file dengan foto baru
-bernama SAMA (format .jpg), tidak perlu mengubah kode. Foto tampil dengan
+images/banner/hero-1.png sampai hero-5.png. Cukup timpa file dengan foto baru
+bernama SAMA (produk .jpg, banner .png), tidak perlu mengubah kode. Foto tampil dengan
 warna asli (tanpa efek warna) dan dipotong rapi menjadi persegi (object-fit:
 cover), jadi letakkan produk di tengah foto.
 Logo navbar & footer ada di images/logo.png. Timpa dengan logo baru bernama

@@ -319,6 +319,11 @@ header {
 
 .navbar {
     min-height: 92px;
+    /* Kembalikan jarak samping 12px seperti .container lain
+       (bawaan .navbar Bootstrap membuatnya 0, sehingga badge
+       keranjang keluar dari tepi layar) */
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 /* Logo: maskot + tulisan "Cherry Blossom" */
@@ -392,7 +397,7 @@ header {
 
 /* Pencarian kecil di navbar: pill, ikon di dalam kolom */
 .nav-search {
-    width: 200px;
+    width: 280px;   /* layar xl; di 992-1199px dibuat 220px */
 }
 
 .nav-search-icon {
@@ -451,18 +456,18 @@ header {
     border-radius: 14px;
 }
 
-/* Tombol keranjang: ikon tas + tulisan + angka jumlah barang */
+/* Tombol keranjang: ikon tas di dalam lingkaran 44x44px */
 .bag {
+    position: relative;          /* patokan posisi badge angka */
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-family: 'Fredoka', 'Nunito', sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 600;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
     background: var(--pink-soft);
     border: 2px solid var(--pink-bg);
-    border-radius: 50px;
-    padding: 7px 12px;
+    border-radius: 50%;
     color: var(--pink-deep);
 }
 
@@ -481,18 +486,27 @@ header {
 /* Angka tetap terbaca: lingkaran putih, angka pink */
 .bag.active .bag-count {
     background: var(--white);
+    border-color: var(--pink-strong);
     color: var(--pink-deep);
 }
 
-/* Angka jumlah barang di dalam lingkaran pink */
+/* Badge angka jumlah barang di pojok kanan atas ikon */
 .bag-count {
-    min-width: 26px;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
     background: var(--pink-strong);
-    color: var(--white);
-    padding: 2px 8px;
+    border: 2px solid var(--white);
     border-radius: 50px;
-    text-align: center;
+    color: var(--white);
+    font-family: 'Fredoka', 'Nunito', sans-serif;
+    font-size: 0.75rem;
     font-weight: 700;
+    line-height: 18px;
+    text-align: center;
 }
 
 
@@ -563,18 +577,16 @@ header {
     padding: 24px;
 }
 
-/* Foto slide tampil dengan warna asli seperti kartu foto:
-   sudut membulat, garis tepi putih, bayangan lembut. */
+/* Gambar slide: PNG transparan tanpa kotak. object-fit: contain
+   membuat sepatu tampil utuh; bayangan mengikuti bentuk gambar. */
 .hero-foto {
     display: block;
     width: 100%;
-    max-width: 400px;        /* ukuran kartu foto di desktop */
-    aspect-ratio: 1 / 1;     /* selalu persegi, jadi tetap proporsional */
+    aspect-ratio: 1 / 1;     /* tinggi area gambar sama di kelima slide */
+    max-height: 440px;
     margin: 0 auto;
-    object-fit: cover;       /* foto mengisi kotak tanpa gepeng */
-    border: 6px solid var(--white);
-    border-radius: 28px;
-    box-shadow: var(--shadow-pink);
+    object-fit: contain;
+    filter: drop-shadow(0 18px 24px rgba(90, 120, 170, 0.18));
 }
 
 /* Maskot (kanan atas) & bintang ✧ (kiri bawah), tetap di dalam .hero-art */
@@ -1666,15 +1678,19 @@ footer .col-6 a:hover {
 
 
 /* ===== 20b. ALAMAT TOKO & PETA (kontak.html) ===== */
-.toko-box {
-    background: var(--white);
-    border-radius: 28px;
-    padding: 32px;
-    box-shadow: var(--shadow-pink);
+/* Kotak toko memakai class .promo-banner (lihat bagian Banner promo).
+   Dekorasi maskot & awan "mengintip" di tepi kotak agar tidak
+   menutupi teks maupun peta. */
+.toko-maskot {
+    top: -30px;
+    right: 40px;
+    width: 60px;
+    transform: rotate(10deg);
 }
 
-.toko-box h2 {
-    font-size: 1.875rem;
+.toko-awan {
+    bottom: 12px;
+    left: 32px;
 }
 
 .info-toko li {
@@ -1691,7 +1707,7 @@ footer .col-6 a:hover {
     display: block;
     width: 100%;
     height: 350px;
-    border: 0;
+    border: 3px solid var(--white);
     border-radius: 24px;
 }
 
@@ -1888,7 +1904,7 @@ footer .col-6 a:hover {
     }
 
     .nav-search {
-        width: 170px;
+        width: 220px;
     }
 
     /* Filter + pencarian produk tetap satu baris */
@@ -2004,9 +2020,9 @@ footer .col-6 a:hover {
         font-size: 1rem;
     }
 
-    /* Di HP kartu foto lebih kecil agar teks & foto muat */
+    /* Di HP gambar lebih kecil agar teks & gambar muat */
     .hero-foto {
-        max-width: 260px;
+        max-height: 280px;
     }
 
     .f1 {
@@ -2025,7 +2041,6 @@ footer .col-6 a:hover {
         font-size: 1.625rem;
     }
 
-    .toko-box,
     .promo-banner {
         padding: 24px 18px;
     }
