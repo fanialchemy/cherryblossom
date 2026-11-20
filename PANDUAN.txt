@@ -1,0 +1,113 @@
+CHERRYBLOSSOM — Proyek Pemrograman Web 1
+
+CARA MEMBUKA
+Ekstrak seluruh ZIP, lalu buka index.html di browser. Tidak perlu instalasi,
+Node.js, npm, backend, atau database. Bootstrap 5.3.3 dan foto disertakan lokal.
+Font Fredoka dan Nunito disertakan lokal sehingga tampilan font tetap tersedia offline.
+Untuk penyimpanan keranjang paling konsisten antarhalaman, gunakan hosting
+statis atau ekstensi Live Server di editor. Perilaku localStorage pada file://
+berbeda antarbrowser. Situs tetap dapat dibuka langsung untuk peninjauan.
+
+ENAM HALAMAN
+index.html: beranda dengan Bootstrap carousel dua slide dan 8 produk unggulan.
+produk.html: katalog 16 produk (Bootstrap card + grid), filter Semua/Anak/Dewasa,
+             filter Sepatu/Sandal, dan pencarian sederhana.
+detail.html: detail produk (diisi JavaScript dari ?id= di URL), pilihan ukuran,
+             dan tambah ke keranjang.
+keranjang.html: ubah jumlah, hapus produk, total Rupiah, dan simulasi selesai.
+tentang.html: cerita merek serta penjelasan proyek.
+kontak.html: formulir dengan required, email, minlength, dan validasi sederhana.
+
+STRUKTUR FOLDER
+CHERRYBLOSSOM/
+├── index.html, produk.html, detail.html, keranjang.html,
+│   tentang.html, kontak.html      -> semua halaman HTML di root
+├── PANDUAN.txt
+├── css/
+│   ├── bootstrap.min.css          -> Bootstrap 5.3.3 (offline)
+│   ├── fonts.css                  -> @font-face Fredoka & Nunito (../fonts/)
+│   └── style.css                  -> gaya khusus CHERRYBLOSSOM
+├── js/
+│   ├── bootstrap.bundle.min.js    -> Bootstrap 5.3.3 (offline)
+│   └── script.js                  -> data produk, filter, detail, keranjang, form
+├── images/
+│   ├── sepatu-rose.jpg, sepatu-anak.jpg, sandal-pelangi.jpg,
+│   │   sandal-pita.jpg, sandal-lila.jpg   -> foto sumber asli
+│   ├── banner/
+│   │   ├── hero-1.jpg             -> gambar slide 1 beranda
+│   │   └── hero-2.jpg             -> gambar slide 2 beranda
+│   └── produk/
+│       └── <id-produk>.jpg        -> 16 file, satu per produk
+├── fonts/                         -> 9 file .ttf (Fredoka & Nunito)
+└── referensi-desain/              -> bahan referensi desain (tidak dipakai halaman)
+
+Setiap halaman memuat css/bootstrap.min.css, css/style.css (yang mengimpor
+fonts.css), js/bootstrap.bundle.min.js, dan js/script.js. Header/footer disalin
+secara konsisten pada tiap halaman agar mudah dipelajari. Tidak ada router,
+framework aplikasi, proses build, atau permintaan API.
+
+MENGGANTI FOTO PRODUK
+Setiap produk punya file gambar sendiri di images/produk/ dengan nama sesuai id
+(misalnya images/produk/sakura-puni.jpg). Saat ini isinya masih salinan foto
+sumber. Cukup timpa file dengan foto baru bernama SAMA (format .jpg), tidak
+perlu mengubah kode. Gambar carousel beranda diganti di images/banner/.
+
+DAFTAR PRODUK (16)
+id            Nama          Kategori  Jenis   Warna               Harga
+--------------------------------------------------------------------------
+sakura-puni   Sakura Puni   Dewasa    Sepatu  Merah muda          Rp289.000
+momo-fuwa     Momo Fuwa     Dewasa    Sepatu  Peach lembut        Rp299.000
+yume-kira     Yume Kira     Dewasa    Sepatu  Lavender            Rp319.000
+hana-mochi    Hana Mochi    Dewasa    Sepatu  Krem susu           Rp279.000
+niji-pyon     Niji Pyon     Dewasa    Sandal  Pastel warna-warni  Rp189.000
+riri-chuu     Riri Chuu     Dewasa    Sandal  Merah muda          Rp159.000
+lulu-sora     Lulu Sora     Dewasa    Sandal  Ungu muda           Rp229.000
+nana-puru     Nana Puru     Dewasa    Sandal  Mint pastel         Rp199.000
+koko-tobi     Koko Tobi     Anak      Sepatu  Biru pastel         Rp219.000
+pipi-kumo     Pipi Kumo     Anak      Sepatu  Biru langit         Rp209.000
+mimi-usa      Mimi Usa      Anak      Sepatu  Pink stroberi       Rp229.000
+chibi-hoshi   Chibi Hoshi   Anak      Sepatu  Kuning lemon        Rp199.000
+nini-pyoko    Nini Pyoko    Anak      Sandal  Merah muda          Rp129.000
+tete-miru     Tete Miru     Anak      Sandal  Lila                Rp139.000
+popo-niko     Popo Niko     Anak      Sandal  Pastel warna-warni  Rp149.000
+yuyu-puka     Yuyu Puka     Anak      Sandal  Peach               Rp119.000
+Ukuran dewasa: 36–40. Ukuran anak: 24–34.
+Produk unggulan di beranda: sakura-puni, koko-tobi, niji-pyon, riri-chuu,
+momo-fuwa, mimi-usa, lulu-sora, popo-niko.
+
+Data lengkap ada di array products di js/script.js. Kartu di produk.html dan
+index.html ditulis langsung di HTML; jika mengubah id, nama, harga, atau
+kategori, ubah juga di script.js agar tetap sama.
+
+ALUR KERANJANG
+Data produk ada di awal js/script.js. Harga tidak diambil dari input pengunjung.
+Keranjang menyimpan ID produk, ukuran dan jumlah dalam localStorage.
+Jumlah dibatasi 1–10 pasang per produk/ukuran. Tombol simulasi tidak memproses
+transaksi. Form kontak tidak mengirim atau menyimpan data.
+
+CATATAN KONTEN
+CHERRYBLOSSOM adalah merek fiktif. Nama, harga, ukuran dan deskripsi produk
+merupakan contoh akademik. Foto pihak ketiga hanya sebagai ilustrasi, bukan
+bukti produk milik merek CHERRYBLOSSOM. Sebelum penggunaan komersial, gunakan
+foto sendiri atau foto berlisensi yang sesuai.
+
+SUMBER FOTO
+(Foto di images/banner/ dan images/produk/ saat ini adalah salinan foto berikut.)
+sepatu-rose.jpg: Apita/Piago
+https://www.apitashop.com/shop/g/g001-02096110203057
+sepatu-anak.jpg: adidas, Tensaur Run 2.0
+https://www.adidas.co.uk/tensaur-run-2.0-shoes-kids/IE5989.html
+sandal-pelangi.jpg: Stylo, Multy Formal Sandal FR5145
+https://stylo.pk/products/multy-formal-sandal-fr5145
+sandal-pita.jpg: Stylo, koleksi sandal
+https://stylo.pk/collections/sandals
+sandal-lila.jpg: Diane Marie, Magnolia
+https://pantofidianemarie.ro/products/sandale-dama-din-piele-naturala-lila-cu-roz-magnolia
+Bootstrap 5.3.3: https://getbootstrap.com/ (MIT, keterangan lisensi dalam berkas).
+Font: Fredoka dan Nunito, diunduh melalui Google Fonts.
+Revisi visual: baby blue #D3E3FF, pink #FF78AA, judul bulat tebal dengan
+outline putih, logo cokelat hangat, dan teks ungu keabu-abuan. Layout tetap.
+
+PUBLIKASI
+Unggah seluruh isi folder ini ke hosting statis. Pertahankan nama dan susunan
+file. Website belum dipublikasikan: tinjau dahulu sebelum melakukan deployment.

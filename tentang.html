@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHERRYBLOSSOM — koleksi sepatu dan sandal pastel untuk langkah kecil dan besar. Proyek simulasi toko.">
+    <title>Tentang Kami | CHERRYBLOSSOM</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ===== SIMBOL SVG (maskot, awan, kelopak) =====
+         Digambar sendiri, disembunyikan, lalu dipakai ulang dengan <use href="#..."> -->
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+        <defs>
+            <radialGradient id="gradasi-kelopak" cx="50" cy="50" r="46" gradientUnits="userSpaceOnUse">
+                <stop offset="0.4" stop-color="#FFFFFF"/>
+                <stop offset="1" stop-color="#FFC2D6"/>
+            </radialGradient>
+        </defs>
+        <!-- Maskot bunga sakura 5 kelopak berwajah imut -->
+        <symbol id="maskot" viewBox="0 0 100 100">
+            <g fill="url(#gradasi-kelopak)" stroke="#6B3F2A" stroke-width="3" stroke-linejoin="round">
+                <path id="kelopak-maskot" d="M50 50 C28 42 27 14 41 7 Q46 4 50 12 Q54 4 59 7 C73 14 72 42 50 50 Z"/>
+                <use href="#kelopak-maskot" transform="rotate(72 50 50)"/>
+                <use href="#kelopak-maskot" transform="rotate(144 50 50)"/>
+                <use href="#kelopak-maskot" transform="rotate(216 50 50)"/>
+                <use href="#kelopak-maskot" transform="rotate(288 50 50)"/>
+            </g>
+            <circle cx="50" cy="51" r="17" fill="#FFFFFF"/>
+            <circle cx="43" cy="49" r="2.7" fill="#6B3F2A"/>
+            <circle cx="57" cy="49" r="2.7" fill="#6B3F2A"/>
+            <ellipse cx="38.5" cy="55" rx="3.6" ry="2.3" fill="#FF7FA8" opacity="0.8"/>
+            <ellipse cx="61.5" cy="55" rx="3.6" ry="2.3" fill="#FF7FA8" opacity="0.8"/>
+            <path d="M46.5 54.5 Q50 58 53.5 54.5" fill="none" stroke="#6B3F2A" stroke-width="2" stroke-linecap="round"/>
+        </symbol>
+        <!-- Awan -->
+        <symbol id="awan" viewBox="0 0 120 60">
+            <path fill="currentColor" d="M24 56 C10 56 4 46 8 37 C12 29 21 27 27 30 C29 17 41 9 54 12 C62 4 78 5 85 16 C97 13 109 21 108 33 C116 36 118 48 110 54 C108 55.5 106 56 104 56 Z"/>
+        </symbol>
+        <!-- Kelopak sakura -->
+        <symbol id="kelopak" viewBox="0 0 40 40">
+            <path fill="currentColor" d="M20 38 C6 30 3 12 13 4 Q17 2 20 8 Q23 2 27 4 C37 12 34 30 20 38 Z"/>
+        </symbol>
+    </svg>
+    <a class="skip" href="#utama">Langsung ke konten</a>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <!-- ===== PENGUMUMAN ===== -->
+        <div class="announcement">Kelopak kecil, kebahagiaan besar. <span>Temukan pasangan favoritmu ✿</span></div>
+
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="index.html">
+                <svg class="maskot brand-maskot" aria-hidden="true"><use href="#maskot"></use></svg>
+                <span class="brand-text">Cherry Blossom<span class="brand-sub">LANGKAH MANIS SETIAP HARI</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Buka menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produk.html">Koleksi</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tentang.html" aria-current="page">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+                <a class="bag" href="keranjang.html">Keranjang <span id="cart-count">0</span> ↗</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="utama">
+
+        <!-- ===== HERO TENTANG ===== -->
+        <section class="about-hero container has-decor">
+            <!-- Dekorasi (hanya hiasan) -->
+            <svg class="decor decor-awan d-tl" aria-hidden="true"><use href="#awan"></use></svg>
+            <svg class="decor decor-awan kecil d-tr tetap-hp" aria-hidden="true"><use href="#awan"></use></svg>
+            <svg class="decor decor-kelopak besar d-bl rot-l" aria-hidden="true"><use href="#kelopak"></use></svg>
+            <svg class="decor decor-kelopak d-br rot-r" aria-hidden="true"><use href="#kelopak"></use></svg>
+            <span class="decor decor-kilau biru d-mr" aria-hidden="true">✦</span>
+            <div class="eyebrow">CERITA DI BALIK KELOPAK</div>
+            <svg class="maskot about-maskot" aria-hidden="true"><use href="#maskot"></use></svg>
+            <h1>Hal kecil yang membuat<br><em>hari lebih manis.</em></h1>
+            <p>CHERRYBLOSSOM berawal dari sebuah ide sederhana:<br>bagaimana jika setiap langkah terasa sedikit lebih ceria?</p>
+        </section>
+
+        <!-- ===== CERITA & NILAI MEREK ===== -->
+        <section class="container section pt-0">
+            <div class="row g-5">
+                <div class="col-md-5">
+                    <h2>Untuk si kecil.<br>Untuk dirimu.<br>Untuk semua cerita.</h2>
+                </div>
+                <div class="col-md-7">
+                    <p>Kami membayangkan sebuah tempat untuk sepatu dan sandal dengan warna lembut, bentuk yang menyenangkan, dan detail yang membuat tersenyum. Terinspirasi bunga sakura, CHERRYBLOSSOM merayakan keindahan dalam keseharian.</p>
+                    <p>Koleksi anak dan dewasa mengajak siapa pun mengekspresikan sisi cerianya. Dari merah muda yang hangat hingga biru lembut seperti langit, setiap pilihan punya cerita sendiri.</p>
+                    <p>Website ini adalah proyek ujian Pemrograman Web 1. CHERRYBLOSSOM merupakan konsep merek fiktif. Seluruh kegiatan belanja dan pengiriman pesan di sini hanya berupa simulasi.</p>
+                </div>
+            </div>
+
+            <!-- Tiga nilai merek -->
+            <div class="values">
+                <article>
+                    <span>✿</span>
+                    <h3>Warna yang bercerita</h3>
+                    <p>Palet pastel yang lembut dan mudah dipadukan.</p>
+                </article>
+                <article>
+                    <span>♡</span>
+                    <h3>Bahagia lintas usia</h3>
+                    <p>Pilihan untuk langkah kecil dan langkah dewasa.</p>
+                </article>
+                <article>
+                    <span>✧</span>
+                    <h3>Detail penuh karakter</h3>
+                    <p>Sentuhan sederhana yang terasa istimewa.</p>
+                </article>
+            </div>
+
+            <a class="btn btn-cherry" href="produk.html">Temukan ceritamu ↗</a>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <!-- Dekorasi (hanya hiasan) -->
+        <span class="decor decor-kilau d-tr" aria-hidden="true">✦</span>
+        <svg class="decor decor-kelopak besar d-bl rot-l" aria-hidden="true"><use href="#kelopak"></use></svg>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <a class="footer-brand" href="index.html">
+                        <svg class="maskot brand-maskot" aria-hidden="true"><use href="#maskot"></use></svg>
+                        <span class="brand-text">Cherry Blossom</span>
+                    </a>
+                    <p>Untuk langkah kecil, mimpi besar,<br>dan semua cerita di antaranya.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2>Jelajahi</h2>
+                    <a href="produk.html">Semua koleksi</a>
+                    <a href="tentang.html">Cerita kami</a>
+                    <a href="keranjang.html">Keranjang belanja</a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2>Ada pertanyaan?</h2>
+                    <a href="kontak.html">Hubungi kami ↗</a>
+                    <a href="detail.html">Panduan ukuran</a>
+                    <span>Dibuat dengan sepenuh hati ♡</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 CHERRYBLOSSOM</span>
+                <span>Proyek Pemrograman Web 1 · Toko simulasi, tanpa transaksi nyata.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
