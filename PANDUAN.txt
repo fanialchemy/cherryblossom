@@ -3,85 +3,96 @@ CHERRYBLOSSOM — Proyek Pemrograman Web 1
 CARA MEMBUKA
 Ekstrak seluruh ZIP, lalu buka index.html di browser. Tidak perlu instalasi,
 Node.js, npm, backend, atau database. Bootstrap 5.3.9, font, dan semua gambar
-disertakan lokal sehingga situs tetap tampil walau offline (kecuali peta
-Google Maps di kontak.html yang membutuhkan internet).
+disertakan lokal (offline), jadi situs tetap tampil tanpa internet, kecuali
+peta Google Maps di kontak.html.
 Untuk penyimpanan keranjang paling konsisten antarhalaman, gunakan hosting
 statis atau ekstensi Live Server di editor. Perilaku localStorage pada file://
 berbeda antarbrowser. Situs tetap dapat dibuka langsung untuk peninjauan.
 
 TEKNOLOGI
-HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline).
+HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline, tanpa CDN).
 - Tata letak memakai grid Bootstrap (container, row, col-*, g-*) dan utility
-  Bootstrap (d-flex, py-5, mb-4, text-center, d-none d-md-inline, dll.).
-- Komponen Bootstrap: navbar, carousel, card, badge,
-  btn / btn-sm rounded-pill, breadcrumb, table table-striped, form-control,
-  form-select, form-check, modal, dropdown, accordion.
-- Hiasan awan & kelopak hanya di hero, kartu kategori, banner promo, dan
-  cerita singkat; disembunyikan di HP dengan class "d-none d-md-block".
-- Ikon tas belanja "bag-heart" (navbar) dan kaca pembesar "search" (kolom
-  pencarian produk.html) dari Bootstrap Icons (MIT), disalin sebagai inline
-  SVG (tanpa library tambahan).
-- css/style.css hanya mengatur warna, huruf, sudut bulat, bayangan, dan hiasan.
+  Bootstrap (d-flex, gap-*, py-5, mb-4, text-center, d-none d-md-block, dll.).
+- Komponen Bootstrap yang dipakai:
+  navbar + collapse (menu hamburger di HP), dropdown (menu "Koleksi"),
+  carousel (hero beranda & slider foto detail), card (kartu produk),
+  grid, form (form-control, form-select, form-check), badge, breadcrumb,
+  table (table-striped), accordion (FAQ kontak), modal (pop-up berhasil),
+  serta btn / rounded-pill.
+- Ikon dari Bootstrap Icons (MIT), disalin sebagai inline SVG tanpa library
+  tambahan: "bag-heart" (tombol keranjang), "search" (kolom pencarian),
+  dan "instagram" (link Instagram).
+- Hiasan awan & kelopak (images/dekor/) dipakai di hero, kartu kategori,
+  banner promo, cerita singkat, dan kotak "Kunjungi toko kami"; disembunyikan
+  di HP dengan class "d-none d-md-block".
+- css/style.css mengatur warna, huruf, sudut bulat, bayangan, dan hiasan.
 - js/script.js memakai function biasa, for loop, dan localStorage.
 Tidak ada framework aplikasi, proses build, atau permintaan API.
 
-DELAPAN HALAMAN & FITUR
-index.html     : urutan section: carousel Bootstrap 5 slide (berganti
-                 setiap 3,5 detik, tombol prev/next, 5 titik indikator)
+8 HALAMAN HTML & FITUR
+Semua halaman  : header menempel saat di-scroll; logo (images/logo.png) +
+                 nama "Cherry Blossom" + slogan "STEP INTO CUTE COMFORT";
+                 menu aktif berbentuk pill pink; menu "Koleksi" berupa
+                 dropdown (Semua koleksi, Koleksi anak, Koleksi dewasa,
+                 Panduan ukuran); kolom "Cari produk..." yang membuka
+                 produk.html?cari=...; tombol keranjang bulat berisi ikon tas
+                 dan angka jumlah barang (badge). Di HP menu masuk ke tombol
+                 hamburger. Footer berisi link Jelajahi (Semua koleksi, Cerita
+                 kami, Keranjang belanja), Ada pertanyaan? (Hubungi kami,
+                 Panduan ukuran, Instagram @cherryblossom), dan baris bawah
+                 "© 2026 CHERRYBLOSSOM" serta "Dibuat dengan sepenuh hati ♡".
+index.html     : carousel hero 5 slide (berganti setiap 3,5 detik, tombol
+                 prev/next, 5 titik indikator; gambar PNG transparan)
                  -> 4 kartu keunggulan -> kartu kategori Anak & Dewasa
-                 -> 8 produk favorit -> "Cara belanja" (3 langkah dalam
-                 panel putih) -> banner promo "Voucher Gemes!" (kode
-                 contoh BLOSSOM10, promo simulasi) -> cerita singkat.
-                 Semua section memakai latar pink lembut yang sama, py-5.
-panduan-ukuran.html : 2 kolom (col-md-6). Kiri: tabel ukuran dewasa 36–40
-                 lalu cara mengukur kaki (<ol> 4 langkah). Kanan: tabel
-                 ukuran anak 24–34 lalu tips memilih ukuran (<ul>). Tabel
-                 memakai table-striped dengan belang pink muda. Ditautkan
-                 dari footer semua halaman, detail.html (di dekat pilihan
-                 ukuran), kartu langkah 2 "Cara belanja", dan kontak.html.
-Semua halaman  : header menempel saat di-scroll; menu aktif berbentuk pill
-                 pink; menu "Koleksi" berupa dropdown (Semua koleksi, Koleksi
-                 anak, Koleksi dewasa, Panduan ukuran); kolom "Cari produk..."
-                 yang membuka produk.html?cari=...; tombol keranjang dengan ikon tas (di HP hanya ikon +
-                 angka); footer berisi link "Panduan ukuran" dan baris
-                 bawah "Dibuat dengan sepenuh hati ♡".
-produk.html    : katalog 16 produk (card + grid), filter kategori
-                 (Semua/Anak/Dewasa), filter jenis (Semua/Sepatu/Sandal),
-                 dan pencarian nama. Filter bisa dibuka dari URL,
-                 contoh produk.html?kategori=Anak.
-detail.html    : detail produk diisi JavaScript dari ?id= di URL; jika produk
-                 punya lebih dari 1 foto (field images), foto tampil sebagai
-                 slider (Carousel Bootstrap, otomatis 4 detik, berhenti saat
-                 kursor di atas foto);
-                 (contoh detail.html?id=sakura-puni), breadcrumb, pilihan
-                 ukuran + link "Bingung ukuran? Lihat panduan ukuran",
-                 jumlah, tambah ke keranjang, kotak "Bahan & perawatan"
-                 di bawah foto (diisi dari field material & care).
-keranjang.html : daftar belanja, ubah jumlah (1–10), hapus barang,
+                 -> 8 produk favorit -> "Cara belanja" (3 langkah)
+                 -> banner promo "Voucher Gemes!" (kode BLOSSOM10)
+                 -> cerita singkat.
+produk.html    : katalog 16 produk (card + grid). Satu panel berisi filter
+                 kategori (Semua/Anak/Dewasa, pink), filter jenis
+                 (Semua/Sepatu/Sandal, biru), dan pencarian nama. Filter dan
+                 pencarian bisa dibuka dari URL, contoh
+                 produk.html?kategori=Anak atau produk.html?cari=sakura.
+detail.html    : isi diambil JavaScript dari ?id= di URL (contoh
+                 detail.html?id=sakura-puni): breadcrumb, nama, harga,
+                 deskripsi, warna, pilihan ukuran + link "Bingung ukuran?
+                 Lihat panduan ukuran", jumlah, dan tombol tambah ke keranjang.
+                 Produk dengan lebih dari satu foto tampil sebagai slider
+                 (Carousel Bootstrap, berganti otomatis setiap 4 detik,
+                 berhenti saat kursor di atas foto). Di bawah foto ada kotak
+                 "Bahan & perawatan".
+keranjang.html : daftar belanja, ubah jumlah (1–10), hapus barang, ringkasan
                  total Rupiah, dan tombol "Lanjut ke pengiriman" ke
                  checkout.html (disembunyikan jika keranjang kosong).
 checkout.html  : penanda langkah (1 Keranjang - 2 Pengiriman - 3 Selesai),
                  form "Data pengiriman" (nama, nomor HP, alamat, metode
-                 pembayaran, catatan) yang divalidasi atribut HTML, dan
-                 kartu "Ringkasan pesanan" dari keranjang. Setelah "Buat
-                 pesanan": keranjang dikosongkan, angka navbar jadi 0, dan
-                 pop-up (Modal Bootstrap) "Pesanan berhasil!" muncul.
-                 Jika keranjang kosong, form diganti pesan kosong.
-tentang.html   : kolase foto produk + cerita merek, tiga nilai merek,
-                 tombol "Jelajahi koleksi", dan penjelasan proyek.
-kontak.html    : FAQ 5 pertanyaan (Accordion Bootstrap, satu terbuka
-                 sekaligus), formulir (required, email, minlength,
-                 checkbox persetujuan wajib) dengan
-                 validasi tambahan JavaScript dan pop-up (Modal Bootstrap)
-                 "Pesan terkirim!"; section "Kunjungi toko kami"
-                 berisi alamat, jam buka, nomor contoh, dan peta Google Maps.
+                 pembayaran, catatan) yang divalidasi atribut HTML (required,
+                 pattern, minlength), dan kartu "Ringkasan pesanan". Setelah
+                 "Buat pesanan": keranjang dikosongkan, angka di navbar jadi 0,
+                 dan pop-up (modal) "Pesanan berhasil!" muncul. Jika keranjang
+                 kosong, form diganti pesan "Keranjangmu masih kosong".
+tentang.html   : kolase 3 foto produk, kutipan, cerita merek, tiga nilai
+                 merek, tombol "Jelajahi koleksi", dan keterangan bahwa
+                 CHERRYBLOSSOM adalah merek fiktif untuk proyek ujian.
+kontak.html    : FAQ 5 pertanyaan (accordion, satu terbuka sekaligus);
+                 formulir (nama, email, topik, pesan, checkbox persetujuan
+                 wajib) dengan validasi HTML + JavaScript dan pop-up (modal)
+                 "Pesan terkirim!"; kotak "Kunjungi toko kami" berisi alamat,
+                 jam buka, telepon, email, Instagram, dan peta Google Maps.
+panduan-ukuran.html : 2 kolom. Kiri: tabel ukuran dewasa 36–40 lalu cara
+                 mengukur kaki (4 langkah). Kanan: tabel ukuran anak 24–34
+                 lalu tips memilih ukuran. Tabel memakai table-striped dengan
+                 belang pink muda. Ditautkan dari dropdown "Koleksi", footer,
+                 detail.html, langkah 2 "Cara belanja", dan FAQ kontak.
 
-ALAMAT TOKO (SIMULASI)
-Alamat   : Kawasan Jl. Soekarno Hatta, Lowokwaru, Malang (area umum, contoh)
-Jam buka : Senin–Sabtu 09.00–21.00, Minggu 10.00–20.00
-Telepon  : 0812-0000-0000 (nomor contoh)
-Email    : halo@cherryblossom.example (alamat contoh)
-Data kontak hanya contoh untuk proyek simulasi, bukan toko sungguhan.
+ALAMAT TOKO
+Alamat    : Kawasan Jl. Soekarno Hatta, Lowokwaru, Malang
+Jam buka  : Senin–Sabtu 09.00–21.00, Minggu 10.00–20.00
+Telepon   : 0812-0000-0000
+Email     : halo@cherryblossom.example
+Instagram : @cherryblossom -> https://www.instagram.com/
+            (di footer semua halaman dan di kotak "Kunjungi toko kami"
+            kontak.html; dibuka di tab baru). Tidak ada link Shopee.
+Data kontak berupa contoh.
 Untuk mengganti lokasi peta, ubah teks setelah "q=" pada atribut src iframe
 di kontak.html (spasi ditulis %20, koma ditulis %2C), lalu ubah juga teks
 alamat di atasnya.
@@ -105,36 +116,45 @@ CHERRYBLOSSOM/
 │   └── style.css                  -> warna, huruf, dan hiasan CHERRYBLOSSOM
 ├── js/
 │   ├── bootstrap.bundle.min.js    -> Bootstrap 5.3.9 (offline)
-│   └── script.js                  -> data produk, filter, detail, keranjang, form
+│   └── script.js                  -> data produk, filter, detail, keranjang,
+│                                     checkout, dan form kontak
 ├── images/
-│   ├── logo.png                   -> logo navbar & footer + semua hiasan maskot
+│   ├── logo.png                   -> logo navbar & footer; juga hiasan maskot
+│   │                                 di hero & kategori beranda, banner promo,
+│   │                                 cerita singkat, tentang, dan kontak
 │   ├── banner/
 │   │   └── hero-1.png ... hero-5.png   -> gambar 5 slide carousel
 │   ├── produk/
-│   │   └── <id-produk>.jpg        -> foto utama tiap produk (+ <id>2.jpg,
-│   │                                 <id>3.jpg untuk slider di detail)
+│   │   └── <id-produk>.jpg        -> foto utama tiap produk, ditambah
+│   │                                 <id>2.jpg / <id>3.jpg untuk slider detail
 │   └── dekor/
-│       ├── maskot.svg             -> sumber awal logo.png (tidak dipakai halaman)
+│       ├── maskot.svg             -> maskot bunga sakura: pop-up berhasil
+│       │                             (checkout.html & kontak.html) dan hiasan
+│       │                             kotak "Kunjungi toko kami" (kontak.html)
 │       ├── awan.svg               -> awan putih
 │       └── kelopak.svg            -> kelopak sakura
 ├── fonts/                         -> 9 file .ttf (Fredoka & Nunito)
 └── referensi-desain/              -> bahan referensi desain (tidak dipakai halaman)
 
 Setiap halaman memuat css/bootstrap.min.css, css/style.css (yang mengimpor
-fonts.css), js/bootstrap.bundle.min.js, dan js/script.js. Header/footer disalin
-sama pada tiap halaman agar mudah dipelajari. Hiasan dipanggil dengan
-<img src="images/dekor/...svg" alt="" aria-hidden="true">.
+fonts.css), js/bootstrap.bundle.min.js, dan js/script.js. Header dan footer
+disalin sama pada tiap halaman agar mudah dipelajari. Hiasan dipanggil dengan
+<img src="..." alt="" aria-hidden="true">.
 
 MENGGANTI FOTO
-Setiap produk punya file gambar sendiri di images/produk/ dengan nama sesuai id
-(misalnya images/produk/sakura-puni.jpg). Gambar carousel ada di
-images/banner/hero-1.png sampai hero-5.png. Cukup timpa file dengan foto baru
-bernama SAMA (produk .jpg, banner .png), tidak perlu mengubah kode. Foto tampil dengan
-warna asli (tanpa efek warna) dan dipotong rapi menjadi persegi (object-fit:
-cover), jadi letakkan produk di tengah foto.
-Logo navbar & footer ada di images/logo.png. Timpa dengan logo baru bernama
-SAMA; tingginya diatur CSS (44px navbar, 40px footer), lebarnya mengikuti
-proporsi gambar, jadi logo persegi maupun memanjang tetap tampil rapi.
+- Foto produk: images/produk/<id>.jpg (misalnya sakura-puni.jpg). Foto ini
+  dipakai di kartu produk, keranjang, dan checkout.
+- Foto tambahan untuk slider di detail.html: <id>2.jpg, <id>3.jpg, lalu
+  daftarkan di array "images" produk tersebut di js/script.js (foto utama
+  selalu di urutan pertama). Saat ini 15 dari 16 produk punya 2–3 foto;
+  Niji Pyon hanya 1 foto, jadi tampil sebagai gambar biasa.
+- Gambar carousel beranda: images/banner/hero-1.png sampai hero-5.png
+  (PNG transparan, tampil utuh dengan object-fit: contain).
+- Logo: images/logo.png. Tingginya diatur CSS (44px navbar, 38px di HP,
+  40px footer) dan lebarnya mengikuti proporsi gambar.
+Cukup timpa file dengan nama yang SAMA (produk .jpg, banner .png), tidak perlu
+mengubah kode. Foto produk tampil dengan warna asli dan dipotong rapi menjadi
+persegi (object-fit: cover), jadi letakkan produk di tengah foto.
 
 DAFTAR PRODUK (16)
 id            Nama          Kategori  Jenis   Warna               Harga
@@ -159,32 +179,38 @@ Ukuran dewasa: 36–40. Ukuran anak: 24–34.
 Produk unggulan di beranda: sakura-puni, koko-tobi, niji-pyon, riri-chuu,
 momo-fuwa, mimi-usa, lulu-sora, popo-niko.
 
-Data lengkap ada di array products di js/script.js. Kartu di produk.html dan
-index.html ditulis langsung di HTML; jika mengubah id, nama, harga, atau
-kategori, ubah juga di script.js agar tetap sama.
+Data lengkap ada di array products di js/script.js. Setiap produk berisi id,
+nama, kategori, jenis, harga, warna, ukuran, deskripsi, bahan (material),
+cara merawat (care), foto utama (image), dan daftar foto slider (images).
+Kartu di produk.html dan index.html ditulis langsung di HTML; jika mengubah
+id, nama, harga, warna, atau kategori, ubah juga di script.js agar tetap sama.
 
 ALUR KERANJANG
-Data produk ada di awal js/script.js. Harga tidak diambil dari input pengunjung.
-Keranjang menyimpan id produk, ukuran, dan jumlah dalam localStorage
-(kunci "cherry-cart"). Jumlah dibatasi 1–10 pasang per produk/ukuran.
-Tombol "Buat pesanan" tidak memproses transaksi nyata. Form kontak tidak mengirim atau
-menyimpan data.
+1. detail.html: pilih ukuran & jumlah -> "Tambahkan ke keranjang".
+2. keranjang.html: ubah jumlah atau hapus barang -> "Lanjut ke pengiriman".
+3. checkout.html: isi data pengiriman -> "Buat pesanan" -> pop-up berhasil,
+   keranjang kosong.
+Keranjang disimpan di localStorage (kunci "cherry-cart") berisi id produk,
+ukuran, dan jumlah. Harga selalu diambil dari data produk, bukan dari input
+pengunjung. Jumlah dibatasi 1–10 pasang per produk/ukuran.
+Tidak ada pembayaran atau pengiriman nyata, dan form kontak tidak mengirim
+maupun menyimpan data.
 
 CATATAN KONTEN
-CHERRYBLOSSOM adalah merek fiktif. Nama, harga, ukuran dan deskripsi produk
-merupakan contoh akademik. Maskot, awan, dan kelopak digambar sendiri (SVG).
+CHERRYBLOSSOM adalah merek fiktif untuk proyek ujian Pemrograman Web 1.
+Nama, harga, ukuran, deskripsi produk, dan data kontak merupakan contoh.
+Maskot, awan, dan kelopak digambar sendiri (SVG).
 
 SUMBER & KREDIT
-Nama, harga, dan spesifikasi merupakan contoh untuk proyek. Foto produk hanya
-sebagai ilustrasi.
+Foto produk hanya sebagai ilustrasi.
 Bootstrap 5.3.9: https://getbootstrap.com/ (MIT, keterangan lisensi dalam berkas).
-Bootstrap Icons (ikon bag-heart dan search): https://icons.getbootstrap.com/ (MIT).
+Bootstrap Icons (bag-heart, search, instagram): https://icons.getbootstrap.com/ (MIT).
 Font: Fredoka dan Nunito, diunduh melalui Google Fonts.
 
 PALET WARNA
 Pink latar #FFD9E6, pink lembut #FFF0F5, pink #FF7FA8, pink tombol #F25C8E,
 biru langit #D3E7FF, biru #5AB0F0, lila #CDBBF5, cokelat logo #6B3F2A,
-teks #5A4650. Judul memakai huruf Fredoka tebal dengan outline putih.
+teks #5A4650. Judul utama memakai huruf Fredoka tebal dengan outline putih.
 
 PUBLIKASI
 Unggah seluruh isi folder ini ke hosting statis. Pertahankan nama dan susunan
