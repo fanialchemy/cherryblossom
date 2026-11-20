@@ -22,6 +22,14 @@
                 <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
                 <span class="brand-text">Cherry Blossom<span class="brand-sub">LANGKAH MANIS SETIAP HARI</span></span>
             </a>
+            <!-- Tombol keranjang: ikon + tulisan (disembunyikan di layar kecil) + jumlah barang -->
+            <a class="bag ms-auto me-2 me-lg-0 order-lg-last" href="keranjang.html" aria-label="Keranjang belanja">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+                </svg>
+                <span class="d-none d-md-inline">Keranjang</span>
+                <span id="cart-count" class="bag-count">0</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Buka menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,7 +40,6 @@
                     <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link active" href="kontak.html" aria-current="page">Kontak</a></li>
                 </ul>
-                <a class="bag" href="keranjang.html">Keranjang <span id="cart-count">0</span> ↗</a>
             </div>
         </nav>
     </header>
@@ -64,6 +71,7 @@
                         <h3>Sebelum mengirim</h3>
                         <p>Form ini adalah simulasi. Pesan tidak dikirim ke siapa pun dan tidak disimpan.</p>
                     </div>
+                    <a class="btn btn-sm rounded-pill btn-outline-cherry" href="index.html#panduan-ukuran">Lihat panduan ukuran ↗</a>
                 </div>
 
                 <!-- Form kontak (divalidasi oleh HTML + js/script.js) -->
@@ -109,6 +117,42 @@
             </div>
         </section>
 
+        <!-- ===== KUNJUNGI TOKO KAMI (alamat + peta) ===== -->
+        <section class="container pb-5" aria-labelledby="judul-toko">
+            <div class="toko-box">
+                <div class="row g-4 align-items-center">
+
+                    <!-- Alamat, jam buka, kontak -->
+                    <div class="col-md-5">
+                        <div class="badge rounded-pill eyebrow">MAMPIR, YUK!</div>
+                        <h2 id="judul-toko">Kunjungi toko kami</h2>
+                        <ul class="list-unstyled info-toko">
+                            <li>
+                                <strong>Alamat</strong><br>
+                                Jl. Soekarno Hatta, Malang, Jawa Timur
+                            </li>
+                            <li>
+                                <strong>Jam buka</strong><br>
+                                Senin–Sabtu: 09.00–21.00<br>
+                                Minggu: 10.00–20.00
+                            </li>
+                            <li>
+                                <strong>Telepon / WhatsApp</strong><br>
+                                0812-0000-0000 (nomor contoh)
+                            </li>
+                        </ul>
+                        <p class="catatan-kecil mb-0">Toko, alamat, dan nomor di atas adalah bagian dari proyek simulasi, bukan toko sungguhan.</p>
+                    </div>
+
+                    <!-- Peta Google Maps (lokasi diatur lewat q= pada alamat src) -->
+                    <div class="col-md-7">
+                        <iframe class="peta" src="https://maps.google.com/maps?q=Jl.%20Soekarno%20Hatta%2C%20Malang&amp;z=15&amp;output=embed" title="Peta lokasi toko CHERRYBLOSSOM di Jl. Soekarno Hatta, Malang" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- ===== FOOTER ===== -->
@@ -134,6 +178,7 @@
                 <div class="col-6 col-md-3">
                     <h2>Ada pertanyaan?</h2>
                     <a href="kontak.html">Hubungi kami ↗</a>
+                    <a href="index.html#panduan-ukuran">Panduan ukuran</a>
                     <span>Dibuat dengan sepenuh hati ♡</span>
                 </div>
             </div>

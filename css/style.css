@@ -129,7 +129,7 @@ footer h2,
     padding: 7px 16px;
     font-size: 0.8125rem;
     font-weight: 900;
-    letter-spacing: 1.5px;
+    letter-spacing: .8px;
     line-height: 1.4;
     white-space: normal;
     margin-bottom: 18px;
@@ -175,14 +175,66 @@ footer h2,
     margin-left: 14px;
 }
 
-/* Tautan teks dengan garis bawah pink */
-.text-link {
-    display: inline-block;
+/* Tombol pill kecil bergaris tepi (dipakai bersama "btn btn-sm rounded-pill")
+   untuk link yang berdiri sendiri. Saat hover, latar terisi warna. */
+.btn-outline-cherry,
+.btn-outline-langit {
+    border: 2px solid;
+    background: var(--white);
+    padding: 6px 16px;
     font-size: 0.9375rem;
-    font-weight: 800;
+    font-weight: 600;
+}
+
+/* Versi pink */
+.btn-outline-cherry {
+    border-color: var(--pink);
     color: var(--pink-deep);
-    border-bottom: 3px solid var(--pink);
-    padding-bottom: 3px;
+}
+
+.btn-outline-cherry:hover,
+.btn-outline-cherry:focus-visible {
+    background: var(--pink-strong);
+    border-color: var(--pink-strong);
+    color: var(--white);
+}
+
+/* Versi biru (kartu kategori Anak) */
+.btn-outline-langit {
+    border-color: var(--blue);
+    color: var(--blue-deep);
+}
+
+.btn-outline-langit:hover,
+.btn-outline-langit:focus-visible {
+    background: var(--blue-deep);
+    border-color: var(--blue-deep);
+    color: var(--white);
+}
+
+/* Saat seluruh kartu kategori disentuh mouse, tombolnya ikut terisi warna */
+.category.pink:hover .btn-outline-cherry {
+    background: var(--pink-strong);
+    border-color: var(--pink-strong);
+    color: var(--white);
+}
+
+.category.blue:hover .btn-outline-langit {
+    background: var(--blue-deep);
+    border-color: var(--blue-deep);
+    color: var(--white);
+}
+
+/* Link di dalam kalimat & link footer: tanpa garis bawah, pink tebal */
+p a,
+footer .col-6 a {
+    color: var(--pink-deep);
+    font-weight: 800;
+}
+
+p a:hover,
+footer .col-6 a:hover {
+    color: #9E2D55;
 }
 
 
@@ -317,39 +369,38 @@ header {
     font-family: 'Nunito', sans-serif;
     font-size: 0.6875rem;
     font-weight: 800;
-    letter-spacing: 1.2px;
+    letter-spacing: .8px;
     margin-top: 4px;
     color: var(--pink-deep);
     -webkit-text-stroke: 0;
 }
 
 .navbar-nav {
-    gap: 22px;
+    gap: 6px;
 }
 
-.navbar .nav-link {
-    position: relative;
+/* Menu navbar berbentuk pill.
+   Selector ".navbar .navbar-nav .nav-link" dipakai agar padding
+   bawaan Bootstrap tertimpa. */
+.navbar .navbar-nav .nav-link {
     font-family: 'Fredoka', 'Nunito', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     color: var(--text);
+    border-radius: 50px;
+    padding: 8px 18px;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-    color: var(--pink-deep);
+/* Hover: latar pink tipis */
+.navbar .navbar-nav .nav-link:hover {
+    background: var(--pink-soft);
+    color: var(--pink-strong);
 }
 
-/* Garis pink membulat di bawah menu yang aktif */
-.navbar .nav-link.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 2px;
-    height: 5px;
-    border-radius: 5px;
-    background: var(--pink);
+/* Menu aktif: latar pill pink lembut, teks pink */
+.navbar .navbar-nav .nav-link.active {
+    background: #FFE3EC;
+    color: var(--pink-strong);
 }
 
 .navbar-toggler {
@@ -357,27 +408,32 @@ header {
     border-radius: 14px;
 }
 
-/* Tombol keranjang + angka jumlah barang */
+/* Tombol keranjang: ikon tas + tulisan + angka jumlah barang */
 .bag {
     display: inline-flex;
     align-items: center;
+    gap: 8px;
     font-family: 'Fredoka', 'Nunito', sans-serif;
     font-size: 0.9375rem;
     font-weight: 600;
     background: var(--pink-soft);
     border: 2px solid var(--pink-bg);
     border-radius: 50px;
-    padding: 8px 16px;
+    padding: 7px 12px;
     color: var(--pink-deep);
 }
 
-.bag span {
+.bag:hover {
+    background: var(--pink-bg);
+}
+
+/* Angka jumlah barang di dalam lingkaran pink */
+.bag-count {
     min-width: 26px;
     background: var(--pink-strong);
     color: var(--white);
     padding: 2px 8px;
     border-radius: 50px;
-    margin: 0 8px;
     text-align: center;
     font-weight: 700;
 }
@@ -534,43 +590,49 @@ header {
 }
 
 
-/* ===== 8. LABEL KEUNGGULAN (badge pill) ===== */
-.benefit-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+/* ===== 8. KARTU KEUNGGULAN (4 kartu kecil di bawah hero) ===== */
+.fitur-card {
+    border: 0;
+    border-radius: 24px;
     background: var(--white);
-    color: var(--text);
-    padding: 7px 20px 7px 7px;
-    font-size: 0.9375rem;
-    font-weight: 800;
     box-shadow: var(--shadow-pink);
 }
 
-/* Ikon bulat berwarna */
-.benefit-icon {
+.fitur-card h3 {
+    font-size: 1.0625rem;
+    margin: 12px 0 6px;
+}
+
+.fitur-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+/* Ikon bulat kecil di atas judul */
+.fitur-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     background: var(--pink-soft);
     color: var(--pink-strong);
 }
 
-.benefit-pill:nth-child(2) .benefit-icon {
+/* Warna ikon berbeda untuk kartu ke-2, ke-3, ke-4 */
+.fitur .col-6:nth-child(2) .fitur-icon {
     background: var(--blue-sky);
     color: var(--blue-deep);
 }
 
-.benefit-pill:nth-child(3) .benefit-icon {
+.fitur .col-6:nth-child(3) .fitur-icon {
     background: #EEE7FD;
     color: #7A5BC7;
 }
 
-.benefit-pill:nth-child(4) .benefit-icon {
+.fitur .col-6:nth-child(4) .fitur-icon {
     background: var(--pink-bg);
     color: var(--pink-deep);
 }
@@ -588,11 +650,33 @@ header {
 
 /* Judul berada di atas "selotip" putih semi-transparan */
 .section-heading h2,
-.story-teaser h2 {
+.story-teaser h2,
+.judul-tengah {
     position: relative;
     display: table;   /* selebar teks, tapi tetap di baris sendiri */
     padding: 4px 18px;
     z-index: 0;
+}
+
+/* Judul selotip yang diletakkan di tengah */
+.judul-tengah {
+    font-size: 2rem;
+    margin: 0 auto 14px;
+}
+
+.judul-tengah::before {
+    content: "";
+    position: absolute;
+    inset: 8px -4px 2px;
+    background: rgba(255, 255, 255, .72);
+    transform: rotate(-1.5deg);
+    z-index: -1;
+    clip-path: polygon(0 10%, 3% 0, 50% 4%, 97% 0, 100% 12%, 98% 50%, 100% 90%, 96% 100%, 50% 95%, 3% 100%, 0 88%, 2% 50%);
+}
+
+/* Di pita putih, selotip dibuat pink lembut agar tetap terlihat */
+.bg-white .judul-tengah::before {
+    background: var(--pink-soft);
 }
 
 .section-heading h2::before,
@@ -662,14 +746,15 @@ header {
     color: var(--blue-deep);
 }
 
-.card-body {
+/* Isi kartu produk (diawali .product-card agar tidak mengenai card lain) */
+.product-card .card-body {
     position: relative;
     padding: 14px 16px 18px;
     text-align: center;
 }
 
 /* Info kecil: "SEPATU · Merah muda" */
-.card-body small {
+.product-card .card-body small {
     display: block;
     font-size: 0.8125rem;
     font-weight: 800;
@@ -678,12 +763,12 @@ header {
 }
 
 /* Nama produk di dalam pill */
-.card-body h3 {
+.product-card .card-body h3 {
     font-size: 1.0625rem;
     margin: 8px 0;
 }
 
-.card-body h3 a {
+.product-card .card-body h3 a {
     display: inline-block;
     background: var(--pink-soft);
     border: 2px solid var(--pink-bg);
@@ -751,7 +836,7 @@ header {
     padding: 6px 14px;
     font-size: 0.8125rem;
     font-weight: 900;
-    letter-spacing: 1.8px;
+    letter-spacing: .8px;
 }
 
 .category.blue .badge {
@@ -765,17 +850,6 @@ header {
 
 .category.blue h2 {
     color: var(--blue);
-}
-
-.category p {
-    font-size: 0.9375rem;
-    font-weight: 800;
-    margin: 0;
-    color: var(--pink-deep);
-}
-
-.category.blue p {
-    color: var(--blue-deep);
 }
 
 /* Gambar awan + maskot di kanan kartu */
@@ -1306,6 +1380,109 @@ footer .col-6 span {
 }
 
 
+/* ===== 20b. ALAMAT TOKO & PETA (kontak.html) ===== */
+.toko-box {
+    background: var(--white);
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: var(--shadow-pink);
+}
+
+.toko-box h2 {
+    font-size: 1.875rem;
+}
+
+.info-toko li {
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.info-toko strong {
+    color: var(--pink-deep);
+}
+
+/* Peta Google Maps: lebar penuh, sudut membulat */
+.peta {
+    display: block;
+    width: 100%;
+    height: 350px;
+    border: 0;
+    border-radius: 24px;
+}
+
+
+/* ===== 20c. PITA SELEBAR LAYAR, LANGKAH BELANJA, PANDUAN UKURAN (index.html) ===== */
+
+/* Pita biru muda untuk section panduan ukuran */
+.pita-biru {
+    background: #EAF4FF;
+}
+
+/* Agar judul tidak tertutup header saat dibuka dari index.html#panduan-ukuran */
+#panduan-ukuran {
+    scroll-margin-top: 130px;
+}
+
+/* Kartu langkah belanja */
+.langkah-card {
+    border: 0;
+    border-radius: 24px;
+    background: var(--pink-soft);
+}
+
+.langkah-card h3 {
+    font-size: 1.1875rem;
+    margin: 14px 0 6px;
+    color: var(--pink-deep);
+}
+
+.langkah-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+/* Nomor langkah di dalam lingkaran */
+.langkah-nomor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--pink-strong);
+    border: 4px solid var(--white);
+    box-shadow: var(--shadow-pink);
+    color: var(--white);
+    font-family: 'Fredoka', 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Kotak putih bersudut bulat berisi tabel ukuran */
+.tabel-ukuran {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 20px 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.tabel-ukuran h3 {
+    font-size: 1.1875rem;
+    color: var(--pink-deep);
+    margin-bottom: 12px;
+}
+
+.tabel-ukuran th {
+    color: var(--blue-deep);
+}
+
+/* Teks keterangan kecil */
+.catatan-kecil {
+    font-size: 0.875rem;
+    opacity: .85;
+}
+
+
 /* ===== 21. AKSESIBILITAS ===== */
 /* Tautan "Langsung ke konten" muncul hanya saat ditekan Tab */
 .skip {
@@ -1339,9 +1516,9 @@ footer .col-6 span {
         padding: 16px 0;
     }
 
-    .navbar .nav-link.active::after {
-        right: auto;
-        width: 44px;
+    /* Menu terlipat di tablet/HP: pill selebar teks, tidak memenuhi baris */
+    .navbar .navbar-nav .nav-link {
+        display: inline-block;
     }
 
     .navbar-collapse {
@@ -1431,10 +1608,6 @@ footer .col-6 span {
         font-size: 1rem;
     }
 
-    .hero-copy .eyebrow {
-        letter-spacing: 1px;
-    }
-
     .hero-art {
         height: 290px;
         width: 86%;
@@ -1445,25 +1618,35 @@ footer .col-6 span {
         width: 56px;
     }
 
-    .benefit-pill {
-        padding-right: 14px;
+    .fitur-card .card-body {
+        padding: 14px 10px;
     }
 
-    .benefit-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9375rem;
+    .fitur-card h3 {
+        font-size: 1rem;
+    }
+
+    .judul-tengah {
+        font-size: 1.625rem;
+    }
+
+    .toko-box {
+        padding: 20px;
+    }
+
+    .peta {
+        height: 280px;
     }
 
     .section-heading h2 {
         font-size: 1.625rem;
     }
 
-    .card-body {
+    .product-card .card-body {
         padding: 10px 8px 14px;
     }
 
-    .card-body h3 a {
+    .product-card .card-body h3 a {
         padding: 3px 10px;
     }
 
@@ -1548,6 +1731,18 @@ footer .col-6 span {
     .decor.tetap-hp {
         display: block;
         transform: scale(.7);
+    }
+}
+
+
+/* ===== 23b. HP KECIL (lebar maksimal 575px) =====
+   Logo boleh menyempit (slogan turun ke 2 baris) agar logo,
+   ikon keranjang, dan tombol menu tetap muat dalam satu baris. */
+@media (max-width: 575px) {
+    .navbar-brand {
+        flex: 1 1 0;
+        min-width: 0;
+        white-space: normal;
     }
 }
 

@@ -2,27 +2,38 @@ CHERRYBLOSSOM — Proyek Pemrograman Web 1
 
 CARA MEMBUKA
 Ekstrak seluruh ZIP, lalu buka index.html di browser. Tidak perlu instalasi,
-Node.js, npm, backend, atau database. Bootstrap 5.3.3, font, dan semua gambar
-disertakan lokal sehingga situs tetap tampil walau offline.
+Node.js, npm, backend, atau database. Bootstrap 5.3.9, font, dan semua gambar
+disertakan lokal sehingga situs tetap tampil walau offline (kecuali peta
+Google Maps di kontak.html yang membutuhkan internet).
 Untuk penyimpanan keranjang paling konsisten antarhalaman, gunakan hosting
 statis atau ekstensi Live Server di editor. Perilaku localStorage pada file://
 berbeda antarbrowser. Situs tetap dapat dibuka langsung untuk peninjauan.
 
 TEKNOLOGI
-HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.3 (offline).
+HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline).
 - Tata letak memakai grid Bootstrap (container, row, col-*, g-*) dan utility
-  Bootstrap (d-flex, py-5, mb-4, text-center, dll.).
-- Komponen Bootstrap: navbar, carousel, card, badge rounded-pill, btn,
-  breadcrumb, form-control, form-select, form-check.
+  Bootstrap (d-flex, py-5, mb-4, text-center, d-none d-md-inline, dll.).
+- Komponen Bootstrap: navbar, carousel, card, badge rounded-pill,
+  btn / btn-sm rounded-pill, breadcrumb, table table-striped, form-control,
+  form-select, form-check.
+- Ikon tas belanja "bag-heart" dari Bootstrap Icons (MIT), disalin sebagai
+  inline SVG di navbar (tanpa library tambahan).
 - css/style.css hanya mengatur warna, huruf, sudut bulat, bayangan, dan hiasan.
 - js/script.js memakai function biasa, for loop, dan localStorage.
 Tidak ada framework aplikasi, proses build, atau permintaan API.
 
 ENAM HALAMAN & FITUR
-index.html     : header menempel saat di-scroll; carousel Bootstrap 5 slide
-                 (berganti setiap 3,5 detik, tombol prev/next dan 5 titik
-                 indikator); 4 label keunggulan; 8 produk unggulan; kartu
-                 kategori Anak & Dewasa; cerita singkat.
+index.html     : carousel Bootstrap 5 slide (berganti setiap 3,5 detik,
+                 tombol prev/next dan 5 titik indikator); 4 kartu
+                 keunggulan; 8 produk unggulan; section "Cara belanja"
+                 (3 langkah, pita putih); kartu kategori Anak & Dewasa;
+                 section "Panduan ukuran" (id="panduan-ukuran", pita biru
+                 muda, 2 tabel ukuran dewasa 36–40 & anak 24–34);
+                 cerita singkat.
+Semua halaman  : header menempel saat di-scroll; menu aktif berbentuk pill
+                 pink; tombol keranjang dengan ikon tas (di HP hanya ikon +
+                 angka); footer berisi link "Panduan ukuran" ke
+                 index.html#panduan-ukuran.
 produk.html    : katalog 16 produk (card + grid), filter kategori
                  (Semua/Anak/Dewasa), filter jenis (Semua/Sepatu/Sandal),
                  dan pencarian nama. Filter bisa dibuka dari URL,
@@ -34,7 +45,17 @@ keranjang.html : daftar belanja, ubah jumlah (1–10), hapus barang,
                  total Rupiah, dan tombol simulasi selesai.
 tentang.html   : cerita merek, tiga nilai merek, dan penjelasan proyek.
 kontak.html    : formulir (required, email, minlength, checkbox) dengan
-                 validasi tambahan JavaScript.
+                 validasi tambahan JavaScript; section "Kunjungi toko kami"
+                 berisi alamat, jam buka, nomor contoh, dan peta Google Maps.
+
+ALAMAT TOKO (SIMULASI)
+Alamat   : Jl. Soekarno Hatta, Malang, Jawa Timur (lokasi contoh)
+Jam buka : Senin–Sabtu 09.00–21.00, Minggu 10.00–20.00
+Telepon  : 0812-0000-0000 (nomor contoh)
+Toko ini bagian dari proyek simulasi, bukan toko sungguhan.
+Untuk mengganti lokasi peta, ubah teks setelah "q=" pada atribut src iframe
+di kontak.html (spasi ditulis %20, koma ditulis %2C), lalu ubah juga teks
+alamat di atasnya.
 
 ISI CAROUSEL BERANDA (5 SLIDE)
 1. Koleksi pastel       -> produk.html                   (images/banner/hero-1.jpg)
@@ -49,11 +70,11 @@ CHERRYBLOSSOM/
 │   tentang.html, kontak.html      -> semua halaman HTML di root
 ├── PANDUAN.txt
 ├── css/
-│   ├── bootstrap.min.css          -> Bootstrap 5.3.3 (offline)
+│   ├── bootstrap.min.css          -> Bootstrap 5.3.9 (offline)
 │   ├── fonts.css                  -> @font-face Fredoka & Nunito (../fonts/)
 │   └── style.css                  -> warna, huruf, dan hiasan CHERRYBLOSSOM
 ├── js/
-│   ├── bootstrap.bundle.min.js    -> Bootstrap 5.3.3 (offline)
+│   ├── bootstrap.bundle.min.js    -> Bootstrap 5.3.9 (offline)
 │   └── script.js                  -> data produk, filter, detail, keranjang, form
 ├── images/
 │   ├── banner/
@@ -137,7 +158,8 @@ Foto di images/produk/ dan images/banner/ adalah salinan dari foto berikut:
 - Diane Marie, Magnolia (sandal lila)
   https://pantofidianemarie.ro/products/sandale-dama-din-piele-naturala-lila-cu-roz-magnolia
   -> lulu-sora, tete-miru, hero-4
-Bootstrap 5.3.3: https://getbootstrap.com/ (MIT, keterangan lisensi dalam berkas).
+Bootstrap 5.3.9: https://getbootstrap.com/ (MIT, keterangan lisensi dalam berkas).
+Bootstrap Icons (ikon bag-heart): https://icons.getbootstrap.com/ (MIT).
 Font: Fredoka dan Nunito, diunduh melalui Google Fonts.
 
 PALET WARNA
