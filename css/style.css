@@ -1026,6 +1026,12 @@ footer .col-6 a:hover {
     color: var(--pink-strong);
 }
 
+/* Ikon Instagram di depan teks link (footer & info toko) */
+.ig-link svg {
+    vertical-align: -2px;
+    margin-right: 6px;
+}
+
 .footer-bottom {
     border-top: 2px dashed var(--white);
     padding: 20px 0;
