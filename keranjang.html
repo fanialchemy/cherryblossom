@@ -14,7 +14,7 @@
     <!-- ===== HEADER ===== -->
     <header>
         <!-- ===== PENGUMUMAN ===== -->
-        <div class="announcement">Kelopak kecil, kebahagiaan besar. <span>Temukan pasangan favoritmu ✿</span></div>
+        <div class="announcement">Kelopak kecil, kebahagiaan besar. <span>Temukan sepatu &amp; sandal favoritmu ✿</span></div>
 
         <!-- ===== NAVBAR ===== -->
         <nav class="navbar navbar-expand-lg container">
@@ -63,8 +63,14 @@
 
     <main id="utama">
 
-        <!-- ===== PEMBUKA HALAMAN ===== -->
+        <!-- ===== PEMBUKA HALAMAN + PENANDA LANGKAH ===== -->
         <section class="page-intro container pt-5 pb-4">
+            <!-- Penanda langkah: done = selesai, active = sedang berjalan -->
+            <ol class="checkout-steps list-unstyled d-flex flex-wrap align-items-center mb-4" aria-label="Langkah belanja">
+                <li class="step active" aria-current="step"><span class="step-num">1</span>Keranjang</li>
+                <li class="step"><span class="step-num">2</span>Pengiriman</li>
+                <li class="step"><span class="step-num">3</span>Selesai</li>
+            </ol>
             <div class="badge eyebrow">PILIHAN MANISMU</div>
             <h1>Keranjang kebahagiaan.</h1>
             <p>Satu langkah lagi untuk melengkapi cerita.</p>
@@ -75,31 +81,35 @@
             <div class="row g-4 g-lg-5">
 
                 <!-- Daftar barang (diisi oleh js/script.js) -->
-                <div class="col-lg-8">
+                <div class="col-lg-7">
                     <div id="cart-items"></div>
                 </div>
 
-                <!-- Ringkasan belanja -->
-                <div class="col-lg-4">
-                    <aside class="summary">
-                        <h2>Ringkasan belanja</h2>
-                        <div class="d-flex justify-content-between gap-2 my-3">
-                            <span>Subtotal</span>
-                            <strong id="subtotal">Rp0</strong>
-                        </div>
-                        <div class="d-flex justify-content-between gap-2 my-3">
-                            <span>Biaya pengiriman</span>
-                            <span>Tidak diterapkan</span>
-                        </div>
-                        <div class="total d-flex justify-content-between gap-2 my-3">
-                            <span>Total</span>
-                            <strong id="total">Rp0</strong>
-                        </div>
-                        <!-- Disembunyikan oleh js/script.js jika keranjang kosong -->
-                        <a id="to-checkout" class="btn btn-cherry w-100" href="checkout.html">Lanjut ke pengiriman ↗</a>
-                    </aside>
+                <!-- Ringkasan belanja + tombol kembali.
+                     sticky-lg-top: menempel saat di-scroll, hanya di layar besar -->
+                <div class="col-lg-5">
+                    <div class="summary-sticky sticky-lg-top">
+                        <aside class="summary">
+                            <h2>Ringkasan belanja</h2>
+                            <div class="d-flex justify-content-between gap-2 my-3">
+                                <span>Subtotal</span>
+                                <strong id="subtotal">Rp0</strong>
+                            </div>
+                            <div class="d-flex justify-content-between gap-2 my-3">
+                                <span>Biaya pengiriman</span>
+                                <span>Gratis</span>
+                            </div>
+                            <div class="total d-flex justify-content-between gap-2 my-3">
+                                <span>Total</span>
+                                <strong id="total">Rp0</strong>
+                            </div>
+                            <!-- Disembunyikan oleh js/script.js jika keranjang kosong -->
+                            <a id="to-checkout" class="btn btn-cherry w-100" href="checkout.html">Lanjut ke pengiriman ↗</a>
+                            <p class="summary-note">Ongkos kirim gratis untuk semua pesanan.</p>
+                        </aside>
 
-                    <a class="btn btn-sm rounded-pill btn-outline-cherry mt-4" href="produk.html">← Kembali memilih koleksi</a>
+                        <a class="btn btn-sm rounded-pill btn-outline-cherry mt-4" href="produk.html">← Kembali memilih koleksi</a>
+                    </div>
                 </div>
 
             </div>

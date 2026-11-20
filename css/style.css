@@ -1316,6 +1316,22 @@ footer .col-6 a:hover {
     color: var(--blue-deep);
 }
 
+/* Keranjang & checkout: kolom ringkasan menempel di bawah header (tinggi header ±130px).
+   z-index rendah agar menu dropdown navbar tetap tampil di atasnya */
+.summary-sticky {
+    top: 150px;
+    z-index: 1;
+}
+
+/* Teks kecil di bawah tombol "Buat pesanan" */
+.summary .summary-note {
+    margin: 10px 0 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+}
+
 /* Kotak pesan saat kosong (keranjang / hasil pencarian) */
 .empty-state {
     padding: 46px 20px;

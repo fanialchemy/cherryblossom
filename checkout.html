@@ -14,7 +14,7 @@
     <!-- ===== HEADER ===== -->
     <header>
         <!-- ===== PENGUMUMAN ===== -->
-        <div class="announcement">Kelopak kecil, kebahagiaan besar. <span>Temukan pasangan favoritmu ✿</span></div>
+        <div class="announcement">Kelopak kecil, kebahagiaan besar. <span>Temukan sepatu &amp; sandal favoritmu ✿</span></div>
 
         <!-- ===== NAVBAR ===== -->
         <nav class="navbar navbar-expand-lg container">
@@ -80,7 +80,7 @@
             <!-- Pesan jika keranjang kosong (ditampilkan oleh js/script.js) -->
             <div id="checkout-empty" class="empty-state" hidden>
                 <h2>Keranjangmu masih kosong</h2>
-                <p>Pilih dulu pasangan favoritmu, ya.</p>
+                <p>Pilih dulu sepatu atau sandal favoritmu, ya.</p>
                 <a class="btn btn-cherry" href="produk.html">Jelajahi koleksi ↗</a>
             </div>
 
@@ -123,24 +123,34 @@
                             <label for="co-note" class="form-label">Catatan <span class="fw-normal">(opsional)</span></label>
                             <textarea id="co-note" name="catatan" class="form-control" rows="2" maxlength="200"></textarea>
                         </div>
-                        <div class="d-flex flex-wrap align-items-center gap-3">
-                            <button class="btn btn-cherry" type="submit">Buat pesanan ↗</button>
-                            <a class="btn btn-sm rounded-pill btn-outline-cherry" href="keranjang.html">← Kembali ke keranjang</a>
-                        </div>
+                        <!-- Tombol "Buat pesanan" dan "Kembali ke keranjang" ada di kolom kanan -->
                         <p id="checkout-status" role="status" class="status-message"></p>
                     </form>
                 </div>
 
-                <!-- Ringkasan pesanan (diisi js/script.js dari keranjang) -->
+                <!-- Ringkasan pesanan (diisi js/script.js dari keranjang) + tombol kembali.
+                     sticky-lg-top: menempel saat di-scroll, hanya di layar besar -->
                 <div class="col-lg-5">
-                    <aside class="summary">
-                        <h2>Ringkasan pesanan</h2>
-                        <ul id="order-items" class="order-list list-unstyled mb-0"></ul>
-                        <div class="total d-flex justify-content-between gap-2 mt-3">
-                            <span>Total</span>
-                            <strong id="order-total">Rp0</strong>
-                        </div>
-                    </aside>
+                    <div class="summary-sticky sticky-lg-top">
+                        <aside class="summary">
+                            <h2>Ringkasan pesanan</h2>
+                            <ul id="order-items" class="order-list list-unstyled mb-0"></ul>
+                            <div class="d-flex justify-content-between gap-2 my-3">
+                                <span>Biaya pengiriman</span>
+                                <span>Gratis</span>
+                            </div>
+                            <div class="total d-flex justify-content-between gap-2 my-3">
+                                <span>Total</span>
+                                <strong id="order-total">Rp0</strong>
+                            </div>
+                            <!-- Tombol di luar <form>: atribut form="checkout-form" membuatnya
+                                 tetap men-submit form tersebut, jadi validasi HTML tetap berjalan -->
+                            <button class="btn btn-cherry w-100" type="submit" form="checkout-form">Buat pesanan ↗</button>
+                            <p class="summary-note">Periksa kembali data pengirimanmu sebelum membuat pesanan.</p>
+                        </aside>
+
+                        <a class="btn btn-sm rounded-pill btn-outline-cherry mt-4" href="keranjang.html">← Kembali ke keranjang</a>
+                    </div>
                 </div>
 
             </div>
