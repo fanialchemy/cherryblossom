@@ -294,11 +294,18 @@ footer h2,
 
 
 /* ===== 6. HEADER: PENGUMUMAN & NAVBAR ===== */
+/* Header (pengumuman + navbar) tetap menempel di atas saat halaman di-scroll */
 header {
     background: var(--white);
     box-shadow: 0 4px 18px rgba(242, 92, 142, .10);
-    position: relative;
-    z-index: 5;
+    position: sticky;
+    top: 0;
+    z-index: 1030;   /* di atas konten & carousel */
+}
+
+/* Saat lompat ke #utama (tautan "Langsung ke konten"), konten tidak tertutup header */
+#utama {
+    scroll-margin-top: 140px;
 }
 
 /* Bar pengumuman pink dengan teks putih */
@@ -512,7 +519,6 @@ header {
     position: absolute;
     left: 6%;
     top: 7%;
-    transform: rotate(-12deg);
 }
 
 /* Hiasan di sekitar gambar hero (maskot & kilauan) */
@@ -1110,8 +1116,8 @@ footer .col-6 a:hover {
 }
 
 .filter[data-filter-jenis].active {
-    background: var(--blue-deep);
-    border-color: var(--blue-deep);
+    background: var(--blue);
+    border-color: var(--blue);
     color: var(--white);
 }
 
