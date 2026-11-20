@@ -49,12 +49,7 @@
         <!-- ===== DETAIL PRODUK =====
              Isi nama, harga, gambar, dan ukuran diganti oleh js/script.js
              berdasarkan ?id= di URL. Teks di bawah hanya isi awal. -->
-        <section class="container py-5 has-decor">
-            <!-- Dekorasi (hanya hiasan) -->
-            <img class="decor decor-kelopak besar pos-tr rot-r" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
-            <img class="decor decor-awan kecil pos-bl" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-            <span class="decor decor-kilau biru pos-tc" aria-hidden="true">✦</span>
-
+        <section class="container py-5">
             <!-- Breadcrumb Bootstrap (nama produk diisi oleh JavaScript) -->
             <nav aria-label="Jejak halaman">
                 <ol class="breadcrumb breadcrumb-small mb-4">
@@ -75,7 +70,7 @@
 
                 <!-- Info produk + form tambah ke keranjang -->
                 <div class="col-md-6">
-                    <div class="badge rounded-pill eyebrow" id="detail-category">KOLEKSI DEWASA · SEPATU</div>
+                    <div class="badge eyebrow" id="detail-category">KOLEKSI DEWASA · SEPATU</div>
                     <h1 id="detail-name">Sakura Puni</h1>
                     <p class="detail-price" id="detail-price">Rp289.000</p>
                     <p id="detail-description">Sepatu merah muda dengan tali putih yang empuk banget, kayak kue mochi. Siap nemenin jalan santai sambil cari jajanan manis.</p>
@@ -83,9 +78,11 @@
 
                     <form id="add-form">
                         <label for="size" class="form-label">Pilih ukuran</label>
-                        <select id="size" class="form-select mb-3" required>
+                        <select id="size" class="form-select mb-2" required>
                             <option value="">Pilih ukuranmu</option>
                         </select>
+                        <!-- Tautan kecil ke halaman panduan ukuran -->
+                        <p class="catatan-kecil mb-3">Bingung ukuran? <a href="panduan-ukuran.html">Lihat panduan ukuran</a></p>
                         <label for="quantity" class="form-label">Jumlah</label>
                         <input id="quantity" type="number" min="1" max="10" value="1" class="form-control quantity mb-4" required>
                         <button class="btn btn-cherry w-100" type="submit">Tambahkan ke keranjang ♡</button>
@@ -110,9 +107,6 @@
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        <!-- Dekorasi (hanya hiasan) -->
-        <span class="decor decor-kilau pos-tr" aria-hidden="true">✦</span>
-        <img class="decor decor-kelopak besar pos-bl rot-l" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-md-6">
@@ -131,12 +125,12 @@
                 <div class="col-6 col-md-3">
                     <h2>Ada pertanyaan?</h2>
                     <a href="kontak.html">Hubungi kami ↗</a>
-                    <a href="index.html#panduan-ukuran">Panduan ukuran</a>
-                    <span>Dibuat dengan sepenuh hati ♡</span>
+                    <a href="panduan-ukuran.html">Panduan ukuran</a>
                 </div>
             </div>
             <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
                 <span>© 2026 CHERRYBLOSSOM</span>
+                <span>Dibuat dengan sepenuh hati ♡</span>
                 <span>Proyek Pemrograman Web 1 · Toko simulasi, tanpa transaksi nyata.</span>
             </div>
         </div>

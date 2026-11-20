@@ -13,34 +13,42 @@ TEKNOLOGI
 HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline).
 - Tata letak memakai grid Bootstrap (container, row, col-*, g-*) dan utility
   Bootstrap (d-flex, py-5, mb-4, text-center, d-none d-md-inline, dll.).
-- Komponen Bootstrap: navbar, carousel, card, badge rounded-pill,
+- Komponen Bootstrap: navbar, carousel, card, badge,
   btn / btn-sm rounded-pill, breadcrumb, table table-striped, form-control,
   form-select, form-check.
+- Hiasan awan & kelopak hanya di hero, kartu kategori, banner promo, dan
+  cerita singkat; disembunyikan di HP dengan class "d-none d-md-block".
 - Ikon tas belanja "bag-heart" dari Bootstrap Icons (MIT), disalin sebagai
   inline SVG di navbar (tanpa library tambahan).
 - css/style.css hanya mengatur warna, huruf, sudut bulat, bayangan, dan hiasan.
 - js/script.js memakai function biasa, for loop, dan localStorage.
 Tidak ada framework aplikasi, proses build, atau permintaan API.
 
-ENAM HALAMAN & FITUR
-index.html     : carousel Bootstrap 5 slide (berganti setiap 3,5 detik,
-                 tombol prev/next dan 5 titik indikator); 4 kartu
-                 keunggulan; 8 produk unggulan; section "Cara belanja"
-                 (3 langkah, pita putih); kartu kategori Anak & Dewasa;
-                 section "Panduan ukuran" (id="panduan-ukuran", pita biru
-                 muda, 2 tabel ukuran dewasa 36–40 & anak 24–34);
-                 cerita singkat.
+TUJUH HALAMAN & FITUR
+index.html     : urutan section: carousel Bootstrap 5 slide (berganti
+                 setiap 3,5 detik, tombol prev/next, 5 titik indikator)
+                 -> 4 kartu keunggulan -> kartu kategori Anak & Dewasa
+                 -> 8 produk favorit -> "Cara belanja" (3 langkah dalam
+                 panel putih) -> banner promo "Voucher Gemes!" (kode
+                 contoh BLOSSOM10, promo simulasi) -> cerita singkat.
+                 Semua section memakai latar pink lembut yang sama, py-5.
+panduan-ukuran.html : tabel ukuran dewasa 36–40 & anak 24–34 (table
+                 table-striped), cara mengukur kaki (<ol> 4 langkah), tips
+                 memilih ukuran (<ul>), dan keterangan simulasi. Ditautkan
+                 dari footer semua halaman, detail.html (di dekat pilihan
+                 ukuran), kartu langkah 2 "Cara belanja", dan kontak.html.
 Semua halaman  : header menempel saat di-scroll; menu aktif berbentuk pill
                  pink; tombol keranjang dengan ikon tas (di HP hanya ikon +
-                 angka); footer berisi link "Panduan ukuran" ke
-                 index.html#panduan-ukuran.
+                 angka); footer berisi link "Panduan ukuran" dan baris
+                 bawah "Dibuat dengan sepenuh hati ♡".
 produk.html    : katalog 16 produk (card + grid), filter kategori
                  (Semua/Anak/Dewasa), filter jenis (Semua/Sepatu/Sandal),
                  dan pencarian nama. Filter bisa dibuka dari URL,
                  contoh produk.html?kategori=Anak.
 detail.html    : detail produk diisi JavaScript dari ?id= di URL
                  (contoh detail.html?id=sakura-puni), breadcrumb, pilihan
-                 ukuran, jumlah, tambah ke keranjang, panduan ukuran.
+                 ukuran + link "Bingung ukuran? Lihat panduan ukuran",
+                 jumlah, tambah ke keranjang, ringkasan panduan ukuran.
 keranjang.html : daftar belanja, ubah jumlah (1–10), hapus barang,
                  total Rupiah, dan tombol simulasi selesai.
 tentang.html   : cerita merek, tiga nilai merek, dan penjelasan proyek.
@@ -67,7 +75,8 @@ ISI CAROUSEL BERANDA (5 SLIDE)
 STRUKTUR FOLDER
 CHERRYBLOSSOM/
 ├── index.html, produk.html, detail.html, keranjang.html,
-│   tentang.html, kontak.html      -> semua halaman HTML di root
+│   tentang.html, kontak.html,
+│   panduan-ukuran.html            -> 7 halaman HTML di root
 ├── PANDUAN.txt
 ├── css/
 │   ├── bootstrap.min.css          -> Bootstrap 5.3.9 (offline)
@@ -82,7 +91,7 @@ CHERRYBLOSSOM/
 │   ├── produk/
 │   │   └── <id-produk>.jpg        -> 16 file, satu per produk
 │   └── dekor/
-│       ├── maskot.svg             -> maskot bunga sakura (logo & hiasan)
+│       ├── maskot.svg             -> maskot bunga sakura (logo, hiasan, banner promo)
 │       ├── awan.svg               -> awan putih
 │       └── kelopak.svg            -> kelopak sakura
 ├── fonts/                         -> 9 file .ttf (Fredoka & Nunito)

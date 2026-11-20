@@ -122,18 +122,28 @@ footer h2,
 
 /* ===== 4. LABEL PILL, TOMBOL, TAUTAN ===== */
 
-/* Eyebrow: label kecil di atas judul (dipakai bersama class "badge rounded-pill") */
+/* Eyebrow: label slogan kecil di atas judul (dipakai bersama class "badge").
+   Dibuat seperti label, bukan tombol: latar lembut, tanpa bayangan.
+   Warna dibuat kontras dengan latar di belakangnya:
+   - .eyebrow       : biru muda, untuk latar pink (halaman, kartu Dewasa)
+   - .eyebrow-pink  : pink muda, untuk latar biru (hero, kartu Anak, promo) */
 .eyebrow {
-    background: var(--white);
-    color: var(--pink-deep);
-    padding: 7px 16px;
+    background: #DCEBFF;
+    color: var(--blue-deep);
+    border-radius: 6px;
+    padding: 6px 12px;
     font-size: 0.8125rem;
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: .8px;
     line-height: 1.4;
     white-space: normal;
-    margin-bottom: 18px;
-    box-shadow: var(--shadow-pink);
+    margin-bottom: 16px;
+}
+
+/* Versi pink untuk area/kartu berwarna biru */
+.eyebrow-pink {
+    background: #FFE3EC;
+    color: var(--pink-deep);
 }
 
 /* Titik pink kecil di dalam eyebrow */
@@ -225,22 +235,22 @@ footer h2,
     color: var(--white);
 }
 
-/* Link di dalam kalimat & link footer: tanpa garis bawah, pink tebal */
-p a,
-footer .col-6 a {
+/* Link di dalam kalimat: tanpa garis bawah, pink tebal */
+p a {
     color: var(--pink-deep);
     font-weight: 800;
 }
 
-p a:hover,
-footer .col-6 a:hover {
+p a:hover {
     color: #9E2D55;
 }
 
 
-/* ===== 5. DEKORASI (awan, kelopak, kilauan ✦) =====
-   Gambar hiasan diletakkan di sudut section dengan position absolute.
-   z-index -1 membuatnya berada di belakang konten. */
+/* ===== 5. DEKORASI (awan & kelopak) =====
+   Hanya dipakai di hero, kartu kategori, banner promo, dan cerita.
+   Gambar diletakkan di sudut section (position absolute) dan berada
+   di belakang konten (z-index -1). Di HP disembunyikan dengan
+   class Bootstrap "d-none d-md-block". */
 .has-decor {
     position: relative;
     isolation: isolate;
@@ -262,42 +272,18 @@ footer .col-6 a:hover {
     width: 64px;
 }
 
-/* Kelopak (dibuat transparan) */
+/* Kelopak sakura (dibuat transparan, sedikit miring) */
 .decor-kelopak {
-    width: 30px;
-    opacity: .35;
-}
-
-.decor-kelopak.besar {
     width: 54px;
-    opacity: .22;
+    opacity: .3;
+    transform: rotate(-18deg);
 }
 
-/* Kilauan ✦ (teks) */
-.decor-kilau {
-    font-size: 1.375rem;
-    line-height: 1;
-    color: var(--white);
-    text-shadow: 0 0 8px rgba(255, 127, 168, .7);
-}
-
-.decor-kilau.biru {
-    color: var(--blue);
-    text-shadow: 0 0 8px rgba(255, 255, 255, .9);
-}
-
-/* Posisi hiasan: t = atas, b = bawah, m = tengah, l = kiri, r = kanan, c = tengah */
-.pos-tl { top: 14px; left: 3%; }
-.pos-tr { top: 14px; right: 3%; }
-.pos-bl { bottom: 16px; left: 3%; }
-.pos-br { bottom: 16px; right: 3%; }
-.pos-tc { top: 10px; left: 46%; }
-.pos-ml { top: 45%; left: 1%; }
-.pos-mr { top: 45%; right: 1%; }
-
-/* Kemiringan hiasan */
-.rot-l { transform: rotate(-18deg); }
-.rot-r { transform: rotate(22deg); }
+/* Posisi hiasan: t = atas, b = bawah, l = kiri, r = kanan, c = tengah */
+.pos-tl { top: 20px; left: 3%; }
+.pos-tc { top: 14px; left: 46%; }
+.pos-bl { bottom: 20px; left: 3%; }
+.pos-br { bottom: 20px; right: 3%; }
 
 
 /* ===== 6. HEADER: PENGUMUMAN & NAVBAR ===== */
@@ -469,10 +455,21 @@ header {
     padding-bottom: 64px;
 }
 
+/* Ruang di dalam setiap slide. .carousel-inner Bootstrap memakai
+   overflow: hidden, jadi tanpa padding ini outline putih judul dan
+   label bisa terpotong di tepi. */
+.hero-section .carousel-item {
+    padding: 36px 16px 8px;
+}
+
 /* Tinggi minimal setiap slide agar tidak "melompat" saat berganti */
 .hero-section .carousel-item > .row {
-    min-height: 520px;
-    padding-top: 30px;
+    min-height: 500px;
+}
+
+/* Hiasan kiri bawah hero dinaikkan agar tidak tertutup tepi awan */
+.hero-section .pos-bl {
+    bottom: 80px;
 }
 
 .hero-copy h1 {
@@ -489,39 +486,33 @@ header {
     margin-bottom: 28px;
 }
 
-.hero-note {
-    font-size: 0.9375rem;
-    font-weight: 800;
-    color: var(--pink-deep);
-    margin-top: 22px;
-}
-
 /* Wadah gambar slide */
 .hero-art {
     position: relative;
     height: 420px;
 }
 
-/* Foto produk di slide (latar putih foto membaur dengan biru) */
+/* Foto produk di slide (latar putih foto membaur dengan biru).
+   Diberi jarak dari tepi agar maskot & bintang punya tempat di sudut. */
 .hero-foto {
     position: absolute;
-    left: 6%;
-    top: 7%;
-    width: 88%;
-    height: 86%;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
     mix-blend-mode: multiply;
 }
 
-/* Maskot di pojok kanan atas & bintang ✧ */
+/* Maskot (kanan atas) & bintang ✧ (kiri bawah), tetap di dalam .hero-art */
 .flower {
     position: absolute;
     z-index: 2;
 }
 
 .f1 {
-    right: -6px;
-    top: -14px;
+    right: 8px;
+    top: 8px;
     width: 76px;
     transform: rotate(14deg);
     filter: drop-shadow(0 6px 8px rgba(242, 92, 142, .25));
@@ -529,8 +520,9 @@ header {
 
 .f2 {
     font-size: 3rem;
-    bottom: 22px;
-    left: -18px;
+    line-height: 1;
+    bottom: 12px;
+    left: 12px;
     color: var(--blue);
     -webkit-text-stroke: 4px var(--white);
     paint-order: stroke fill;
@@ -606,6 +598,7 @@ header {
 .fitur-card p {
     font-size: 0.9375rem;
     line-height: 1.6;
+    color: var(--text);
 }
 
 /* Ikon bulat kecil di atas judul */
@@ -672,11 +665,6 @@ header {
     transform: rotate(-1.5deg);
     z-index: -1;
     clip-path: polygon(0 10%, 3% 0, 50% 4%, 97% 0, 100% 12%, 98% 50%, 100% 90%, 96% 100%, 50% 95%, 3% 100%, 0 88%, 2% 50%);
-}
-
-/* Di pita putih, selotip dibuat pink lembut agar tetap terlihat */
-.bg-white .judul-tengah::before {
-    background: var(--pink-soft);
 }
 
 .section-heading h2::before,
@@ -829,20 +817,6 @@ header {
     background: linear-gradient(140deg, var(--pink-bg), var(--pink-soft));
 }
 
-/* Label kecil "UNTUK SI KECIL" (badge pill) */
-.category .badge {
-    background: var(--white);
-    color: var(--pink-deep);
-    padding: 6px 14px;
-    font-size: 0.8125rem;
-    font-weight: 900;
-    letter-spacing: .8px;
-}
-
-.category.blue .badge {
-    color: var(--blue-deep);
-}
-
 .category h2 {
     font-size: 1.8125rem;
     margin: 15px 0;
@@ -896,10 +870,6 @@ header {
 
 
 /* ===== 12. CERITA SINGKAT (beranda) ===== */
-.story-teaser {
-    padding-bottom: 80px;
-}
-
 .story-maskot {
     display: block;
     width: 70px;
@@ -960,11 +930,16 @@ footer h2 {
 }
 
 /* Link footer ditumpuk ke bawah */
-footer .col-6 a,
-footer .col-6 span {
+footer .col-6 a {
     display: block;
     font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text);
     margin-bottom: 10px;
+}
+
+footer .col-6 a:hover {
+    color: var(--pink-strong);
 }
 
 .footer-bottom {
@@ -1411,46 +1386,132 @@ footer .col-6 span {
 }
 
 
-/* ===== 20c. PITA SELEBAR LAYAR, LANGKAH BELANJA, PANDUAN UKURAN (index.html) ===== */
+/* ===== 20c. CARA BELANJA & BANNER PROMO (index.html) ===== */
 
-/* Pita biru muda untuk section panduan ukuran */
-.pita-biru {
-    background: #EAF4FF;
-}
-
-/* Agar judul tidak tertutup header saat dibuka dari index.html#panduan-ukuran */
-#panduan-ukuran {
-    scroll-margin-top: 130px;
-}
-
-/* Kartu langkah belanja */
-.langkah-card {
-    border: 0;
-    border-radius: 24px;
-    background: var(--pink-soft);
-}
-
-.langkah-card h3 {
+/* Cara belanja: 3 langkah terbuka (tanpa kartu) di atas latar halaman */
+.langkah h3 {
     font-size: 1.1875rem;
-    margin: 14px 0 6px;
+    margin: 16px 0 6px;
     color: var(--pink-deep);
 }
 
-.langkah-card p {
+.langkah p {
+    max-width: 280px;      /* baris tidak terlalu panjang */
+    margin: 0 auto;
     font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* Garis putus-putus di belakang lingkaran nomor.
+   top 28px = setengah tinggi lingkaran (56px), jadi garis lewat tepat di tengahnya.
+   left/right 16.66% = titik tengah kolom pertama dan terakhir. */
+.langkah-garis {
+    position: absolute;
+    top: 28px;
+    left: 16.66%;
+    right: 16.66%;
+    border-top: 2px dashed var(--pink);
+    opacity: .5;
+}
+
+/* Banner promo biru langit */
+.promo-banner {
+    background: linear-gradient(135deg, var(--blue-sky), #EAF4FF);
+    border: 4px solid var(--white);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: var(--shadow-pink);
+}
+
+.promo-banner h2 {
+    font-size: 2.25rem;
+    margin-bottom: 10px;
+}
+
+/* Kode voucher di kotak putih bergaris putus-putus */
+.kode-promo {
+    display: inline-block;
+    background: var(--white);
+    border: 2px dashed var(--blue);
+    border-radius: 12px;
+    padding: 8px 22px;
+    font-family: 'Fredoka', 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--pink-deep);
+}
+
+/* Gambar maskot + awan + kelopak di kanan banner */
+.promo-art {
+    position: relative;
+    height: 240px;
+}
+
+.promo-maskot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 160px;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    filter: drop-shadow(0 8px 10px rgba(242, 92, 142, .25));
+}
+
+.promo-awan {
+    position: absolute;
+    left: 6%;
+    bottom: 12px;
+    width: 140px;
+    filter: drop-shadow(0 6px 8px rgba(44, 116, 181, .15));
+}
+
+.promo-kelopak {
+    position: absolute;
+    right: 10%;
+    top: 12px;
+    width: 46px;
+    opacity: .45;
+    transform: rotate(20deg);
+}
+
+
+/* ===== 20d. HALAMAN PANDUAN UKURAN (panduan-ukuran.html) ===== */
+
+/* Kotak putih berisi daftar langkah & tips */
+.panduan-box {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow-soft);
+}
+
+.panduan-box li {
+    margin-bottom: 8px;
     line-height: 1.6;
 }
 
+/* Judul kecil di dalam kotak tabel & panduan (tanpa outline stiker) */
+.tabel-ukuran h2,
+.panduan-box h2 {
+    font-size: 1.25rem;
+    color: var(--pink-deep);
+    -webkit-text-stroke: 0;
+    margin-bottom: 12px;
+}
+
 /* Nomor langkah di dalam lingkaran */
+/* Lingkaran nomor langkah (position relative agar berada di atas garis) */
 .langkah-nomor {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: var(--pink-strong);
-    border: 4px solid var(--white);
+    border: 5px solid var(--white);
     box-shadow: var(--shadow-pink);
     color: var(--white);
     font-family: 'Fredoka', 'Nunito', sans-serif;
@@ -1464,12 +1525,6 @@ footer .col-6 span {
     border-radius: 24px;
     padding: 20px 24px;
     box-shadow: var(--shadow-soft);
-}
-
-.tabel-ukuran h3 {
-    font-size: 1.1875rem;
-    color: var(--pink-deep);
-    margin-bottom: 12px;
 }
 
 .tabel-ukuran th {
@@ -1561,12 +1616,6 @@ footer .col-6 span {
     .pink .category-awan {
         width: 60px;
     }
-
-    /* Hiasan di tengah samping disembunyikan agar tidak menabrak konten */
-    .pos-ml,
-    .pos-mr {
-        display: none;
-    }
 }
 
 
@@ -1594,9 +1643,12 @@ footer .col-6 span {
         padding: 0 20px;
     }
 
+    .hero-section .carousel-item {
+        padding: 24px 12px 8px;
+    }
+
     .hero-section .carousel-item > .row {
         min-height: 0;
-        padding-top: 20px;
     }
 
     .hero-copy h1 {
@@ -1630,8 +1682,25 @@ footer .col-6 span {
         font-size: 1.625rem;
     }
 
-    .toko-box {
-        padding: 20px;
+    .toko-box,
+    .promo-banner {
+        padding: 24px 18px;
+    }
+
+    .promo-banner h2 {
+        font-size: 1.875rem;
+    }
+
+    .promo-art {
+        height: 180px;
+    }
+
+    .promo-maskot {
+        width: 120px;
+    }
+
+    .promo-awan {
+        width: 110px;
     }
 
     .peta {
@@ -1721,16 +1790,6 @@ footer .col-6 span {
 
     .cart-row h2 {
         font-size: 1rem;
-    }
-
-    /* Hiasan dikurangi di HP: hanya yang bertanda "tetap-hp" yang tampil */
-    .decor {
-        display: none;
-    }
-
-    .decor.tetap-hp {
-        display: block;
-        transform: scale(.7);
     }
 }
 

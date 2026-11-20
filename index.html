@@ -48,13 +48,9 @@
 
         <!-- ===== HERO / CAROUSEL ===== -->
         <section class="hero-section">
-            <!-- Dekorasi hero (hanya hiasan) -->
-            <img class="decor decor-awan pos-tl" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-            <img class="decor decor-awan kecil pos-bl" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-            <img class="decor decor-awan kecil pos-tc" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-            <img class="decor decor-kelopak besar pos-tr rot-r" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
-            <img class="decor decor-kelopak pos-ml rot-l" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
-            <span class="decor decor-kilau pos-br tetap-hp" aria-hidden="true">✦</span>
+            <!-- Dekorasi hero: awan di atas tengah, kelopak di kiri bawah (disembunyikan di HP) -->
+            <img class="decor decor-awan pos-tc d-none d-md-block" src="images/dekor/awan.svg" alt="" aria-hidden="true">
+            <img class="decor decor-kelopak pos-bl d-none d-md-block" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
 
             <div class="container">
                 <!-- Carousel Bootstrap: 5 slide, berganti setiap 3,5 detik -->
@@ -75,11 +71,10 @@
                         <div class="carousel-item active">
                             <div class="row align-items-center g-4">
                                 <div class="col-md-6 hero-copy text-center text-md-start">
-                                    <div class="badge rounded-pill eyebrow"><span></span> KOLEKSI PASTEL PILIHAN</div>
+                                    <div class="badge eyebrow eyebrow-pink"><span></span> KOLEKSI PASTEL PILIHAN</div>
                                     <h1>Langkah kecil.<br><em>Bahagia besar.</em></h1>
                                     <p>Sepatu dan sandal semanis harimu.<br>Untuk si kecil, untukmu, untuk setiap cerita baru.</p>
                                     <a class="btn btn-cherry" href="produk.html">Temukan favoritmu <span>↗</span></a>
-                                    <div class="hero-note">✿ Warna lembut, karakter yang istimewa.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
@@ -95,11 +90,10 @@
                         <div class="carousel-item">
                             <div class="row align-items-center g-4">
                                 <div class="col-md-6 hero-copy text-center text-md-start">
-                                    <div class="badge rounded-pill eyebrow">UNTUK HARI YANG BERWARNA</div>
+                                    <div class="badge eyebrow eyebrow-pink">UNTUK HARI YANG BERWARNA</div>
                                     <h1>Warna lembut.<br><em>Cerita seru.</em></h1>
                                     <p>Sentuhan pelangi untuk melengkapi<br>momen santaimu yang paling menyenangkan.</p>
                                     <a class="btn btn-cherry" href="detail.html?id=niji-pyon">Kenali Niji Pyon ↗</a>
-                                    <div class="hero-note">✿ Teman manis untuk menjelajah.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
@@ -114,11 +108,10 @@
                         <div class="carousel-item">
                             <div class="row align-items-center g-4">
                                 <div class="col-md-6 hero-copy text-center text-md-start">
-                                    <div class="badge rounded-pill eyebrow">UNTUK SI KECIL</div>
+                                    <div class="badge eyebrow eyebrow-pink">UNTUK SI KECIL</div>
                                     <h1>Langkah mungil.<br><em>Petualangan besar.</em></h1>
                                     <p>Sepatu dan sandal ringan untuk si kecil<br>yang tak pernah berhenti bermain.</p>
                                     <a class="btn btn-cherry" href="produk.html?kategori=Anak">Jelajahi koleksi anak ↗</a>
-                                    <div class="hero-note">✿ Ukuran 24–34, nyaman dipakai seharian.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
@@ -133,11 +126,10 @@
                         <div class="carousel-item">
                             <div class="row align-items-center g-4">
                                 <div class="col-md-6 hero-copy text-center text-md-start">
-                                    <div class="badge rounded-pill eyebrow">UNTUK DIRIMU</div>
+                                    <div class="badge eyebrow eyebrow-pink">UNTUK DIRIMU</div>
                                     <h1>Tampil manis.<br><em>Tanpa batas usia.</em></h1>
                                     <p>Pilihan sepatu dan sandal pastel<br>untuk menemani harimu yang sibuk.</p>
                                     <a class="btn btn-cherry" href="produk.html?kategori=Dewasa">Jelajahi koleksi dewasa ↗</a>
-                                    <div class="hero-note">✿ Ukuran 36–40, lembut di setiap langkah.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
@@ -152,11 +144,10 @@
                         <div class="carousel-item">
                             <div class="row align-items-center g-4">
                                 <div class="col-md-6 hero-copy text-center text-md-start">
-                                    <div class="badge rounded-pill eyebrow">BARU DATANG</div>
+                                    <div class="badge eyebrow eyebrow-pink">BARU DATANG</div>
                                     <h1>Si imut baru.<br><em>Siap menemani.</em></h1>
                                     <p>Kenalan dengan Riri Chuu, sandal merah muda<br>beraksen mint yang ringan dan menggemaskan.</p>
                                     <a class="btn btn-cherry" href="detail.html?id=riri-chuu">Kenali Riri Chuu ↗</a>
-                                    <div class="hero-note">✿ Pendatang baru di koleksi kami.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
@@ -183,7 +174,7 @@
         </section>
 
         <!-- ===== KEUNGGULAN (4 kartu kecil) ===== -->
-        <section class="container pt-4" aria-label="Keunggulan CHERRYBLOSSOM">
+        <section class="container py-5" aria-label="Keunggulan CHERRYBLOSSOM">
             <div class="row g-3 fitur">
 
                 <div class="col-6 col-md-3">
@@ -229,15 +220,50 @@
             </div>
         </section>
 
-        <!-- ===== PRODUK UNGGULAN ===== -->
-        <section class="container py-5 has-decor">
-            <!-- Dekorasi (hanya hiasan) -->
-            <img class="decor decor-kelopak pos-tc rot-l" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
-            <span class="decor decor-kilau biru pos-tr" aria-hidden="true">✦</span>
+        <!-- ===== KATEGORI ANAK / DEWASA ===== -->
+        <section class="container py-5">
+            <div class="row g-4">
 
+                <!-- Kartu Anak (biru) -->
+                <div class="col-md-6">
+                    <a href="produk.html?kategori=Anak" class="category blue d-flex justify-content-between align-items-center h-100">
+                        <div>
+                            <span class="badge eyebrow eyebrow-pink">UNTUK SI KECIL</span>
+                            <h2>Kecil langkahnya,<br>besar imajinasinya.</h2>
+                            <span class="btn btn-sm rounded-pill btn-outline-langit">Jelajahi koleksi anak ↗</span>
+                        </div>
+                        <!-- Hiasan: awan besar + maskot kecil -->
+                        <span class="category-art" aria-hidden="true">
+                            <img class="category-awan" src="images/dekor/awan.svg" alt="" aria-hidden="true">
+                            <img class="category-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Kartu Dewasa (pink) -->
+                <div class="col-md-6">
+                    <a href="produk.html?kategori=Dewasa" class="category pink d-flex justify-content-between align-items-center h-100">
+                        <div>
+                            <span class="badge eyebrow">UNTUK DIRIMU</span>
+                            <h2>Tak ada usia<br>untuk tampil manis.</h2>
+                            <span class="btn btn-sm rounded-pill btn-outline-cherry">Jelajahi koleksi dewasa ↗</span>
+                        </div>
+                        <!-- Hiasan: maskot besar + awan kecil -->
+                        <span class="category-art" aria-hidden="true">
+                            <img class="category-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                            <img class="category-awan" src="images/dekor/awan.svg" alt="" aria-hidden="true">
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== PRODUK UNGGULAN ===== -->
+        <section class="container py-5">
             <div class="section-heading d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end gap-3 mb-4">
                 <div>
-                    <div class="badge rounded-pill eyebrow">JATUH HATI PADA LANGKAH PERTAMA</div>
+                    <div class="badge eyebrow">JATUH HATI PADA LANGKAH PERTAMA</div>
                     <h2>Kenalan dengan favorit baru.</h2>
                 </div>
                 <a class="btn btn-sm rounded-pill btn-outline-cherry" href="produk.html">Lihat semua koleksi ↗</a>
@@ -376,158 +402,76 @@
             </div>
         </section>
 
-        <!-- ===== CARA BELANJA (pita putih selebar layar) ===== -->
-        <section class="pita bg-white py-5" aria-labelledby="judul-cara-belanja">
-            <div class="container">
-                <div class="text-center mb-4">
-                    <div class="badge rounded-pill eyebrow">MUDAH DAN MENYENANGKAN</div>
-                    <h2 id="judul-cara-belanja" class="judul-tengah">Cara belanja.</h2>
-                </div>
+        <!-- ===== CARA BELANJA (3 langkah terbuka) ===== -->
+        <section class="container py-5" aria-labelledby="judul-cara-belanja">
+            <div class="text-center mb-4">
+                <div class="badge eyebrow">MUDAH DAN MENYENANGKAN</div>
+                <h2 id="judul-cara-belanja" class="judul-tengah">Cara belanja.</h2>
+            </div>
+
+            <div class="position-relative">
+                <!-- Garis putus-putus penyambung lingkaran 1 -> 2 -> 3 (hanya md ke atas) -->
+                <div class="langkah-garis d-none d-md-block" aria-hidden="true"></div>
 
                 <!-- 3 langkah -->
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card langkah-card h-100 text-center">
-                            <div class="card-body p-4">
-                                <span class="langkah-nomor">1</span>
-                                <h3>Pilih pasangan favorit</h3>
-                                <p class="mb-0">Jelajahi koleksi, pakai filter Anak/Dewasa, lalu buka detail produk yang kamu suka.</p>
-                            </div>
-                        </div>
+                <div class="row g-4 text-center">
+                    <div class="col-md-4 langkah">
+                        <span class="langkah-nomor">1</span>
+                        <h3>Pilih pasangan favorit</h3>
+                        <p class="mb-0">Jelajahi koleksi, pakai filter Anak/Dewasa, lalu buka detail produk yang kamu suka.</p>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card langkah-card h-100 text-center">
-                            <div class="card-body p-4">
-                                <span class="langkah-nomor">2</span>
-                                <h3>Masukkan ke keranjang</h3>
-                                <p class="mb-0">Pilih ukuran dan jumlah, lalu tekan tombol "Tambahkan ke keranjang".</p>
-                            </div>
-                        </div>
+                    <div class="col-md-4 langkah">
+                        <span class="langkah-nomor">2</span>
+                        <h3>Masukkan ke keranjang</h3>
+                        <p class="mb-0">Pilih ukuran dan jumlah, lalu tekan "Tambahkan ke keranjang". Bingung ukuran? Lihat <a href="panduan-ukuran.html">panduan ukuran</a>.</p>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card langkah-card h-100 text-center">
-                            <div class="card-body p-4">
-                                <span class="langkah-nomor">3</span>
-                                <h3>Selesaikan pesanan</h3>
-                                <p class="mb-0">Cek isi keranjang dan totalnya, lalu tekan "Selesaikan simulasi".</p>
-                            </div>
-                        </div>
+                    <div class="col-md-4 langkah">
+                        <span class="langkah-nomor">3</span>
+                        <h3>Selesaikan pesanan</h3>
+                        <p class="mb-0">Cek isi keranjang dan totalnya, lalu tekan "Selesaikan simulasi".</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== KATEGORI ANAK / DEWASA ===== -->
-        <section class="container py-5">
-            <div class="row g-4">
+        <!-- ===== BANNER PROMO ===== -->
+        <section class="container py-5" aria-labelledby="judul-promo">
+            <div class="promo-banner">
+                <div class="row align-items-center g-4">
 
-                <!-- Kartu Anak (biru) -->
-                <div class="col-md-6">
-                    <a href="produk.html?kategori=Anak" class="category blue d-flex justify-content-between align-items-center h-100">
+                    <!-- Kiri: teks promo -->
+                    <div class="col-md-7">
+                        <div class="badge eyebrow eyebrow-pink">PROMO SPESIAL</div>
+                        <h2 id="judul-promo">Voucher Gemes!</h2>
+                        <p>Masukkan kode di bawah saat belanja untuk potongan 10% pasangan pertamamu.</p>
+                        <div class="kode-promo mb-4">BLOSSOM10</div>
                         <div>
-                            <span class="badge rounded-pill">UNTUK SI KECIL</span>
-                            <h2>Kecil langkahnya,<br>besar imajinasinya.</h2>
-                            <span class="btn btn-sm rounded-pill btn-outline-langit">Jelajahi koleksi anak ↗</span>
+                            <a class="btn btn-cherry" href="produk.html">Belanja sekarang <span>↗</span></a>
                         </div>
-                        <!-- Hiasan: awan besar + maskot kecil -->
-                        <span class="category-art" aria-hidden="true">
-                            <img class="category-awan" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-                            <img class="category-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
-                        </span>
-                    </a>
-                </div>
+                        <p class="catatan-kecil mt-3 mb-0">Promo simulasi untuk proyek.</p>
+                    </div>
 
-                <!-- Kartu Dewasa (pink) -->
-                <div class="col-md-6">
-                    <a href="produk.html?kategori=Dewasa" class="category pink d-flex justify-content-between align-items-center h-100">
-                        <div>
-                            <span class="badge rounded-pill">UNTUK DIRIMU</span>
-                            <h2>Tak ada usia<br>untuk tampil manis.</h2>
-                            <span class="btn btn-sm rounded-pill btn-outline-cherry">Jelajahi koleksi dewasa ↗</span>
-                        </div>
-                        <!-- Hiasan: maskot besar + awan kecil -->
-                        <span class="category-art" aria-hidden="true">
-                            <img class="category-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
-                            <img class="category-awan" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-                        </span>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ===== PANDUAN UKURAN (pita biru muda selebar layar) ===== -->
-        <section id="panduan-ukuran" class="pita pita-biru py-5" aria-labelledby="judul-panduan">
-            <div class="container">
-                <div class="text-center mb-4">
-                    <div class="badge rounded-pill eyebrow">BIAR PAS DI KAKI</div>
-                    <h2 id="judul-panduan" class="judul-tengah">Panduan ukuran.</h2>
-                    <p class="mb-0">Cara mengukur: berdiri di atas kertas, tandai ujung tumit dan ujung jari terpanjang, lalu ukur jaraknya dengan penggaris.</p>
-                </div>
-
-                <!-- 2 tabel berdampingan -->
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="tabel-ukuran">
-                            <h3>Ukuran dewasa</h3>
-                            <table class="table table-striped mb-0">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Ukuran</th>
-                                        <th scope="col">Panjang kaki (cm)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>36</td><td>23,0</td></tr>
-                                    <tr><td>37</td><td>23,5</td></tr>
-                                    <tr><td>38</td><td>24,0</td></tr>
-                                    <tr><td>39</td><td>24,5</td></tr>
-                                    <tr><td>40</td><td>25,0</td></tr>
-                                </tbody>
-                            </table>
+                    <!-- Kanan: maskot sakura dan awan -->
+                    <div class="col-md-5">
+                        <div class="promo-art" aria-hidden="true">
+                            <img class="promo-awan" src="images/dekor/awan.svg" alt="" aria-hidden="true">
+                            <img class="promo-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                            <img class="promo-kelopak" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="tabel-ukuran">
-                            <h3>Ukuran anak</h3>
-                            <table class="table table-striped mb-0">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Ukuran</th>
-                                        <th scope="col">Panjang kaki (cm)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>24</td><td>15,0</td></tr>
-                                    <tr><td>25</td><td>15,5</td></tr>
-                                    <tr><td>26</td><td>16,0</td></tr>
-                                    <tr><td>27</td><td>16,5</td></tr>
-                                    <tr><td>28</td><td>17,5</td></tr>
-                                    <tr><td>29</td><td>18,0</td></tr>
-                                    <tr><td>30</td><td>18,5</td></tr>
-                                    <tr><td>31</td><td>19,5</td></tr>
-                                    <tr><td>32</td><td>20,0</td></tr>
-                                    <tr><td>33</td><td>20,5</td></tr>
-                                    <tr><td>34</td><td>21,5</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+
                 </div>
-                <p class="catatan-kecil text-center mt-3 mb-0">Panduan ini contoh simulasi, bukan ukuran resmi produsen.</p>
             </div>
         </section>
 
         <!-- ===== CERITA SINGKAT ===== -->
-        <section class="story-teaser container has-decor text-center pt-5">
-            <!-- Dekorasi (hanya hiasan) -->
-            <img class="decor decor-awan pos-tl" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-            <img class="decor decor-awan kecil pos-mr" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-            <img class="decor decor-kelopak besar pos-bl rot-r" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
-            <span class="decor decor-kilau biru pos-tr" aria-hidden="true">✦</span>
+        <section class="story-teaser container has-decor text-center py-5">
+            <!-- Dekorasi: awan besar kiri atas, awan kecil kanan bawah (disembunyikan di HP) -->
+            <img class="decor decor-awan pos-tl d-none d-md-block" src="images/dekor/awan.svg" alt="" aria-hidden="true">
+            <img class="decor decor-awan kecil pos-br d-none d-md-block" src="images/dekor/awan.svg" alt="" aria-hidden="true">
 
             <img class="story-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
-            <div class="badge rounded-pill eyebrow">LEBIH DARI SEPASANG SEPATU</div>
+            <div class="badge eyebrow">LEBIH DARI SEPASANG SEPATU</div>
             <h2>Sedikit warna, banyak bahagia.</h2>
             <p>Kami percaya hal-hal kecil dapat membuat hari terasa istimewa.<br>CHERRYBLOSSOM hadir untuk merayakan sisi ceria dalam dirimu.</p>
             <a class="btn btn-sm rounded-pill btn-outline-cherry" href="tentang.html">Baca cerita kami ↗</a>
@@ -537,9 +481,6 @@
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        <!-- Dekorasi (hanya hiasan) -->
-        <span class="decor decor-kilau pos-tr" aria-hidden="true">✦</span>
-        <img class="decor decor-kelopak besar pos-bl rot-l" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-md-6">
@@ -558,12 +499,12 @@
                 <div class="col-6 col-md-3">
                     <h2>Ada pertanyaan?</h2>
                     <a href="kontak.html">Hubungi kami ↗</a>
-                    <a href="index.html#panduan-ukuran">Panduan ukuran</a>
-                    <span>Dibuat dengan sepenuh hati ♡</span>
+                    <a href="panduan-ukuran.html">Panduan ukuran</a>
                 </div>
             </div>
             <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
                 <span>© 2026 CHERRYBLOSSOM</span>
+                <span>Dibuat dengan sepenuh hati ♡</span>
                 <span>Proyek Pemrograman Web 1 · Toko simulasi, tanpa transaksi nyata.</span>
             </div>
         </div>
