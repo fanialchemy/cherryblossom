@@ -9,40 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ===== SIMBOL SVG (maskot, awan, kelopak) =====
-         Digambar sendiri, disembunyikan, lalu dipakai ulang dengan <use href="#..."> -->
-    <svg class="svg-sprite" aria-hidden="true" focusable="false">
-        <defs>
-            <radialGradient id="gradasi-kelopak" cx="50" cy="50" r="46" gradientUnits="userSpaceOnUse">
-                <stop offset="0.4" stop-color="#FFFFFF"/>
-                <stop offset="1" stop-color="#FFC2D6"/>
-            </radialGradient>
-        </defs>
-        <!-- Maskot bunga sakura 5 kelopak berwajah imut -->
-        <symbol id="maskot" viewBox="0 0 100 100">
-            <g fill="url(#gradasi-kelopak)" stroke="#6B3F2A" stroke-width="3" stroke-linejoin="round">
-                <path id="kelopak-maskot" d="M50 50 C28 42 27 14 41 7 Q46 4 50 12 Q54 4 59 7 C73 14 72 42 50 50 Z"/>
-                <use href="#kelopak-maskot" transform="rotate(72 50 50)"/>
-                <use href="#kelopak-maskot" transform="rotate(144 50 50)"/>
-                <use href="#kelopak-maskot" transform="rotate(216 50 50)"/>
-                <use href="#kelopak-maskot" transform="rotate(288 50 50)"/>
-            </g>
-            <circle cx="50" cy="51" r="17" fill="#FFFFFF"/>
-            <circle cx="43" cy="49" r="2.7" fill="#6B3F2A"/>
-            <circle cx="57" cy="49" r="2.7" fill="#6B3F2A"/>
-            <ellipse cx="38.5" cy="55" rx="3.6" ry="2.3" fill="#FF7FA8" opacity="0.8"/>
-            <ellipse cx="61.5" cy="55" rx="3.6" ry="2.3" fill="#FF7FA8" opacity="0.8"/>
-            <path d="M46.5 54.5 Q50 58 53.5 54.5" fill="none" stroke="#6B3F2A" stroke-width="2" stroke-linecap="round"/>
-        </symbol>
-        <!-- Awan -->
-        <symbol id="awan" viewBox="0 0 120 60">
-            <path fill="currentColor" d="M24 56 C10 56 4 46 8 37 C12 29 21 27 27 30 C29 17 41 9 54 12 C62 4 78 5 85 16 C97 13 109 21 108 33 C116 36 118 48 110 54 C108 55.5 106 56 104 56 Z"/>
-        </symbol>
-        <!-- Kelopak sakura -->
-        <symbol id="kelopak" viewBox="0 0 40 40">
-            <path fill="currentColor" d="M20 38 C6 30 3 12 13 4 Q17 2 20 8 Q23 2 27 4 C37 12 34 30 20 38 Z"/>
-        </symbol>
-    </svg>
     <a class="skip" href="#utama">Langsung ke konten</a>
 
     <!-- ===== HEADER ===== -->
@@ -53,7 +19,7 @@
         <!-- ===== NAVBAR ===== -->
         <nav class="navbar navbar-expand-lg container">
             <a class="navbar-brand" href="index.html">
-                <svg class="maskot brand-maskot" aria-hidden="true"><use href="#maskot"></use></svg>
+                <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
                 <span class="brand-text">Cherry Blossom<span class="brand-sub">LANGKAH MANIS SETIAP HARI</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Buka menu">
@@ -76,14 +42,22 @@
         <!-- ===== DETAIL PRODUK =====
              Isi nama, harga, gambar, dan ukuran diganti oleh js/script.js
              berdasarkan ?id= di URL. Teks di bawah hanya isi awal. -->
-        <section class="container section has-decor">
+        <section class="container py-5 has-decor">
             <!-- Dekorasi (hanya hiasan) -->
-            <svg class="decor decor-kelopak besar d-tr rot-r" aria-hidden="true"><use href="#kelopak"></use></svg>
-            <svg class="decor decor-awan kecil d-bl" aria-hidden="true"><use href="#awan"></use></svg>
-            <span class="decor decor-kilau biru d-tc" aria-hidden="true">✦</span>
-            <nav class="breadcrumb-small" aria-label="Jejak halaman"><a href="index.html">Beranda</a> / <a href="produk.html">Koleksi</a> / <span id="crumb-name">Sakura Puni</span></nav>
+            <img class="decor decor-kelopak besar pos-tr rot-r" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
+            <img class="decor decor-awan kecil pos-bl" src="images/dekor/awan.svg" alt="" aria-hidden="true">
+            <span class="decor decor-kilau biru pos-tc" aria-hidden="true">✦</span>
 
-            <div class="row g-5 align-items-start">
+            <!-- Breadcrumb Bootstrap (nama produk diisi oleh JavaScript) -->
+            <nav aria-label="Jejak halaman">
+                <ol class="breadcrumb breadcrumb-small mb-4">
+                    <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                    <li class="breadcrumb-item"><a href="produk.html">Koleksi</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" id="crumb-name">Sakura Puni</li>
+                </ol>
+            </nav>
+
+            <div class="row g-4 g-lg-5 align-items-start">
 
                 <!-- Foto produk -->
                 <div class="col-md-6">
@@ -94,7 +68,7 @@
 
                 <!-- Info produk + form tambah ke keranjang -->
                 <div class="col-md-6">
-                    <div class="eyebrow" id="detail-category">KOLEKSI DEWASA · SEPATU</div>
+                    <div class="badge rounded-pill eyebrow" id="detail-category">KOLEKSI DEWASA · SEPATU</div>
                     <h1 id="detail-name">Sakura Puni</h1>
                     <p class="detail-price" id="detail-price">Rp289.000</p>
                     <p id="detail-description">Sepatu merah muda dengan tali putih yang empuk banget, kayak kue mochi. Siap nemenin jalan santai sambil cari jajanan manis.</p>
@@ -130,13 +104,13 @@
     <!-- ===== FOOTER ===== -->
     <footer>
         <!-- Dekorasi (hanya hiasan) -->
-        <span class="decor decor-kilau d-tr" aria-hidden="true">✦</span>
-        <svg class="decor decor-kelopak besar d-bl rot-l" aria-hidden="true"><use href="#kelopak"></use></svg>
+        <span class="decor decor-kilau pos-tr" aria-hidden="true">✦</span>
+        <img class="decor decor-kelopak besar pos-bl rot-l" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-md-6">
                     <a class="footer-brand" href="index.html">
-                        <svg class="maskot brand-maskot" aria-hidden="true"><use href="#maskot"></use></svg>
+                        <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
                         <span class="brand-text">Cherry Blossom</span>
                     </a>
                     <p>Untuk langkah kecil, mimpi besar,<br>dan semua cerita di antaranya.</p>
@@ -153,7 +127,7 @@
                     <span>Dibuat dengan sepenuh hati ♡</span>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
                 <span>© 2026 CHERRYBLOSSOM</span>
                 <span>Proyek Pemrograman Web 1 · Toko simulasi, tanpa transaksi nyata.</span>
             </div>

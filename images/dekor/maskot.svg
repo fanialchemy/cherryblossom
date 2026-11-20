@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Maskot CHERRYBLOSSOM: bunga sakura 5 kelopak berwajah imut -->
+    <defs>
+        <radialGradient id="warna-kelopak" cx="50" cy="50" r="46" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#FFFFFF"/>
+            <stop offset="1" stop-color="#FFC2D6"/>
+        </radialGradient>
+    </defs>
+
+    <!-- 5 kelopak (kelopak yang sama diputar 72 derajat) -->
+    <g fill="url(#warna-kelopak)" stroke="#6B3F2A" stroke-width="3" stroke-linejoin="round">
+        <path d="M50 50 C28 42 27 14 41 7 Q46 4 50 12 Q54 4 59 7 C73 14 72 42 50 50 Z"/>
+        <path d="M50 50 C28 42 27 14 41 7 Q46 4 50 12 Q54 4 59 7 C73 14 72 42 50 50 Z" transform="rotate(72 50 50)"/>
+        <path d="M50 50 C28 42 27 14 41 7 Q46 4 50 12 Q54 4 59 7 C73 14 72 42 50 50 Z" transform="rotate(144 50 50)"/>
+        <path d="M50 50 C28 42 27 14 41 7 Q46 4 50 12 Q54 4 59 7 C73 14 72 42 50 50 Z" transform="rotate(216 50 50)"/>
+        <path d="M50 50 C28 42 27 14 41 7 Q46 4 50 12 Q54 4 59 7 C73 14 72 42 50 50 Z" transform="rotate(288 50 50)"/>
+    </g>
+
+    <!-- Wajah: lingkaran putih, mata, pipi merona, senyum -->
+    <circle cx="50" cy="51" r="17" fill="#FFFFFF"/>
+    <circle cx="43" cy="49" r="2.7" fill="#6B3F2A"/>
+    <circle cx="57" cy="49" r="2.7" fill="#6B3F2A"/>
+    <ellipse cx="38.5" cy="55" rx="3.6" ry="2.3" fill="#FF7FA8" opacity="0.8"/>
+    <ellipse cx="61.5" cy="55" rx="3.6" ry="2.3" fill="#FF7FA8" opacity="0.8"/>
+    <path d="M46.5 54.5 Q50 58 53.5 54.5" fill="none" stroke="#6B3F2A" stroke-width="2" stroke-linecap="round"/>
+</svg>

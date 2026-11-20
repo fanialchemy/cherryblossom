@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+    <!-- Satu kelopak sakura pink (transparansi diatur lewat CSS opacity) -->
+    <path fill="#FF7FA8" d="M20 38 C6 30 3 12 13 4 Q17 2 20 8 Q23 2 27 4 C37 12 34 30 20 38 Z"/>
+</svg>

@@ -2,21 +2,46 @@ CHERRYBLOSSOM — Proyek Pemrograman Web 1
 
 CARA MEMBUKA
 Ekstrak seluruh ZIP, lalu buka index.html di browser. Tidak perlu instalasi,
-Node.js, npm, backend, atau database. Bootstrap 5.3.3 dan foto disertakan lokal.
-Font Fredoka dan Nunito disertakan lokal sehingga tampilan font tetap tersedia offline.
+Node.js, npm, backend, atau database. Bootstrap 5.3.3, font, dan semua gambar
+disertakan lokal sehingga situs tetap tampil walau offline.
 Untuk penyimpanan keranjang paling konsisten antarhalaman, gunakan hosting
 statis atau ekstensi Live Server di editor. Perilaku localStorage pada file://
 berbeda antarbrowser. Situs tetap dapat dibuka langsung untuk peninjauan.
 
-ENAM HALAMAN
-index.html: beranda dengan Bootstrap carousel dua slide dan 8 produk unggulan.
-produk.html: katalog 16 produk (Bootstrap card + grid), filter Semua/Anak/Dewasa,
-             filter Sepatu/Sandal, dan pencarian sederhana.
-detail.html: detail produk (diisi JavaScript dari ?id= di URL), pilihan ukuran,
-             dan tambah ke keranjang.
-keranjang.html: ubah jumlah, hapus produk, total Rupiah, dan simulasi selesai.
-tentang.html: cerita merek serta penjelasan proyek.
-kontak.html: formulir dengan required, email, minlength, dan validasi sederhana.
+TEKNOLOGI
+HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.3 (offline).
+- Tata letak memakai grid Bootstrap (container, row, col-*, g-*) dan utility
+  Bootstrap (d-flex, py-5, mb-4, text-center, dll.).
+- Komponen Bootstrap: navbar, carousel, card, badge rounded-pill, btn,
+  breadcrumb, form-control, form-select, form-check.
+- css/style.css hanya mengatur warna, huruf, sudut bulat, bayangan, dan hiasan.
+- js/script.js memakai function biasa, for loop, dan localStorage.
+Tidak ada framework aplikasi, proses build, atau permintaan API.
+
+ENAM HALAMAN & FITUR
+index.html     : header menempel saat di-scroll; carousel Bootstrap 5 slide
+                 (berganti setiap 3,5 detik, tombol prev/next dan 5 titik
+                 indikator); 4 label keunggulan; 8 produk unggulan; kartu
+                 kategori Anak & Dewasa; cerita singkat.
+produk.html    : katalog 16 produk (card + grid), filter kategori
+                 (Semua/Anak/Dewasa), filter jenis (Semua/Sepatu/Sandal),
+                 dan pencarian nama. Filter bisa dibuka dari URL,
+                 contoh produk.html?kategori=Anak.
+detail.html    : detail produk diisi JavaScript dari ?id= di URL
+                 (contoh detail.html?id=sakura-puni), breadcrumb, pilihan
+                 ukuran, jumlah, tambah ke keranjang, panduan ukuran.
+keranjang.html : daftar belanja, ubah jumlah (1–10), hapus barang,
+                 total Rupiah, dan tombol simulasi selesai.
+tentang.html   : cerita merek, tiga nilai merek, dan penjelasan proyek.
+kontak.html    : formulir (required, email, minlength, checkbox) dengan
+                 validasi tambahan JavaScript.
+
+ISI CAROUSEL BERANDA (5 SLIDE)
+1. Koleksi pastel       -> produk.html                   (images/banner/hero-1.jpg)
+2. Sandal warna-warni   -> detail.html?id=niji-pyon      (images/banner/hero-2.jpg)
+3. Koleksi anak         -> produk.html?kategori=Anak     (images/banner/hero-3.jpg)
+4. Koleksi dewasa       -> produk.html?kategori=Dewasa   (images/banner/hero-4.jpg)
+5. Produk terbaru       -> detail.html?id=riri-chuu      (images/banner/hero-5.jpg)
 
 STRUKTUR FOLDER
 CHERRYBLOSSOM/
@@ -26,31 +51,33 @@ CHERRYBLOSSOM/
 ├── css/
 │   ├── bootstrap.min.css          -> Bootstrap 5.3.3 (offline)
 │   ├── fonts.css                  -> @font-face Fredoka & Nunito (../fonts/)
-│   └── style.css                  -> gaya khusus CHERRYBLOSSOM
+│   └── style.css                  -> warna, huruf, dan hiasan CHERRYBLOSSOM
 ├── js/
 │   ├── bootstrap.bundle.min.js    -> Bootstrap 5.3.3 (offline)
 │   └── script.js                  -> data produk, filter, detail, keranjang, form
 ├── images/
-│   ├── sepatu-rose.jpg, sepatu-anak.jpg, sandal-pelangi.jpg,
-│   │   sandal-pita.jpg, sandal-lila.jpg   -> foto sumber asli
 │   ├── banner/
-│   │   ├── hero-1.jpg             -> gambar slide 1 beranda
-│   │   └── hero-2.jpg             -> gambar slide 2 beranda
-│   └── produk/
-│       └── <id-produk>.jpg        -> 16 file, satu per produk
+│   │   └── hero-1.jpg ... hero-5.jpg   -> gambar 5 slide carousel
+│   ├── produk/
+│   │   └── <id-produk>.jpg        -> 16 file, satu per produk
+│   └── dekor/
+│       ├── maskot.svg             -> maskot bunga sakura (logo & hiasan)
+│       ├── awan.svg               -> awan putih
+│       └── kelopak.svg            -> kelopak sakura
 ├── fonts/                         -> 9 file .ttf (Fredoka & Nunito)
 └── referensi-desain/              -> bahan referensi desain (tidak dipakai halaman)
 
 Setiap halaman memuat css/bootstrap.min.css, css/style.css (yang mengimpor
 fonts.css), js/bootstrap.bundle.min.js, dan js/script.js. Header/footer disalin
-secara konsisten pada tiap halaman agar mudah dipelajari. Tidak ada router,
-framework aplikasi, proses build, atau permintaan API.
+sama pada tiap halaman agar mudah dipelajari. Hiasan dipanggil dengan
+<img src="images/dekor/...svg" alt="" aria-hidden="true">.
 
-MENGGANTI FOTO PRODUK
+MENGGANTI FOTO
 Setiap produk punya file gambar sendiri di images/produk/ dengan nama sesuai id
-(misalnya images/produk/sakura-puni.jpg). Saat ini isinya masih salinan foto
-sumber. Cukup timpa file dengan foto baru bernama SAMA (format .jpg), tidak
-perlu mengubah kode. Gambar carousel beranda diganti di images/banner/.
+(misalnya images/produk/sakura-puni.jpg). Gambar carousel ada di
+images/banner/hero-1.jpg sampai hero-5.jpg. Saat ini isinya masih foto
+contoh. Cukup timpa file dengan foto baru bernama SAMA (format .jpg), tidak
+perlu mengubah kode.
 
 DAFTAR PRODUK (16)
 id            Nama          Kategori  Jenis   Warna               Harga
@@ -81,32 +108,42 @@ kategori, ubah juga di script.js agar tetap sama.
 
 ALUR KERANJANG
 Data produk ada di awal js/script.js. Harga tidak diambil dari input pengunjung.
-Keranjang menyimpan ID produk, ukuran dan jumlah dalam localStorage.
-Jumlah dibatasi 1–10 pasang per produk/ukuran. Tombol simulasi tidak memproses
-transaksi. Form kontak tidak mengirim atau menyimpan data.
+Keranjang menyimpan id produk, ukuran, dan jumlah dalam localStorage
+(kunci "cherry-cart"). Jumlah dibatasi 1–10 pasang per produk/ukuran.
+Tombol simulasi tidak memproses transaksi. Form kontak tidak mengirim atau
+menyimpan data.
 
 CATATAN KONTEN
 CHERRYBLOSSOM adalah merek fiktif. Nama, harga, ukuran dan deskripsi produk
 merupakan contoh akademik. Foto pihak ketiga hanya sebagai ilustrasi, bukan
 bukti produk milik merek CHERRYBLOSSOM. Sebelum penggunaan komersial, gunakan
-foto sendiri atau foto berlisensi yang sesuai.
+foto sendiri atau foto berlisensi yang sesuai. Maskot, awan, dan kelopak
+digambar sendiri (SVG).
 
-SUMBER FOTO
-(Foto di images/banner/ dan images/produk/ saat ini adalah salinan foto berikut.)
-sepatu-rose.jpg: Apita/Piago
-https://www.apitashop.com/shop/g/g001-02096110203057
-sepatu-anak.jpg: adidas, Tensaur Run 2.0
-https://www.adidas.co.uk/tensaur-run-2.0-shoes-kids/IE5989.html
-sandal-pelangi.jpg: Stylo, Multy Formal Sandal FR5145
-https://stylo.pk/products/multy-formal-sandal-fr5145
-sandal-pita.jpg: Stylo, koleksi sandal
-https://stylo.pk/collections/sandals
-sandal-lila.jpg: Diane Marie, Magnolia
-https://pantofidianemarie.ro/products/sandale-dama-din-piele-naturala-lila-cu-roz-magnolia
+SUMBER FOTO CONTOH
+Foto di images/produk/ dan images/banner/ adalah salinan dari foto berikut:
+- Apita/Piago (sepatu merah muda)
+  https://www.apitashop.com/shop/g/g001-02096110203057
+  -> sakura-puni, momo-fuwa, yume-kira, hana-mochi, hero-1
+- adidas, Tensaur Run 2.0 (sepatu anak)
+  https://www.adidas.co.uk/tensaur-run-2.0-shoes-kids/IE5989.html
+  -> koko-tobi, pipi-kumo, mimi-usa, chibi-hoshi, hero-3
+- Stylo, Multy Formal Sandal FR5145 (sandal warna-warni)
+  https://stylo.pk/products/multy-formal-sandal-fr5145
+  -> niji-pyon, nana-puru, popo-niko, hero-2
+- Stylo, koleksi sandal (sandal merah muda)
+  https://stylo.pk/collections/sandals
+  -> riri-chuu, nini-pyoko, yuyu-puka, hero-5
+- Diane Marie, Magnolia (sandal lila)
+  https://pantofidianemarie.ro/products/sandale-dama-din-piele-naturala-lila-cu-roz-magnolia
+  -> lulu-sora, tete-miru, hero-4
 Bootstrap 5.3.3: https://getbootstrap.com/ (MIT, keterangan lisensi dalam berkas).
 Font: Fredoka dan Nunito, diunduh melalui Google Fonts.
-Revisi visual: baby blue #D3E3FF, pink #FF78AA, judul bulat tebal dengan
-outline putih, logo cokelat hangat, dan teks ungu keabu-abuan. Layout tetap.
+
+PALET WARNA
+Pink latar #FFD9E6, pink lembut #FFF0F5, pink #FF7FA8, pink tombol #F25C8E,
+biru langit #D3E7FF, biru #5AB0F0, lila #CDBBF5, cokelat logo #6B3F2A,
+teks #5A4650. Judul memakai huruf Fredoka tebal dengan outline putih.
 
 PUBLIKASI
 Unggah seluruh isi folder ini ke hosting statis. Pertahankan nama dan susunan
