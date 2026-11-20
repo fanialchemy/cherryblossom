@@ -18,8 +18,9 @@ HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline).
   form-select, form-check.
 - Hiasan awan & kelopak hanya di hero, kartu kategori, banner promo, dan
   cerita singkat; disembunyikan di HP dengan class "d-none d-md-block".
-- Ikon tas belanja "bag-heart" dari Bootstrap Icons (MIT), disalin sebagai
-  inline SVG di navbar (tanpa library tambahan).
+- Ikon tas belanja "bag-heart" (navbar) dan kaca pembesar "search" (kolom
+  pencarian produk.html) dari Bootstrap Icons (MIT), disalin sebagai inline
+  SVG (tanpa library tambahan).
 - css/style.css hanya mengatur warna, huruf, sudut bulat, bayangan, dan hiasan.
 - js/script.js memakai function biasa, for loop, dan localStorage.
 Tidak ada framework aplikasi, proses build, atau permintaan API.
@@ -32,9 +33,10 @@ index.html     : urutan section: carousel Bootstrap 5 slide (berganti
                  panel putih) -> banner promo "Voucher Gemes!" (kode
                  contoh BLOSSOM10, promo simulasi) -> cerita singkat.
                  Semua section memakai latar pink lembut yang sama, py-5.
-panduan-ukuran.html : tabel ukuran dewasa 36–40 & anak 24–34 (table
-                 table-striped), cara mengukur kaki (<ol> 4 langkah), tips
-                 memilih ukuran (<ul>), dan keterangan simulasi. Ditautkan
+panduan-ukuran.html : 2 kolom (col-md-6). Kiri: tabel ukuran dewasa 36–40
+                 lalu cara mengukur kaki (<ol> 4 langkah). Kanan: tabel
+                 ukuran anak 24–34 lalu tips memilih ukuran (<ul>). Tabel
+                 memakai table-striped dengan belang pink muda. Ditautkan
                  dari footer semua halaman, detail.html (di dekat pilihan
                  ukuran), kartu langkah 2 "Cara belanja", dan kontak.html.
 Semua halaman  : header menempel saat di-scroll; menu aktif berbentuk pill
@@ -48,19 +50,24 @@ produk.html    : katalog 16 produk (card + grid), filter kategori
 detail.html    : detail produk diisi JavaScript dari ?id= di URL
                  (contoh detail.html?id=sakura-puni), breadcrumb, pilihan
                  ukuran + link "Bingung ukuran? Lihat panduan ukuran",
-                 jumlah, tambah ke keranjang, ringkasan panduan ukuran.
+                 jumlah, tambah ke keranjang, kotak "Perawatan & ukuran"
+                 di bawah foto (link ke panduan-ukuran.html).
 keranjang.html : daftar belanja, ubah jumlah (1–10), hapus barang,
-                 total Rupiah, dan tombol simulasi selesai.
-tentang.html   : cerita merek, tiga nilai merek, dan penjelasan proyek.
+                 total Rupiah, dan form "Data pengiriman" (nama, nomor HP,
+                 alamat, metode pembayaran, catatan) yang divalidasi
+                 atribut HTML; tombol "Selesaikan simulasi" = tombol submit.
+tentang.html   : kolase foto produk + cerita merek, tiga nilai merek,
+                 tombol "Jelajahi koleksi", dan penjelasan proyek.
 kontak.html    : formulir (required, email, minlength, checkbox) dengan
                  validasi tambahan JavaScript; section "Kunjungi toko kami"
                  berisi alamat, jam buka, nomor contoh, dan peta Google Maps.
 
 ALAMAT TOKO (SIMULASI)
-Alamat   : Jl. Soekarno Hatta, Malang, Jawa Timur (lokasi contoh)
+Alamat   : Kawasan Jl. Soekarno Hatta, Lowokwaru, Malang (area umum, contoh)
 Jam buka : Senin–Sabtu 09.00–21.00, Minggu 10.00–20.00
 Telepon  : 0812-0000-0000 (nomor contoh)
-Toko ini bagian dari proyek simulasi, bukan toko sungguhan.
+Email    : halo@cherryblossom.example (alamat contoh)
+Data kontak hanya contoh untuk proyek simulasi, bukan toko sungguhan.
 Untuk mengganti lokasi peta, ubah teks setelah "q=" pada atribut src iframe
 di kontak.html (spasi ditulis %20, koma ditulis %2C), lalu ubah juga teks
 alamat di atasnya.
@@ -146,15 +153,13 @@ menyimpan data.
 
 CATATAN KONTEN
 CHERRYBLOSSOM adalah merek fiktif. Nama, harga, ukuran dan deskripsi produk
-merupakan contoh akademik. Foto pihak ketiga hanya sebagai ilustrasi, bukan
-bukti produk milik merek CHERRYBLOSSOM. Sebelum penggunaan komersial, gunakan
-foto sendiri atau foto berlisensi yang sesuai. Maskot, awan, dan kelopak
-digambar sendiri (SVG).
+merupakan contoh akademik. Maskot, awan, dan kelopak digambar sendiri (SVG).
 
-SUMBER FOTO
-Foto produk: [ISI SUMBER FOTO]
+SUMBER & KREDIT
+Nama, harga, dan spesifikasi merupakan contoh untuk proyek. Foto produk hanya
+sebagai ilustrasi.
 Bootstrap 5.3.9: https://getbootstrap.com/ (MIT, keterangan lisensi dalam berkas).
-Bootstrap Icons (ikon bag-heart): https://icons.getbootstrap.com/ (MIT).
+Bootstrap Icons (ikon bag-heart dan search): https://icons.getbootstrap.com/ (MIT).
 Font: Fredoka dan Nunito, diunduh melalui Google Fonts.
 
 PALET WARNA

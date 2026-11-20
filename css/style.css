@@ -413,6 +413,20 @@ header {
     background: var(--pink-bg);
 }
 
+/* Tombol keranjang aktif (di halaman keranjang.html) */
+.bag.active,
+.bag.active:hover {
+    background: var(--pink-strong);
+    border-color: var(--pink-strong);
+    color: var(--white);
+}
+
+/* Angka tetap terbaca: lingkaran putih, angka pink */
+.bag.active .bag-count {
+    background: var(--white);
+    color: var(--pink-deep);
+}
+
 /* Angka jumlah barang di dalam lingkaran pink */
 .bag-count {
     min-width: 26px;
@@ -1021,6 +1035,19 @@ footer .col-6 a:hover {
     color: var(--pink-deep);
 }
 
+/* Ikon kaca pembesar menyatu dengan kolom pencarian */
+.search-group .input-group-text {
+    background: var(--white);
+    border: 2px solid var(--pink-bg);
+    border-right: 0;
+    border-radius: 18px 0 0 18px;
+    color: var(--pink-deep);
+}
+
+.search-group .form-control {
+    border-left: 0;
+}
+
 
 /* ===== 16. FORM (input membulat, fokus pink) ===== */
 .form-control,
@@ -1142,7 +1169,6 @@ footer .col-6 a:hover {
 .summary {
     border-radius: 24px;
     background: var(--white);
-    border-top: 8px solid var(--blue-sky);
     padding: 28px;
     box-shadow: var(--shadow-pink);
 }
@@ -1237,15 +1263,26 @@ footer .col-6 a:hover {
     border-radius: 14px;
 }
 
-/* Tombol hapus berupa teks bergaris bawah */
-.remove {
-    background: none;
-    border: 0;
-    margin-top: 6px;
-    color: var(--pink-deep);
-    font-size: 0.9375rem;
+/* Label kecil "Jumlah" di atas kotak jumlah */
+.cart-qty-label {
+    display: block;
+    font-size: 0.75rem;
     font-weight: 800;
-    text-decoration: underline;
+    margin-bottom: 2px;
+}
+
+/* Tombol hapus: teks kecil tanpa garis bawah (dipakai bersama btn btn-sm) */
+.remove {
+    color: var(--pink-deep);
+    font-weight: 800;
+    border: 0;
+    border-radius: 50px;
+}
+
+.remove:hover,
+.remove:focus-visible {
+    background: var(--pink-soft);
+    color: var(--pink-deep);
 }
 
 
@@ -1286,22 +1323,33 @@ footer .col-6 a:hover {
     color: var(--pink-strong);
 }
 
-.values .col-md-4:nth-child(2) article {
-    border-color: var(--blue-sky);
-}
-
+/* Ketiga kartu memakai border pink lembut yang sama; hanya warna ikon yang beda */
 .values .col-md-4:nth-child(2) span {
     background: var(--blue-sky);
     color: var(--blue-deep);
 }
 
-.values .col-md-4:nth-child(3) article {
-    border-color: #EEE7FD;
-}
-
 .values .col-md-4:nth-child(3) span {
     background: #EEE7FD;
     color: #7A5BC7;
+}
+
+/* Kolase foto produk (tentang.html) */
+.about-collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 5px solid var(--white);
+    box-shadow: var(--shadow-pink);
+}
+
+.about-collage .foto-tinggi {
+    aspect-ratio: 3 / 4;
+}
+
+.about-collage .foto-persegi {
+    aspect-ratio: 1 / 1;
 }
 
 .values h3 {
@@ -1526,6 +1574,11 @@ footer .col-6 a:hover {
 
 .tabel-ukuran th {
     color: var(--blue-deep);
+}
+
+/* Warna belang tabel: pink sangat muda (variabel bawaan Bootstrap) */
+.tabel-ukuran .table {
+    --bs-table-striped-bg: #FFF0F5;
 }
 
 /* Teks keterangan kecil */

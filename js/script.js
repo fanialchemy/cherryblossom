@@ -443,12 +443,14 @@ if (cartItems) {
                     <strong>${rupiah(subtotalBarang)}</strong>
                 </div>
 
-                <!-- Ubah jumlah & tombol hapus -->
-                <div class="ms-auto text-end">
-                    <label class="visually-hidden" for="qty-${i}">Jumlah ${p.name}</label>
-                    <input id="qty-${i}" class="form-control cart-quantity" type="number"
-                           value="${item.quantity}" min="1" max="10" data-index="${i}">
-                    <button class="remove" type="button" data-index="${i}">Hapus</button>
+                <!-- Ubah jumlah & tombol hapus (sejajar tengah) -->
+                <div class="ms-auto d-flex align-items-center gap-2">
+                    <div>
+                        <label class="cart-qty-label" for="qty-${i}">Jumlah</label>
+                        <input id="qty-${i}" class="form-control cart-quantity" type="number"
+                               value="${item.quantity}" min="1" max="10" data-index="${i}">
+                    </div>
+                    <button class="btn btn-sm remove align-self-end" type="button" data-index="${i}">Hapus</button>
                 </div>
             `;
 
@@ -487,11 +489,30 @@ if (cartItems) {
         }
     });
 
-    // Tombol "Selesaikan simulasi"
-    document.getElementById('simulate').addEventListener('click', function () {
+    // Form "Data pengiriman": browser sudah memeriksa required, pattern,
+    // dan minlength. Event submit hanya terjadi jika semua kolom valid.
+    var checkoutForm = document.getElementById('checkout-form');
+    checkoutForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // jangan muat ulang halaman
+
+        if (cart.length === 0) {
+            return;
+        }
+
+        // Simpan total dulu, sebelum keranjang dikosongkan
+        var totalPesanan = document.getElementById('total').textContent;
+
+        // Kosongkan keranjang: simpan ke localStorage (angka navbar ikut 0),
+        // lalu gambar ulang (tampil pesan kosong & tombol jadi nonaktif)
+        cart = [];
+        saveCart();
+        renderCart();
+
+        // Pesan sukses tetap tampil setelah keranjang kosong
         document.getElementById('checkout-status').textContent =
-            'Simulasi selesai! Total pilihanmu ' + document.getElementById('total').textContent +
-            '. Tidak ada pembayaran atau pesanan yang dibuat.';
+            'Terima kasih! Pesanan simulasi senilai ' + totalPesanan +
+            ' berhasil dibuat. Tidak ada pembayaran atau pengiriman nyata.';
+        checkoutForm.reset();
     });
 
     // Gambar keranjang saat halaman dibuka
