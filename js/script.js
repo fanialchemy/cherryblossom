@@ -33,7 +33,7 @@ var products = [
         price: 289000,
         color: 'Merah muda',
         sizes: ukuranDewasa,
-        description: 'Sepatu merah muda dengan tali putih yang empuk banget, kayak kue mochi. Siap nemenin jalan santai sambil cari jajanan manis.'
+        description: 'Sneaker pink-putih dengan tali pink yang manis banget. Pas buat jalan santai sambil cari jajanan kesukaan.'
     },
     {
         id: 'momo-fuwa',
@@ -42,9 +42,9 @@ var products = [
         jenis: 'Sepatu',
         image: 'images/produk/momo-fuwa.jpg',
         price: 299000,
-        color: 'Peach lembut',
+        color: 'Pink gradasi',
         sizes: ukuranDewasa,
-        description: 'Warna peach lembut yang bikin hati ikut adem. Ringan dipakai seharian, cocok buat kamu yang suka tampil kalem tapi tetap gemas.'
+        description: 'Sneaker putih dengan gradasi pink lembut seperti langit sore. Ringan dipakai seharian, kalem tapi tetap gemas.'
     },
     {
         id: 'yume-kira',
@@ -53,9 +53,9 @@ var products = [
         jenis: 'Sepatu',
         image: 'images/produk/yume-kira.jpg',
         price: 319000,
-        color: 'Lavender',
+        color: 'Biru muda',
         sizes: ukuranDewasa,
-        description: 'Sepatu lavender dengan aksen berkilau kecil, seperti mimpi indah di siang hari. Pas buat ngopi cantik atau kencan santai.'
+        description: 'Sneaker biru muda berpadu krem dengan tali krem yang tebal dan empuk. Adem dilihat, nyaman dipakai ke mana saja.'
     },
     {
         id: 'hana-mochi',
@@ -64,9 +64,9 @@ var products = [
         jenis: 'Sepatu',
         image: 'images/produk/hana-mochi.jpg',
         price: 279000,
-        color: 'Krem susu',
+        color: 'Krem pastel',
         sizes: ukuranDewasa,
-        description: 'Krem susu yang hangat dan gampang dipadukan dengan baju apa saja. Sederhana, manis, dan bikin langkah terasa ringan.'
+        description: 'Sneaker krem pastel dengan aksen kuning dan biru yang ceria. Gampang dipadukan dengan baju apa pun.'
     },
 
     // ----- Dewasa · Sandal -----
@@ -77,9 +77,9 @@ var products = [
         jenis: 'Sandal',
         image: 'images/produk/niji-pyon.jpg',
         price: 189000,
-        color: 'Pastel warna-warni',
+        color: 'Pink nude',
         sizes: ukuranDewasa,
-        description: 'Tali pastel warna-warni seperti pelangi kecil di kakimu, lengkap dengan pengikat pergelangan. Ceria buat hari yang penuh warna.'
+        description: 'Sandal slide pink nude bermotif beruang yang menggemaskan. Empuk dan santai dipakai di rumah atau jalan dekat.'
     },
     {
         id: 'riri-chuu',
@@ -90,7 +90,7 @@ var products = [
         price: 159000,
         color: 'Merah muda',
         sizes: ukuranDewasa,
-        description: 'Sandal merah muda dengan aksen mint dan kuning. Imut, ringan, dan siap diajak jalan-jalan sore.'
+        description: 'Sandal jepit platform pink yang bikin langkah sedikit lebih tinggi. Ringan dan imut buat jalan-jalan sore.'
     },
     {
         id: 'lulu-sora',
@@ -99,9 +99,9 @@ var products = [
         jenis: 'Sandal',
         image: 'images/produk/lulu-sora.jpg',
         price: 229000,
-        color: 'Ungu muda',
+        color: 'Krem cokelat',
         sizes: ukuranDewasa,
-        description: 'Perpaduan ungu muda, merah muda, dan putih yang lembut seperti langit sore. Terinspirasi kelopak bunga di musim semi.'
+        description: 'Sandal slide krem dengan sol cokelat dan hiasan pita yang manis. Kalem, rapi, dan nyaman seharian.'
     },
     {
         id: 'nana-puru',
@@ -110,9 +110,9 @@ var products = [
         jenis: 'Sandal',
         image: 'images/produk/nana-puru.jpg',
         price: 199000,
-        color: 'Mint pastel',
+        color: 'Pink stroberi',
         sizes: ukuranDewasa,
-        description: 'Sandal mint pastel yang segar seperti es krim di hari panas. Nyaman dipakai santai di rumah maupun saat liburan.'
+        description: 'Sandal rumah pink dengan pita motif stroberi yang segar. Bikin waktu santai di rumah makin manis.'
     },
 
     // ----- Anak · Sepatu -----
@@ -123,9 +123,9 @@ var products = [
         jenis: 'Sepatu',
         image: 'images/produk/koko-tobi.jpg',
         price: 219000,
-        color: 'Biru pastel',
+        color: 'Krem cokelat',
         sizes: ukuranAnak,
-        description: 'Sepatu biru pastel untuk si kecil yang hobi lompat-lompat. Ringan dan lentur, siap menemani petualangan seharian.'
+        description: 'Sneaker anak krem dengan aksen cokelat, seperti kue cokelat susu. Ringan untuk si kecil yang hobi lompat-lompat.'
     },
     {
         id: 'pipi-kumo',
@@ -134,9 +134,9 @@ var products = [
         jenis: 'Sepatu',
         image: 'images/produk/pipi-kumo.jpg',
         price: 209000,
-        color: 'Biru langit',
+        color: 'Putih pink',
         sizes: ukuranAnak,
-        description: 'Seempuk awan di langit biru! Sepatu yang bikin si kecil semangat berangkat sekolah dan bermain di taman.'
+        description: 'Sneaker anak putih-pink bergambar kartun lucu. Bikin si kecil semangat berangkat sekolah dan bermain.'
     },
     {
         id: 'mimi-usa',
@@ -145,9 +145,9 @@ var products = [
         jenis: 'Sepatu',
         image: 'images/produk/mimi-usa.jpg',
         price: 229000,
-        color: 'Pink stroberi',
+        color: 'Pink glitter',
         sizes: ukuranAnak,
-        description: 'Pink stroberi dengan sentuhan kelinci yang menggemaskan. Langkah kecilnya jadi makin lucu dan percaya diri.'
+        description: 'Sepatu anak model tinggi warna pink yang berkilau. Langkah si kecil jadi makin percaya diri dan bersinar.'
     },
     {
         id: 'chibi-hoshi',
@@ -156,9 +156,9 @@ var products = [
         jenis: 'Sepatu',
         image: 'images/produk/chibi-hoshi.jpg',
         price: 199000,
-        color: 'Kuning lemon',
+        color: 'Putih pink',
         sizes: ukuranAnak,
-        description: 'Kuning lemon seceria bintang kecil. Gampang dipakai sendiri, cocok buat si kecil yang mulai belajar mandiri.'
+        description: 'Sepatu boots anak putih-pink dengan aksen ungu yang manis. Hangat dan imut untuk menemani petualangan si kecil.'
     },
 
     // ----- Anak · Sandal -----
@@ -169,9 +169,9 @@ var products = [
         jenis: 'Sandal',
         image: 'images/produk/nini-pyoko.jpg',
         price: 129000,
-        color: 'Merah muda',
+        color: 'Hijau alpukat',
         sizes: ukuranAnak,
-        description: 'Sandal merah muda yang bikin langkah si kecil terdengar "pyoko-pyoko". Ringan dan nyaman untuk bermain.'
+        description: 'Sandal clog anak hijau dengan hiasan alpukat yang menggemaskan. Ringan dan mudah dipakai sendiri.'
     },
     {
         id: 'tete-miru',
@@ -180,9 +180,9 @@ var products = [
         jenis: 'Sandal',
         image: 'images/produk/tete-miru.jpg',
         price: 139000,
-        color: 'Lila',
+        color: 'Pink unicorn',
         sizes: ukuranAnak,
-        description: 'Sandal lila bertali lembut yang manis dilihat. Pas buat jalan-jalan ke taman bunga bersama keluarga.'
+        description: 'Sandal clog anak pink bergambar unicorn yang ajaib. Cocok buat si kecil yang suka dongeng dan warna ceria.'
     },
     {
         id: 'popo-niko',
@@ -191,9 +191,9 @@ var products = [
         jenis: 'Sandal',
         image: 'images/produk/popo-niko.jpg',
         price: 149000,
-        color: 'Pastel warna-warni',
+        color: 'Putih',
         sizes: ukuranAnak,
-        description: 'Warna-warni pastel yang bikin si kecil senyum terus. Talinya mudah diatur, cocok untuk liburan ke pantai.'
+        description: 'Sandal slide anak putih bergambar wajah anak yang tersenyum. Simpel, lucu, dan nyaman untuk bersantai.'
     },
     {
         id: 'yuyu-puka',
@@ -202,9 +202,9 @@ var products = [
         jenis: 'Sandal',
         image: 'images/produk/yuyu-puka.jpg',
         price: 119000,
-        color: 'Peach',
+        color: 'Putih',
         sizes: ukuranAnak,
-        description: 'Sandal peach mungil yang empuk dan adem. Teman setia si kecil saat bersantai di rumah.'
+        description: 'Sandal clog anak putih dengan hiasan pita yang manis. Teman setia si kecil saat bermain di rumah.'
     }
 ];
 

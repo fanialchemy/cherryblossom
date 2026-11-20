@@ -486,22 +486,24 @@ header {
     margin-bottom: 28px;
 }
 
-/* Wadah gambar slide */
+/* Wadah gambar slide. Padding memberi ruang di sudut untuk maskot & bintang. */
 .hero-art {
     position: relative;
-    height: 420px;
+    padding: 24px;
 }
 
-/* Foto produk di slide (latar putih foto membaur dengan biru).
-   Diberi jarak dari tepi agar maskot & bintang punya tempat di sudut. */
+/* Foto slide tampil dengan warna asli seperti kartu foto:
+   sudut membulat, garis tepi putih, bayangan lembut. */
 .hero-foto {
-    position: absolute;
-    left: 10%;
-    top: 10%;
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-    mix-blend-mode: multiply;
+    display: block;
+    width: 100%;
+    max-width: 400px;        /* ukuran kartu foto di desktop */
+    aspect-ratio: 1 / 1;     /* selalu persegi, jadi tetap proporsional */
+    margin: 0 auto;
+    object-fit: cover;       /* foto mengisi kotak tanpa gepeng */
+    border: 6px solid var(--white);
+    border-radius: 28px;
+    box-shadow: var(--shadow-pink);
 }
 
 /* Maskot (kanan atas) & bintang ✧ (kiri bawah), tetap di dalam .hero-art */
@@ -699,21 +701,17 @@ header {
 .product-photo {
     position: relative;
     display: block;
-    background: var(--pink-soft);
+    background: #F7F4F6;     /* latar netral selama foto dimuat */
     border-radius: 20px;
     overflow: hidden;
     aspect-ratio: 1 / 1;
 }
 
-.product-item:nth-child(even) .product-photo {
-    background: var(--blue-sky);
-}
-
+/* Foto tampil dengan warna asli, mengisi kotak persegi */
 .product-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    mix-blend-mode: multiply;
 }
 
 /* Tag Dewasa/Anak (badge pill) */
@@ -1097,17 +1095,17 @@ footer .col-6 a:hover {
 .detail-photo {
     border-radius: 32px;
     border: 6px solid var(--white);
-    background: var(--blue-sky);
+    background: #F7F4F6;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     box-shadow: var(--shadow-pink);
 }
 
+/* Foto detail: warna asli, mengisi kotak persegi bersudut bulat */
 .detail-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    mix-blend-mode: multiply;
 }
 
 .detail-price {
@@ -1210,8 +1208,7 @@ footer .col-6 a:hover {
     height: 96px;
     object-fit: cover;
     border-radius: 18px;
-    background: var(--pink-soft);
-    mix-blend-mode: multiply;
+    background: #F7F4F6;
 }
 
 .cart-row h2 {
@@ -1584,10 +1581,6 @@ footer .col-6 a:hover {
         font-size: 1.375rem;
     }
 
-    .hero-art {
-        height: 340px;
-    }
-
     .hero-copy h1 {
         font-size: 3rem;
     }
@@ -1660,10 +1653,9 @@ footer .col-6 a:hover {
         font-size: 1rem;
     }
 
-    .hero-art {
-        height: 290px;
-        width: 86%;
-        margin: 0 auto;
+    /* Di HP kartu foto lebih kecil agar teks & foto muat */
+    .hero-foto {
+        max-width: 260px;
     }
 
     .f1 {

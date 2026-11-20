@@ -105,29 +105,30 @@ sama pada tiap halaman agar mudah dipelajari. Hiasan dipanggil dengan
 MENGGANTI FOTO
 Setiap produk punya file gambar sendiri di images/produk/ dengan nama sesuai id
 (misalnya images/produk/sakura-puni.jpg). Gambar carousel ada di
-images/banner/hero-1.jpg sampai hero-5.jpg. Saat ini isinya masih foto
-contoh. Cukup timpa file dengan foto baru bernama SAMA (format .jpg), tidak
-perlu mengubah kode.
+images/banner/hero-1.jpg sampai hero-5.jpg. Cukup timpa file dengan foto baru
+bernama SAMA (format .jpg), tidak perlu mengubah kode. Foto tampil dengan
+warna asli (tanpa efek warna) dan dipotong rapi menjadi persegi (object-fit:
+cover), jadi letakkan produk di tengah foto.
 
 DAFTAR PRODUK (16)
 id            Nama          Kategori  Jenis   Warna               Harga
 --------------------------------------------------------------------------
 sakura-puni   Sakura Puni   Dewasa    Sepatu  Merah muda          Rp289.000
-momo-fuwa     Momo Fuwa     Dewasa    Sepatu  Peach lembut        Rp299.000
-yume-kira     Yume Kira     Dewasa    Sepatu  Lavender            Rp319.000
-hana-mochi    Hana Mochi    Dewasa    Sepatu  Krem susu           Rp279.000
-niji-pyon     Niji Pyon     Dewasa    Sandal  Pastel warna-warni  Rp189.000
+momo-fuwa     Momo Fuwa     Dewasa    Sepatu  Pink gradasi        Rp299.000
+yume-kira     Yume Kira     Dewasa    Sepatu  Biru muda           Rp319.000
+hana-mochi    Hana Mochi    Dewasa    Sepatu  Krem pastel         Rp279.000
+niji-pyon     Niji Pyon     Dewasa    Sandal  Pink nude           Rp189.000
 riri-chuu     Riri Chuu     Dewasa    Sandal  Merah muda          Rp159.000
-lulu-sora     Lulu Sora     Dewasa    Sandal  Ungu muda           Rp229.000
-nana-puru     Nana Puru     Dewasa    Sandal  Mint pastel         Rp199.000
-koko-tobi     Koko Tobi     Anak      Sepatu  Biru pastel         Rp219.000
-pipi-kumo     Pipi Kumo     Anak      Sepatu  Biru langit         Rp209.000
-mimi-usa      Mimi Usa      Anak      Sepatu  Pink stroberi       Rp229.000
-chibi-hoshi   Chibi Hoshi   Anak      Sepatu  Kuning lemon        Rp199.000
-nini-pyoko    Nini Pyoko    Anak      Sandal  Merah muda          Rp129.000
-tete-miru     Tete Miru     Anak      Sandal  Lila                Rp139.000
-popo-niko     Popo Niko     Anak      Sandal  Pastel warna-warni  Rp149.000
-yuyu-puka     Yuyu Puka     Anak      Sandal  Peach               Rp119.000
+lulu-sora     Lulu Sora     Dewasa    Sandal  Krem cokelat        Rp229.000
+nana-puru     Nana Puru     Dewasa    Sandal  Pink stroberi       Rp199.000
+koko-tobi     Koko Tobi     Anak      Sepatu  Krem cokelat        Rp219.000
+pipi-kumo     Pipi Kumo     Anak      Sepatu  Putih pink          Rp209.000
+mimi-usa      Mimi Usa      Anak      Sepatu  Pink glitter        Rp229.000
+chibi-hoshi   Chibi Hoshi   Anak      Sepatu  Putih pink          Rp199.000
+nini-pyoko    Nini Pyoko    Anak      Sandal  Hijau alpukat       Rp129.000
+tete-miru     Tete Miru     Anak      Sandal  Pink unicorn        Rp139.000
+popo-niko     Popo Niko     Anak      Sandal  Putih               Rp149.000
+yuyu-puka     Yuyu Puka     Anak      Sandal  Putih               Rp119.000
 Ukuran dewasa: 36–40. Ukuran anak: 24–34.
 Produk unggulan di beranda: sakura-puni, koko-tobi, niji-pyon, riri-chuu,
 momo-fuwa, mimi-usa, lulu-sora, popo-niko.
@@ -150,23 +151,8 @@ bukti produk milik merek CHERRYBLOSSOM. Sebelum penggunaan komersial, gunakan
 foto sendiri atau foto berlisensi yang sesuai. Maskot, awan, dan kelopak
 digambar sendiri (SVG).
 
-SUMBER FOTO CONTOH
-Foto di images/produk/ dan images/banner/ adalah salinan dari foto berikut:
-- Apita/Piago (sepatu merah muda)
-  https://www.apitashop.com/shop/g/g001-02096110203057
-  -> sakura-puni, momo-fuwa, yume-kira, hana-mochi, hero-1
-- adidas, Tensaur Run 2.0 (sepatu anak)
-  https://www.adidas.co.uk/tensaur-run-2.0-shoes-kids/IE5989.html
-  -> koko-tobi, pipi-kumo, mimi-usa, chibi-hoshi, hero-3
-- Stylo, Multy Formal Sandal FR5145 (sandal warna-warni)
-  https://stylo.pk/products/multy-formal-sandal-fr5145
-  -> niji-pyon, nana-puru, popo-niko, hero-2
-- Stylo, koleksi sandal (sandal merah muda)
-  https://stylo.pk/collections/sandals
-  -> riri-chuu, nini-pyoko, yuyu-puka, hero-5
-- Diane Marie, Magnolia (sandal lila)
-  https://pantofidianemarie.ro/products/sandale-dama-din-piele-naturala-lila-cu-roz-magnolia
-  -> lulu-sora, tete-miru, hero-4
+SUMBER FOTO
+Foto produk: [ISI SUMBER FOTO]
 Bootstrap 5.3.9: https://getbootstrap.com/ (MIT, keterangan lisensi dalam berkas).
 Bootstrap Icons (ikon bag-heart): https://icons.getbootstrap.com/ (MIT).
 Font: Fredoka dan Nunito, diunduh melalui Google Fonts.
