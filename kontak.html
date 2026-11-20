@@ -79,8 +79,52 @@
                 <div class="col-md-4 contact-info">
                     <img class="contact-maskot" src="images/logo.png" alt="" aria-hidden="true">
                     <h2>Halo, teman blossom!</h2>
-                    <p>Gunakan formulir di samping untuk mengirim pesan.</p>
-                    <a class="btn btn-sm rounded-pill btn-outline-cherry" href="panduan-ukuran.html">Lihat panduan ukuran ↗</a>
+                    <p>Mungkin jawabanmu sudah ada di sini:</p>
+
+                    <!-- FAQ: Accordion Bootstrap. Semua tertutup di awal;
+                         data-bs-parent="#faq" membuat hanya satu yang terbuka -->
+                    <div class="accordion faq" id="faq">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">Berapa lama pesanan sampai?</button>
+                            </h3>
+                            <div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">Sekitar 2–4 hari kerja untuk Pulau Jawa dan 3–7 hari kerja untuk luar Jawa.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">Bagaimana memilih ukuran yang pas?</button>
+                            </h3>
+                            <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">Ukur panjang kakimu dari tumit sampai ujung jari terpanjang, lalu cocokkan dengan tabel di halaman <a href="panduan-ukuran.html">Panduan ukuran</a>.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Bisa tukar ukuran?</button>
+                            </h3>
+                            <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">Bisa, dalam 7 hari setelah barang diterima, selama belum dipakai di luar ruangan dan label masih lengkap.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">Metode pembayaran apa saja?</button>
+                            </h3>
+                            <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">Kamu bisa membayar lewat transfer bank, e-wallet, atau bayar di tempat (COD).</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">Bagaimana merawat sepatu dan sandal?</button>
+                            </h3>
+                            <div id="faq-5" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">Lap dengan kain lembut dan keringkan di tempat teduh. Cara merawat yang lebih detail ada di halaman masing-masing produk.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Form kontak (divalidasi oleh HTML + js/script.js) -->
@@ -107,6 +151,13 @@
                             <div class="col-12">
                                 <label for="message" class="form-label">Pesanmu</label>
                                 <textarea id="message" name="pesan" class="form-control" rows="5" minlength="10" maxlength="1000" placeholder="Ceritakan kebutuhanmu (minimal 10 karakter)…" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <!-- Checkbox opsional (tidak wajib dicentang) -->
+                                <div class="form-check">
+                                    <input id="promo" name="promo" class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="promo">Kirimi aku info promo dan koleksi terbaru</label>
+                                </div>
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-cherry" type="submit">Kirim pesan ↗</button>

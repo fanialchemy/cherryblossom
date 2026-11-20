@@ -73,36 +73,35 @@
 
         <!-- ===== KATALOG PRODUK ===== -->
         <section class="container pb-5">
-            <!-- ===== FILTER & PENCARIAN ===== -->
-            <div class="catalog-toolbar p-3 mb-4">
+            <!-- ===== FILTER & PENCARIAN (satu baris) =====
+                 Di layar besar: Kategori | Jenis ... pencarian di kanan.
+                 Di layar kecil: pencarian pindah ke baris paling atas (order-first). -->
+            <div class="catalog-toolbar d-flex flex-wrap align-items-center gap-2 px-3 px-md-4 py-3 mb-4">
 
-                <!-- Baris 1: kolom pencarian lebar penuh, ikon di dalam input -->
-                <label for="search" class="visually-hidden">Cari produk</label>
-                <div class="search-box position-relative mb-3">
+                <div class="d-flex flex-wrap align-items-center gap-2" role="group" aria-labelledby="label-kategori">
+                    <span id="label-kategori" class="filter-label">Kategori</span>
+                    <button class="btn rounded-pill filter active" type="button" data-filter-kategori="Semua">Semua</button>
+                    <button class="btn rounded-pill filter" type="button" data-filter-kategori="Anak">Anak</button>
+                    <button class="btn rounded-pill filter" type="button" data-filter-kategori="Dewasa">Dewasa</button>
+                </div>
+
+                <!-- Garis pemisah tipis (disembunyikan di HP) -->
+                <span class="filter-divider d-none d-md-block mx-1" aria-hidden="true"></span>
+
+                <div class="d-flex flex-wrap align-items-center gap-2" role="group" aria-labelledby="label-jenis">
+                    <span id="label-jenis" class="filter-label">Jenis</span>
+                    <button class="btn rounded-pill filter filter-biru active" type="button" data-filter-jenis="Semua">Semua</button>
+                    <button class="btn rounded-pill filter filter-biru" type="button" data-filter-jenis="Sepatu">Sepatu</button>
+                    <button class="btn rounded-pill filter filter-biru" type="button" data-filter-jenis="Sandal">Sandal</button>
+                </div>
+
+                <!-- Kolom pencarian: ikon di dalam input -->
+                <div class="search-box position-relative order-first order-lg-last ms-lg-auto">
+                    <label for="search" class="visually-hidden">Cari produk</label>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon position-absolute top-50 translate-middle-y" viewBox="0 0 16 16" aria-hidden="true">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                     </svg>
                     <input id="search" class="form-control" type="search" placeholder="Cari nama pasangan favoritmu...">
-                </div>
-
-                <!-- Baris 2: filter kategori | filter jenis -->
-                <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3">
-                    <div class="d-flex flex-wrap align-items-center gap-2" role="group" aria-labelledby="label-kategori">
-                        <span id="label-kategori" class="filter-label">Kategori</span>
-                        <button class="btn rounded-pill filter active" type="button" data-filter-kategori="Semua">Semua</button>
-                        <button class="btn rounded-pill filter" type="button" data-filter-kategori="Anak">Anak</button>
-                        <button class="btn rounded-pill filter" type="button" data-filter-kategori="Dewasa">Dewasa</button>
-                    </div>
-
-                    <!-- Garis pemisah tipis (disembunyikan di HP) -->
-                    <span class="filter-divider d-none d-md-block" aria-hidden="true"></span>
-
-                    <div class="d-flex flex-wrap align-items-center gap-2" role="group" aria-labelledby="label-jenis">
-                        <span id="label-jenis" class="filter-label">Jenis</span>
-                        <button class="btn rounded-pill filter filter-biru active" type="button" data-filter-jenis="Semua">Semua</button>
-                        <button class="btn rounded-pill filter filter-biru" type="button" data-filter-jenis="Sepatu">Sepatu</button>
-                        <button class="btn rounded-pill filter filter-biru" type="button" data-filter-jenis="Sandal">Sandal</button>
-                    </div>
                 </div>
             </div>
 

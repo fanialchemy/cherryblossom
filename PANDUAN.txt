@@ -15,7 +15,7 @@ HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline).
   Bootstrap (d-flex, py-5, mb-4, text-center, d-none d-md-inline, dll.).
 - Komponen Bootstrap: navbar, carousel, card, badge,
   btn / btn-sm rounded-pill, breadcrumb, table table-striped, form-control,
-  form-select, modal, dropdown.
+  form-select, form-check, modal, dropdown, accordion.
 - Hiasan awan & kelopak hanya di hero, kartu kategori, banner promo, dan
   cerita singkat; disembunyikan di HP dengan class "d-none d-md-block".
 - Ikon tas belanja "bag-heart" (navbar) dan kaca pembesar "search" (kolom
@@ -66,7 +66,9 @@ checkout.html  : penanda langkah (1 Keranjang - 2 Pengiriman - 3 Selesai),
                  Jika keranjang kosong, form diganti pesan kosong.
 tentang.html   : kolase foto produk + cerita merek, tiga nilai merek,
                  tombol "Jelajahi koleksi", dan penjelasan proyek.
-kontak.html    : formulir (required, email, minlength) dengan
+kontak.html    : FAQ 5 pertanyaan (Accordion Bootstrap, satu terbuka
+                 sekaligus), formulir (required, email, minlength,
+                 checkbox promo opsional) dengan
                  validasi tambahan JavaScript dan pop-up (Modal Bootstrap)
                  "Pesan terkirim!"; section "Kunjungi toko kami"
                  berisi alamat, jam buka, nomor contoh, dan peta Google Maps.
