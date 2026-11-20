@@ -83,12 +83,12 @@ Untuk mengganti lokasi peta, ubah teks setelah "q=" pada atribut src iframe
 di kontak.html (spasi ditulis %20, koma ditulis %2C), lalu ubah juga teks
 alamat di atasnya.
 
-ISI CAROUSEL BERANDA (5 SLIDE)
-1. Koleksi pastel       -> produk.html                   (images/banner/hero-1.png)
-2. Sandal warna-warni   -> detail.html?id=niji-pyon      (images/banner/hero-2.png)
-3. Koleksi anak         -> produk.html?kategori=Anak     (images/banner/hero-3.png)
-4. Koleksi dewasa       -> produk.html?kategori=Dewasa   (images/banner/hero-4.png)
-5. Produk terbaru       -> detail.html?id=riri-chuu      (images/banner/hero-5.png)
+ISI CAROUSEL BERANDA (5 SLIDE, bergantian dewasa - anak)
+1. Momo Fuwa (dewasa)   -> detail.html?id=momo-fuwa      (images/banner/hero-1.png)
+2. Koko Tobi (anak)     -> produk.html?kategori=Anak     (images/banner/hero-3.png)
+3. Niji Pyon (dewasa)   -> detail.html?id=niji-pyon      (images/banner/hero-4.png)
+4. Nini Pyoko (anak)    -> detail.html?id=nini-pyoko     (images/banner/hero-2.png)
+5. Sakura Puni (dewasa) -> detail.html?id=sakura-puni    (images/banner/hero-5.png)
 
 STRUKTUR FOLDER
 CHERRYBLOSSOM/
