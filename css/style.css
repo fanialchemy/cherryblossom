@@ -614,11 +614,13 @@ header {
 }
 
 /* Indikator carousel: titik pink, yang aktif lebih panjang */
-.hero-section .carousel-indicators {
+.hero-section .carousel-indicators,
+.detail-carousel .carousel-indicators {
     margin-bottom: 18px;
 }
 
-.hero-section .carousel-indicators [data-bs-target] {
+.hero-section .carousel-indicators [data-bs-target],
+.detail-carousel .carousel-indicators [data-bs-target] {
     width: 10px;
     height: 10px;
     border: 2px solid var(--white);
@@ -627,7 +629,8 @@ header {
     opacity: .6;
 }
 
-.hero-section .carousel-indicators .active {
+.hero-section .carousel-indicators .active,
+.detail-carousel .carousel-indicators .active {
     width: 30px;
     border-radius: 10px;
     opacity: 1;
@@ -1203,6 +1206,14 @@ footer .col-6 a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Slider foto detail (dibuat js/script.js jika foto lebih dari 1):
+   setiap bagian setinggi kotak foto agar gambar tetap persegi */
+.detail-carousel,
+.detail-carousel .carousel-inner,
+.detail-carousel .carousel-item {
+    height: 100%;
 }
 
 .detail-price {

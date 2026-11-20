@@ -20,6 +20,8 @@
    - jenis    : "Sepatu" atau "Sandal"
    - material : bahan singkat, tampil di kotak "Bahan & perawatan" (detail.html)
    - care     : cara merawat sesuai bahan, tampil di kotak yang sama
+   - images   : daftar foto untuk slider di detail.html. Foto pertama
+                selalu sama dengan "image" (dipakai kartu & keranjang)
    Kartu produk di produk.html dan index.html ditulis langsung di HTML,
    jadi id, nama, harga, dan kategori di sana harus sama dengan data ini. */
 var ukuranDewasa = [36, 37, 38, 39, 40];
@@ -33,6 +35,7 @@ var products = [
         category: 'Dewasa',
         jenis: 'Sepatu',
         image: 'images/produk/sakura-puni.jpg',
+        images: ['images/produk/sakura-puni.jpg', 'images/produk/sakura-puni2.jpg'],
         price: 289000,
         color: 'Merah muda',
         sizes: ukuranDewasa,
@@ -46,6 +49,7 @@ var products = [
         category: 'Dewasa',
         jenis: 'Sepatu',
         image: 'images/produk/momo-fuwa.jpg',
+        images: ['images/produk/momo-fuwa.jpg', 'images/produk/momo-fuwa2.jpg', 'images/produk/momo-fuwa3.jpg'],
         price: 299000,
         color: 'Pink gradasi',
         sizes: ukuranDewasa,
@@ -59,6 +63,7 @@ var products = [
         category: 'Dewasa',
         jenis: 'Sepatu',
         image: 'images/produk/yume-kira.jpg',
+        images: ['images/produk/yume-kira.jpg', 'images/produk/yume-kira2.jpg', 'images/produk/yume-kira3.jpg'],
         price: 319000,
         color: 'Biru muda',
         sizes: ukuranDewasa,
@@ -72,6 +77,7 @@ var products = [
         category: 'Dewasa',
         jenis: 'Sepatu',
         image: 'images/produk/hana-mochi.jpg',
+        images: ['images/produk/hana-mochi.jpg', 'images/produk/hana-mochi2.jpg', 'images/produk/hana-mochi3.jpg'],
         price: 279000,
         color: 'Krem pastel',
         sizes: ukuranDewasa,
@@ -87,6 +93,7 @@ var products = [
         category: 'Dewasa',
         jenis: 'Sandal',
         image: 'images/produk/niji-pyon.jpg',
+        images: ['images/produk/niji-pyon.jpg'],
         price: 189000,
         color: 'Pink nude',
         sizes: ukuranDewasa,
@@ -100,6 +107,7 @@ var products = [
         category: 'Dewasa',
         jenis: 'Sandal',
         image: 'images/produk/riri-chuu.jpg',
+        images: ['images/produk/riri-chuu.jpg', 'images/produk/riri-chuu2.jpg', 'images/produk/riri-chuu3.jpg'],
         price: 159000,
         color: 'Merah muda',
         sizes: ukuranDewasa,
@@ -113,6 +121,7 @@ var products = [
         category: 'Dewasa',
         jenis: 'Sandal',
         image: 'images/produk/lulu-sora.jpg',
+        images: ['images/produk/lulu-sora.jpg', 'images/produk/lulu-sora2.jpg', 'images/produk/lulu-sora3.jpg'],
         price: 229000,
         color: 'Krem cokelat',
         sizes: ukuranDewasa,
@@ -126,6 +135,7 @@ var products = [
         category: 'Dewasa',
         jenis: 'Sandal',
         image: 'images/produk/nana-puru.jpg',
+        images: ['images/produk/nana-puru.jpg', 'images/produk/nana-puru2.jpg'],
         price: 199000,
         color: 'Pink stroberi',
         sizes: ukuranDewasa,
@@ -141,6 +151,7 @@ var products = [
         category: 'Anak',
         jenis: 'Sepatu',
         image: 'images/produk/koko-tobi.jpg',
+        images: ['images/produk/koko-tobi.jpg', 'images/produk/koko-tobi2.jpg'],
         price: 219000,
         color: 'Krem cokelat',
         sizes: ukuranAnak,
@@ -154,6 +165,7 @@ var products = [
         category: 'Anak',
         jenis: 'Sepatu',
         image: 'images/produk/pipi-kumo.jpg',
+        images: ['images/produk/pipi-kumo.jpg', 'images/produk/pipi-kumo2.jpg'],
         price: 209000,
         color: 'Putih pink',
         sizes: ukuranAnak,
@@ -167,6 +179,7 @@ var products = [
         category: 'Anak',
         jenis: 'Sepatu',
         image: 'images/produk/mimi-usa.jpg',
+        images: ['images/produk/mimi-usa.jpg', 'images/produk/mimi-usa2.jpg'],
         price: 229000,
         color: 'Pink glitter',
         sizes: ukuranAnak,
@@ -180,6 +193,7 @@ var products = [
         category: 'Anak',
         jenis: 'Sepatu',
         image: 'images/produk/chibi-hoshi.jpg',
+        images: ['images/produk/chibi-hoshi.jpg', 'images/produk/chibi-hoshi2.jpg', 'images/produk/chibi-hoshi3.jpg'],
         price: 199000,
         color: 'Putih pink',
         sizes: ukuranAnak,
@@ -195,6 +209,7 @@ var products = [
         category: 'Anak',
         jenis: 'Sandal',
         image: 'images/produk/nini-pyoko.jpg',
+        images: ['images/produk/nini-pyoko.jpg', 'images/produk/nini-pyoko2.jpg'],
         price: 129000,
         color: 'Hijau alpukat',
         sizes: ukuranAnak,
@@ -208,6 +223,7 @@ var products = [
         category: 'Anak',
         jenis: 'Sandal',
         image: 'images/produk/tete-miru.jpg',
+        images: ['images/produk/tete-miru.jpg', 'images/produk/tete-miru2.jpg'],
         price: 139000,
         color: 'Pink unicorn',
         sizes: ukuranAnak,
@@ -221,6 +237,7 @@ var products = [
         category: 'Anak',
         jenis: 'Sandal',
         image: 'images/produk/popo-niko.jpg',
+        images: ['images/produk/popo-niko.jpg', 'images/produk/popo-niko2.jpg'],
         price: 149000,
         color: 'Putih',
         sizes: ukuranAnak,
@@ -234,6 +251,7 @@ var products = [
         category: 'Anak',
         jenis: 'Sandal',
         image: 'images/produk/yuyu-puka.jpg',
+        images: ['images/produk/yuyu-puka.jpg', 'images/produk/yuyu-puka2.jpg', 'images/produk/yuyu-puka3.jpg'],
         price: 119000,
         color: 'Putih',
         sizes: ukuranAnak,
@@ -394,6 +412,44 @@ if (addForm) {
     var gambar = document.getElementById('detail-image');
     gambar.src = product.image;
     gambar.alt = product.name + ' berwarna ' + product.color.toLowerCase();
+
+    // Lebih dari 1 foto: ganti gambar biasa dengan Carousel Bootstrap
+    if (product.images.length > 1) {
+        var indikator = '';
+        var slide = '';
+        for (var f = 0; f < product.images.length; f++) {
+            var aktif = (f === 0) ? ' active' : '';
+            indikator += `<button type="button" data-bs-target="#foto-carousel" data-bs-slide-to="${f}"
+                class="${aktif}" ${f === 0 ? 'aria-current="true"' : ''} aria-label="Foto ${f + 1}"></button>`;
+            slide += `<div class="carousel-item${aktif}">
+                <img src="${product.images[f]}" alt="${product.name} - foto ${f + 1}">
+            </div>`;
+        }
+
+        document.querySelector('.detail-photo').innerHTML = `
+            <div id="foto-carousel" class="carousel slide detail-carousel"
+                 data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="hover">
+                <div class="carousel-indicators">${indikator}</div>
+                <div class="carousel-inner">${slide}</div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#foto-carousel" data-bs-slide="prev">
+                    <span aria-hidden="true">←</span>
+                    <span class="visually-hidden">Foto sebelumnya</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#foto-carousel" data-bs-slide="next">
+                    <span aria-hidden="true">→</span>
+                    <span class="visually-hidden">Foto berikutnya</span>
+                </button>
+            </div>
+        `;
+
+        // Carousel dibuat setelah halaman dimuat, jadi diaktifkan manual
+        // agar tetap berganti otomatis (berhenti saat kursor di atas foto)
+        bootstrap.Carousel.getOrCreateInstance(document.getElementById('foto-carousel'), {
+            interval: 4000,
+            pause: 'hover',
+            ride: 'carousel'
+        });
+    }
 
     // Buat pilihan ukuran (<option>) sesuai ukuran produk
     var pilihanUkuran = document.getElementById('size');

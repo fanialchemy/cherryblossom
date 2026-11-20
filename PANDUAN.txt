@@ -49,7 +49,10 @@ produk.html    : katalog 16 produk (card + grid), filter kategori
                  (Semua/Anak/Dewasa), filter jenis (Semua/Sepatu/Sandal),
                  dan pencarian nama. Filter bisa dibuka dari URL,
                  contoh produk.html?kategori=Anak.
-detail.html    : detail produk diisi JavaScript dari ?id= di URL
+detail.html    : detail produk diisi JavaScript dari ?id= di URL; jika produk
+                 punya lebih dari 1 foto (field images), foto tampil sebagai
+                 slider (Carousel Bootstrap, otomatis 4 detik, berhenti saat
+                 kursor di atas foto);
                  (contoh detail.html?id=sakura-puni), breadcrumb, pilihan
                  ukuran + link "Bingung ukuran? Lihat panduan ukuran",
                  jumlah, tambah ke keranjang, kotak "Bahan & perawatan"
@@ -108,7 +111,8 @@ CHERRYBLOSSOM/
 │   ├── banner/
 │   │   └── hero-1.png ... hero-5.png   -> gambar 5 slide carousel
 │   ├── produk/
-│   │   └── <id-produk>.jpg        -> 16 file, satu per produk
+│   │   └── <id-produk>.jpg        -> foto utama tiap produk (+ <id>2.jpg,
+│   │                                 <id>3.jpg untuk slider di detail)
 │   └── dekor/
 │       ├── maskot.svg             -> sumber awal logo.png (tidak dipakai halaman)
 │       ├── awan.svg               -> awan putih
