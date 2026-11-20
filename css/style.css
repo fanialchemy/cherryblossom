@@ -1169,6 +1169,35 @@ footer .col-6 a:hover {
     font-size: 0.9375rem;
 }
 
+/* Validasi tanpa JS: warna muncul HANYA setelah pengguna mengisi kolom
+   (:user-invalid / :user-valid), bukan saat halaman baru dibuka */
+.form-control:user-invalid,
+.form-select:user-invalid,
+.form-check-input:user-invalid {
+    border-color: #EB7F8C;
+    box-shadow: 0 0 0 4px rgba(235, 127, 140, .18);
+}
+
+.form-control:user-valid,
+.form-select:user-valid {
+    border-color: #86CFA4;
+}
+
+/* Keterangan kecil merah di bawah kolom yang salah */
+.field-hint {
+    display: none;
+    margin-top: 6px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #C9414E;
+}
+
+.form-control:user-invalid ~ .field-hint,
+.form-select:user-invalid ~ .field-hint,
+.form-check-input:user-invalid ~ .field-hint {
+    display: block;
+}
+
 /* Pesan hasil (berhasil ditambahkan, form terkirim, dll.) */
 .status-message {
     margin-top: 16px;

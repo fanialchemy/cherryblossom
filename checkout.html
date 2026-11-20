@@ -86,20 +86,28 @@
 
             <div id="checkout-content" class="row g-4 g-lg-5">
 
-                <!-- Form data pengiriman (validasi cukup dengan atribut HTML) -->
+                <!-- Form data pengiriman, divalidasi bawaan HTML:
+                     - Nama: required, minlength 3, maxlength 60, pattern huruf (diawali huruf; boleh spasi, titik, apostrof)
+                     - No. HP: required, type tel, pattern 08 + 8-11 angka (total 10-13 digit), maxlength 13
+                     - Alamat: required, minlength 10, maxlength 200 (JS menambah cek trim() agar bukan hanya spasi)
+                     - Pembayaran: required (select)
+                     - Catatan: opsional, maxlength 200 -->
                 <div class="col-lg-7">
                     <form id="checkout-form" class="summary">
                         <div class="mb-3">
                             <label for="co-name" class="form-label">Nama lengkap</label>
-                            <input id="co-name" name="nama" type="text" class="form-control" minlength="3" required autocomplete="name">
+                            <input id="co-name" name="nama" type="text" class="form-control" minlength="3" maxlength="60" pattern="[A-Za-z][A-Za-z .']{2,59}" title="Isi nama dengan huruf, minimal 3 karakter" required autocomplete="name">
+                            <small class="field-hint">Isi nama dengan huruf, minimal 3 karakter.</small>
                         </div>
                         <div class="mb-3">
                             <label for="co-phone" class="form-label">Nomor HP/WhatsApp</label>
-                            <input id="co-phone" name="hp" type="tel" class="form-control" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,13}" title="Isi 10–13 digit angka, tanpa spasi atau tanda strip" required autocomplete="tel">
+                            <input id="co-phone" name="hp" type="tel" class="form-control" placeholder="08xxxxxxxxxx" pattern="08[0-9]{8,11}" inputmode="numeric" maxlength="13" title="Diawali 08, total 10–13 digit angka tanpa spasi atau strip" required autocomplete="tel">
+                            <small class="field-hint">Diawali 08, total 10–13 digit angka tanpa spasi atau strip.</small>
                         </div>
                         <div class="mb-3">
                             <label for="co-address" class="form-label">Alamat lengkap</label>
-                            <textarea id="co-address" name="alamat" class="form-control" rows="3" required autocomplete="street-address"></textarea>
+                            <textarea id="co-address" name="alamat" class="form-control" rows="3" minlength="10" maxlength="200" required autocomplete="street-address"></textarea>
+                            <small class="field-hint">Isi alamat lengkap, minimal 10 karakter.</small>
                         </div>
                         <div class="mb-3">
                             <label for="co-payment" class="form-label">Metode pembayaran</label>
@@ -109,15 +117,17 @@
                                 <option>E-wallet</option>
                                 <option>Bayar di tempat/COD</option>
                             </select>
+                            <small class="field-hint">Pilih salah satu metode pembayaran.</small>
                         </div>
                         <div class="mb-4">
                             <label for="co-note" class="form-label">Catatan <span class="fw-normal">(opsional)</span></label>
-                            <textarea id="co-note" name="catatan" class="form-control" rows="2"></textarea>
+                            <textarea id="co-note" name="catatan" class="form-control" rows="2" maxlength="200"></textarea>
                         </div>
                         <div class="d-flex flex-wrap align-items-center gap-3">
                             <button class="btn btn-cherry" type="submit">Buat pesanan ↗</button>
                             <a class="btn btn-sm rounded-pill btn-outline-cherry" href="keranjang.html">← Kembali ke keranjang</a>
                         </div>
+                        <p id="checkout-status" role="status" class="status-message"></p>
                     </form>
                 </div>
 

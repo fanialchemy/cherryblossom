@@ -126,17 +126,24 @@
                     </div>
                 </div>
 
-                <!-- Form kontak (divalidasi oleh HTML + js/script.js) -->
+                <!-- Form kontak, divalidasi bawaan HTML (+ sedikit js/script.js):
+                     - Nama: required, type text, minlength 2, maxlength 80, pattern huruf (diawali huruf; boleh spasi, titik, apostrof)
+                     - Email: required, type email, maxlength 100, pattern wajib ada "@" dan titik domain (nama@contoh.com)
+                     - Topik: required (select)
+                     - Pesan: required, minlength 10, maxlength 1000 (JS menambah cek trim() agar bukan hanya spasi)
+                     - Persetujuan: checkbox required -->
                 <div class="col-md-8">
                     <form id="contact-form" class="contact-form">
                         <div class="row g-4">
                             <div class="col-sm-6">
                                 <label for="name" class="form-label">Nama lengkap</label>
-                                <input id="name" name="nama" class="form-control" placeholder="Nama kamu" minlength="2" maxlength="80" required autocomplete="name">
+                                <input id="name" name="nama" type="text" class="form-control" placeholder="Nama kamu" minlength="2" maxlength="80" pattern="[A-Za-z][A-Za-z .']{1,79}" title="Isi nama dengan huruf, minimal 2 karakter" required autocomplete="name">
+                                <small class="field-hint">Isi nama dengan huruf, minimal 2 karakter.</small>
                             </div>
                             <div class="col-sm-6">
                                 <label for="email" class="form-label">Alamat email</label>
-                                <input id="email" name="email" class="form-control" type="email" placeholder="nama@contoh.com" required autocomplete="email">
+                                <input id="email" name="email" class="form-control" type="email" placeholder="nama@contoh.com" maxlength="100" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Contoh format: nama@contoh.com" required autocomplete="email">
+                                <small class="field-hint">Contoh format: nama@contoh.com</small>
                             </div>
                             <div class="col-12">
                                 <label for="topic" class="form-label">Topik pesan</label>
@@ -146,16 +153,19 @@
                                     <option>Panduan ukuran</option>
                                     <option>Saran dan masukan</option>
                                 </select>
+                                <small class="field-hint">Pilih salah satu topik.</small>
                             </div>
                             <div class="col-12">
                                 <label for="message" class="form-label">Pesanmu</label>
                                 <textarea id="message" name="pesan" class="form-control" rows="5" minlength="10" maxlength="1000" placeholder="Ceritakan kebutuhanmu (minimal 10 karakter)…" required></textarea>
+                                <small class="field-hint">Tulis pesan minimal 10 karakter.</small>
                             </div>
                             <div class="col-12">
                                 <!-- Checkbox wajib (required): divalidasi bawaan HTML -->
                                 <div class="form-check">
                                     <input id="setuju" name="setuju" class="form-check-input" type="checkbox" required>
                                     <label class="form-check-label" for="setuju">Aku setuju data di atas digunakan untuk membalas pesanku.</label>
+                                    <small class="field-hint">Centang persetujuan ini untuk mengirim pesan.</small>
                                 </div>
                             </div>
                             <div class="col-12">

@@ -643,6 +643,16 @@ if (checkoutForm) {
             return;
         }
 
+        // Cek tambahan: alamat tidak boleh hanya berisi spasi
+        var alamat = document.getElementById('co-address').value.trim();
+        var status = document.getElementById('checkout-status');
+
+        if (alamat.length < 10) {
+            status.textContent = 'Isi alamat lengkap minimal 10 karakter, bukan hanya spasi.';
+            return;
+        }
+        status.textContent = '';
+
         // Simpan nama dan total dulu, sebelum keranjang dikosongkan
         var nama = document.getElementById('co-name').value.trim();
         var totalTeks = document.getElementById('order-total').textContent;
