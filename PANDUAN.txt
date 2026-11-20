@@ -15,7 +15,7 @@ HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline).
   Bootstrap (d-flex, py-5, mb-4, text-center, d-none d-md-inline, dll.).
 - Komponen Bootstrap: navbar, carousel, card, badge,
   btn / btn-sm rounded-pill, breadcrumb, table table-striped, form-control,
-  form-select, form-check.
+  form-select.
 - Hiasan awan & kelopak hanya di hero, kartu kategori, banner promo, dan
   cerita singkat; disembunyikan di HP dengan class "d-none d-md-block".
 - Ikon tas belanja "bag-heart" (navbar) dan kaca pembesar "search" (kolom
@@ -50,15 +50,16 @@ produk.html    : katalog 16 produk (card + grid), filter kategori
 detail.html    : detail produk diisi JavaScript dari ?id= di URL
                  (contoh detail.html?id=sakura-puni), breadcrumb, pilihan
                  ukuran + link "Bingung ukuran? Lihat panduan ukuran",
-                 jumlah, tambah ke keranjang, kotak "Perawatan & ukuran"
-                 di bawah foto (link ke panduan-ukuran.html).
+                 jumlah, tambah ke keranjang, kotak "Bahan & perawatan"
+                 di bawah foto (diisi dari field material & care).
 keranjang.html : daftar belanja, ubah jumlah (1–10), hapus barang,
                  total Rupiah, dan form "Data pengiriman" (nama, nomor HP,
                  alamat, metode pembayaran, catatan) yang divalidasi
-                 atribut HTML; tombol "Selesaikan simulasi" = tombol submit.
+                 atribut HTML; tombol "Buat pesanan" = tombol submit. Setelah
+                 dikirim, keranjang dikosongkan dan muncul pesan terima kasih.
 tentang.html   : kolase foto produk + cerita merek, tiga nilai merek,
                  tombol "Jelajahi koleksi", dan penjelasan proyek.
-kontak.html    : formulir (required, email, minlength, checkbox) dengan
+kontak.html    : formulir (required, email, minlength) dengan
                  validasi tambahan JavaScript; section "Kunjungi toko kami"
                  berisi alamat, jam buka, nomor contoh, dan peta Google Maps.
 
@@ -93,12 +94,13 @@ CHERRYBLOSSOM/
 │   ├── bootstrap.bundle.min.js    -> Bootstrap 5.3.9 (offline)
 │   └── script.js                  -> data produk, filter, detail, keranjang, form
 ├── images/
+│   ├── logo.png                   -> logo di navbar & footer semua halaman
 │   ├── banner/
 │   │   └── hero-1.jpg ... hero-5.jpg   -> gambar 5 slide carousel
 │   ├── produk/
 │   │   └── <id-produk>.jpg        -> 16 file, satu per produk
 │   └── dekor/
-│       ├── maskot.svg             -> maskot bunga sakura (logo, hiasan, banner promo)
+│       ├── maskot.svg             -> maskot bunga sakura (hiasan, banner promo)
 │       ├── awan.svg               -> awan putih
 │       └── kelopak.svg            -> kelopak sakura
 ├── fonts/                         -> 9 file .ttf (Fredoka & Nunito)
@@ -116,6 +118,9 @@ images/banner/hero-1.jpg sampai hero-5.jpg. Cukup timpa file dengan foto baru
 bernama SAMA (format .jpg), tidak perlu mengubah kode. Foto tampil dengan
 warna asli (tanpa efek warna) dan dipotong rapi menjadi persegi (object-fit:
 cover), jadi letakkan produk di tengah foto.
+Logo navbar & footer ada di images/logo.png. Timpa dengan logo baru bernama
+SAMA; tingginya diatur CSS (44px navbar, 40px footer), lebarnya mengikuti
+proporsi gambar, jadi logo persegi maupun memanjang tetap tampil rapi.
 
 DAFTAR PRODUK (16)
 id            Nama          Kategori  Jenis   Warna               Harga
@@ -148,7 +153,7 @@ ALUR KERANJANG
 Data produk ada di awal js/script.js. Harga tidak diambil dari input pengunjung.
 Keranjang menyimpan id produk, ukuran, dan jumlah dalam localStorage
 (kunci "cherry-cart"). Jumlah dibatasi 1–10 pasang per produk/ukuran.
-Tombol simulasi tidak memproses transaksi. Form kontak tidak mengirim atau
+Tombol "Buat pesanan" tidak memproses transaksi nyata. Form kontak tidak mengirim atau
 menyimpan data.
 
 CATATAN KONTEN

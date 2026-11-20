@@ -17,6 +17,8 @@
    - id       : kode unik, dipakai di URL detail.html?id=... dan nama file gambar
    - category : "Dewasa" atau "Anak"
    - jenis    : "Sepatu" atau "Sandal"
+   - material : bahan singkat, tampil di kotak "Bahan & perawatan" (detail.html)
+   - care     : cara merawat sesuai bahan, tampil di kotak yang sama
    Kartu produk di produk.html dan index.html ditulis langsung di HTML,
    jadi id, nama, harga, dan kategori di sana harus sama dengan data ini. */
 var ukuranDewasa = [36, 37, 38, 39, 40];
@@ -33,7 +35,9 @@ var products = [
         price: 289000,
         color: 'Merah muda',
         sizes: ukuranDewasa,
-        description: 'Sneaker pink-putih dengan tali pink yang manis banget. Pas buat jalan santai sambil cari jajanan kesukaan.'
+        description: 'Sneaker pink-putih dengan tali pink tebal yang manis banget, plus garis putih di samping dan bordir pita kecil yang bikin senyum. Bagian dalamnya empuk, jadi kaki tetap nyaman walau dipakai jalan lama. Pas buat jalan santai sambil cari jajanan kesukaan. Padukan dengan rok plisket atau celana jeans biru muda.',
+        material: 'Kulit sintetis, sol karet',
+        care: 'Lap bagian luar dengan kain lembap, lalu keringkan di tempat teduh. Lepas tali pinknya dan cuci terpisah dengan sabun lembut agar warnanya tetap cerah. Hindari menjemur di bawah terik matahari langsung.'
     },
     {
         id: 'momo-fuwa',
@@ -44,7 +48,9 @@ var products = [
         price: 299000,
         color: 'Pink gradasi',
         sizes: ukuranDewasa,
-        description: 'Sneaker putih dengan gradasi pink lembut seperti langit sore. Ringan dipakai seharian, kalem tapi tetap gemas.'
+        description: 'Sneaker putih dengan gradasi pink lembut seperti langit sore, lengkap dengan tali pita lebar yang menjuntai manis. Bobotnya ringan dan solnya empuk, jadi nyaman dipakai dari pagi sampai malam. Cocok untuk kuliah, kerja santai, atau nongkrong di kafe. Makin gemas dipadukan dengan kaus putih dan rok denim.',
+        material: 'Kulit sintetis, sol karet',
+        care: 'Bersihkan noda dengan kain lembap dan sedikit sabun lembut, jangan digosok terlalu keras agar gradasi pinknya tidak pudar. Tali pita bisa dilepas dan dicuci tangan. Keringkan di tempat teduh berangin.'
     },
     {
         id: 'yume-kira',
@@ -55,7 +61,9 @@ var products = [
         price: 319000,
         color: 'Biru muda',
         sizes: ukuranDewasa,
-        description: 'Sneaker biru muda berpadu krem dengan tali krem yang tebal dan empuk. Adem dilihat, nyaman dipakai ke mana saja.'
+        description: 'Sneaker biru muda berpadu krem dengan tali tebal bergelombang yang empuk seperti marshmallow. Ada hiasan bunga kecil di sampingnya yang manis kalau dilihat dari dekat. Solnya tebal tapi tetap ringan, nyaman untuk jalan-jalan ke taman atau pusat kota. Serasi dengan kemeja putih, celana kulot, atau dress pastel.',
+        material: 'Kulit sintetis, sol karet',
+        care: 'Lap permukaan sepatu dengan kain lembap setelah dipakai. Tali krem yang tebal sebaiknya dilepas dan dicuci tangan dengan air sabun, lalu dijemur di tempat teduh. Simpan di tempat kering agar sepatu tidak lembap.'
     },
     {
         id: 'hana-mochi',
@@ -66,7 +74,9 @@ var products = [
         price: 279000,
         color: 'Krem pastel',
         sizes: ukuranDewasa,
-        description: 'Sneaker krem pastel dengan aksen kuning dan biru yang ceria. Gampang dipadukan dengan baju apa pun.'
+        description: 'Sneaker krem pastel dengan aksen kuning dan biru yang ceria, seperti es krim tiga rasa. Tali kremnya tebal dan solnya sedikit tinggi, jadi langkah terasa mantap sekaligus empuk. Asyik dipakai untuk jalan-jalan akhir pekan atau piknik bareng teman. Gampang dipadukan dengan celana jeans, overall, atau kaus warna netral.',
+        material: 'Kulit sintetis, sol karet',
+        care: 'Lap bagian luar dengan kain lembap dan sabun lembut, terutama pada bagian krem yang mudah terlihat kotor. Sikat sol karet dengan sikat gigi bekas. Keringkan di tempat teduh, jangan dimasukkan ke mesin pengering.'
     },
 
     // ----- Dewasa · Sandal -----
@@ -79,7 +89,9 @@ var products = [
         price: 189000,
         color: 'Pink nude',
         sizes: ukuranDewasa,
-        description: 'Sandal slide pink nude bermotif beruang yang menggemaskan. Empuk dan santai dipakai di rumah atau jalan dekat.'
+        description: 'Sandal slide pink nude dengan wajah beruang kecil di bagian depan yang bikin gemas. Solnya tebal, empuk, dan ringan, rasanya seperti menginjak awan. Pas dipakai bersantai di rumah, ke minimarket, atau jalan-jalan sore di taman. Cocok dipadukan dengan celana kulot putih atau setelan santai warna pastel.',
+        material: 'EVA (karet ringan)',
+        care: 'Cukup bilas dengan air dan sabun lembut, lalu lap sampai kering. Bersihkan sela wajah beruang dengan sikat lembut. Jauhkan dari panas langsung seperti terik matahari atau dekat kompor agar bentuknya tidak berubah.'
     },
     {
         id: 'riri-chuu',
@@ -90,7 +102,9 @@ var products = [
         price: 159000,
         color: 'Merah muda',
         sizes: ukuranDewasa,
-        description: 'Sandal jepit platform pink yang bikin langkah sedikit lebih tinggi. Ringan dan imut buat jalan-jalan sore.'
+        description: 'Sandal jepit platform pink dengan hiasan kucing kecil berpita di bagian tali yang imut banget. Solnya tebal sehingga langkah terasa sedikit lebih tinggi, tapi tetap ringan dan empuk. Cocok untuk jalan-jalan sore, ke pantai, atau main ke rumah teman. Padukan dengan dress katun atau celana pendek denim.',
+        material: 'EVA (karet ringan)',
+        care: 'Bilas dengan air bersih setelah dipakai, apalagi setelah dari pantai. Gosok sol dengan sabun lembut, lalu lap hingga kering. Jangan dijemur terlalu lama di bawah matahari agar sol platform tidak melengkung.'
     },
     {
         id: 'lulu-sora',
@@ -101,7 +115,9 @@ var products = [
         price: 229000,
         color: 'Krem cokelat',
         sizes: ukuranDewasa,
-        description: 'Sandal slide krem dengan sol cokelat dan hiasan pita yang manis. Kalem, rapi, dan nyaman seharian.'
+        description: 'Sandal slide krem dengan sol cokelat dan hiasan beruang kecil berpita yang manis. Bagian atasnya bergelombang lembut, jadi kaki terasa nyaman dan tidak mudah lecet. Kalem dan rapi untuk dipakai di rumah, ke kafe, atau jalan dekat. Serasi dengan setelan warna krem, cokelat susu, atau putih.',
+        material: 'EVA (karet ringan)',
+        care: 'Lap bagian krem dengan kain lembap dan sedikit sabun agar tetap bersih. Hiasan beruang cukup dibersihkan dengan sikat lembut, jangan ditarik. Keringkan di tempat teduh dan jauhkan dari sumber panas.'
     },
     {
         id: 'nana-puru',
@@ -112,7 +128,9 @@ var products = [
         price: 199000,
         color: 'Pink stroberi',
         sizes: ukuranDewasa,
-        description: 'Sandal rumah pink dengan pita motif stroberi yang segar. Bikin waktu santai di rumah makin manis.'
+        description: 'Sandal rumah pink dengan bulu lembut dan pita besar bermotif stroberi yang segar. Begitu dipakai, kaki langsung terasa hangat dan empuk, cocok untuk pagi yang dingin. Teman setia saat santai di rumah, nonton film, atau sarapan di akhir pekan. Makin manis dipadukan dengan piyama atau baju rumah warna pastel.',
+        material: 'Kain lembut berbulu, sol karet',
+        care: 'Bersihkan bulu dengan sikat lembut atau lap lembap, jangan direndam. Jika perlu dicuci, kucek perlahan dengan air dingin dan sabun lembut, lalu angin-anginkan sampai benar-benar kering. Sisir bulu perlahan agar tetap halus.'
     },
 
     // ----- Anak · Sepatu -----
@@ -125,7 +143,9 @@ var products = [
         price: 219000,
         color: 'Krem cokelat',
         sizes: ukuranAnak,
-        description: 'Sneaker anak krem dengan aksen cokelat, seperti kue cokelat susu. Ringan untuk si kecil yang hobi lompat-lompat.'
+        description: 'Sneaker anak krem dengan aksen cokelat dan tali tebal yang lucu, seperti kue cokelat susu. Bobotnya ringan untuk si kecil yang hobi lompat-lompat, dan solnya bergerigi agar tidak licin. Bagian dalamnya empuk dan mudah dipakai. Cocok untuk sekolah atau bermain di taman, serasi dengan overall dan kaus warna cerah.',
+        material: 'Kulit sintetis, sol karet',
+        care: 'Lap bagian luar dengan kain lembap setiap selesai bermain. Lepas tali tebalnya dan cuci terpisah dengan sabun lembut. Keringkan di tempat teduh agar warna krem tidak menguning.'
     },
     {
         id: 'pipi-kumo',
@@ -136,7 +156,9 @@ var products = [
         price: 209000,
         color: 'Putih pink',
         sizes: ukuranAnak,
-        description: 'Sneaker anak putih-pink bergambar kartun lucu. Bikin si kecil semangat berangkat sekolah dan bermain.'
+        description: 'Sneaker anak putih-pink bergambar kartun lucu dengan tali perekat yang praktis. Si kecil bisa memakainya sendiri tanpa repot mengikat tali. Bobotnya ringan dan solnya tidak licin, jadi aman untuk berlari dan bermain. Bikin semangat berangkat sekolah, dan cocok dipadukan dengan rok, celana jeans, atau seragam olahraga.',
+        material: 'Kulit sintetis, sol karet',
+        care: 'Lap gambar kartun dengan kain lembap, jangan disikat keras agar gambarnya tidak rusak. Bersihkan perekat dari rambut atau serat kain supaya tetap rekat. Keringkan di tempat teduh.'
     },
     {
         id: 'mimi-usa',
@@ -147,7 +169,9 @@ var products = [
         price: 229000,
         color: 'Pink glitter',
         sizes: ukuranAnak,
-        description: 'Sepatu anak model tinggi warna pink yang berkilau. Langkah si kecil jadi makin percaya diri dan bersinar.'
+        description: 'Sepatu anak model tinggi berwarna pink yang berkilau, lengkap dengan hiasan hati dan perekat yang praktis. Si kecil bisa memakai dan melepasnya sendiri dengan mudah. Solnya tidak licin dan bobotnya ringan, jadi tetap lincah saat bermain di luar. Cantik dipadukan dengan dress, rok tutu, atau legging motif.',
+        material: 'Kanvas glitter, sol karet',
+        care: 'Sikat pelan bagian kanvas dengan sikat lembut dan sedikit air sabun, jangan digosok keras agar glitter tidak rontok. Bersihkan sol karet dengan lap basah. Keringkan di tempat teduh, jangan dimasukkan mesin cuci.'
     },
     {
         id: 'chibi-hoshi',
@@ -158,7 +182,9 @@ var products = [
         price: 199000,
         color: 'Putih pink',
         sizes: ukuranAnak,
-        description: 'Sepatu boots anak putih-pink dengan aksen ungu yang manis. Hangat dan imut untuk menemani petualangan si kecil.'
+        description: 'Sepatu boots anak putih-pink dengan aksen ungu dan hiasan bunga yang manis. Bagian dalamnya lembut dan hangat, nyaman untuk kaki mungil saat cuaca dingin. Ada perekat di samping sehingga mudah dipakai sendiri, dan solnya tidak licin. Cocok untuk jalan-jalan keluarga, dipadukan dengan jaket, legging, atau celana panjang.',
+        material: 'Kulit sintetis, sol karet',
+        care: 'Lap bagian luar dengan kain lembap, lalu keringkan di tempat teduh. Bagian dalam yang lembut cukup diangin-anginkan agar tidak lembap dan bau. Jaga perekat tetap bersih supaya mudah ditutup.'
     },
 
     // ----- Anak · Sandal -----
@@ -171,7 +197,9 @@ var products = [
         price: 129000,
         color: 'Hijau alpukat',
         sizes: ukuranAnak,
-        description: 'Sandal clog anak hijau dengan hiasan alpukat yang menggemaskan. Ringan dan mudah dipakai sendiri.'
+        description: 'Sandal clog anak hijau alpukat dengan hiasan alpukat dan karakter kecil yang menggemaskan. Bahannya ringan dan empuk, ditambah tali belakang agar sandal tidak mudah lepas. Si kecil bisa memakainya sendiri, dan solnya tidak licin untuk main di teras atau taman. Lucu dipadukan dengan kaus kuning atau celana pendek hijau.',
+        material: 'EVA (karet ringan)',
+        care: 'Lepas hiasan alpukat dulu, lalu cuci sandal dengan air dan sabun lembut. Lap sampai kering dan pasang kembali hiasannya. Jangan dijemur di bawah terik matahari agar bentuk sandal tetap bagus.'
     },
     {
         id: 'tete-miru',
@@ -182,7 +210,9 @@ var products = [
         price: 139000,
         color: 'Pink unicorn',
         sizes: ukuranAnak,
-        description: 'Sandal clog anak pink bergambar unicorn yang ajaib. Cocok buat si kecil yang suka dongeng dan warna ceria.'
+        description: 'Sandal clog anak pink bergambar unicorn dan tulisan warna-warni yang ajaib. Bobotnya ringan, mudah dipakai sendiri, dan tali belakangnya membantu sandal tetap di kaki saat berlari. Solnya tidak licin, cocok untuk main air, ke taman, atau liburan. Pas untuk si kecil yang suka dongeng, dipadukan dengan dress atau kaus ceria.',
+        material: 'EVA (karet ringan)',
+        care: 'Bilas dengan air bersih setelah main air atau ke taman. Gambar unicorn cukup dilap dengan kain lembut, jangan disikat keras. Keringkan di tempat teduh dan jauhkan dari benda panas.'
     },
     {
         id: 'popo-niko',
@@ -193,7 +223,9 @@ var products = [
         price: 149000,
         color: 'Putih',
         sizes: ukuranAnak,
-        description: 'Sandal slide anak putih bergambar wajah anak yang tersenyum. Simpel, lucu, dan nyaman untuk bersantai.'
+        description: 'Sandal slide anak putih dengan gambar wajah anak perempuan berpita merah yang tersenyum. Modelnya simpel tanpa tali, jadi si kecil bisa langsung memakainya sendiri. Bahannya ringan, empuk, dan solnya tidak licin di lantai basah. Cocok untuk bersantai di rumah atau setelah mandi, serasi dengan kaus dan celana pendek apa saja.',
+        material: 'EVA (karet ringan)',
+        care: 'Cuci dengan air dan sabun lembut, lalu lap hingga kering agar warna putihnya tetap bersih. Bagian gambar wajah cukup dilap pelan. Simpan jauh dari panas matahari langsung supaya tidak menguning.'
     },
     {
         id: 'yuyu-puka',
@@ -204,7 +236,9 @@ var products = [
         price: 119000,
         color: 'Putih',
         sizes: ukuranAnak,
-        description: 'Sandal clog anak putih dengan hiasan pita yang manis. Teman setia si kecil saat bermain di rumah.'
+        description: 'Sandal clog anak putih dengan hiasan pita dan karakter kucing kecil yang manis. Bahannya ringan dan empuk, dan ada tali belakang yang membuat sandal tidak mudah lepas. Mudah dipakai sendiri dan solnya tidak licin, aman untuk bermain di rumah atau halaman. Teman setia si kecil, cocok dipadukan dengan baju main warna pastel.',
+        material: 'EVA (karet ringan)',
+        care: 'Lepas charm pita dan kucing sebelum dicuci, lalu bersihkan sandal dengan air sabun. Lap sampai kering dan pasang lagi charm-nya. Simpan di tempat teduh agar warna putihnya tidak kusam.'
     }
 ];
 
@@ -343,6 +377,8 @@ if (addForm) {
     document.getElementById('detail-price').textContent = rupiah(product.price);
     document.getElementById('detail-color').textContent = product.color;
     document.getElementById('detail-description').textContent = product.description;
+    document.getElementById('detail-material').textContent = product.material; // bahan
+    document.getElementById('detail-care').textContent = product.care;         // cara merawat
     document.getElementById('detail-category').textContent =
         'KOLEKSI ' + product.category.toUpperCase() + ' · ' + product.jenis.toUpperCase();
 
@@ -510,8 +546,7 @@ if (cartItems) {
 
         // Pesan sukses tetap tampil setelah keranjang kosong
         document.getElementById('checkout-status').textContent =
-            'Terima kasih! Pesanan simulasi senilai ' + totalPesanan +
-            ' berhasil dibuat. Tidak ada pembayaran atau pengiriman nyata.';
+            'Terima kasih! Pesananmu senilai ' + totalPesanan + ' sudah kami terima.';
         checkoutForm.reset();
     });
 
@@ -539,7 +574,7 @@ if (contactForm) {
             return;
         }
 
-        status.textContent = 'Terima kasih! Pesanmu lolos validasi simulasi. Pesan tidak dikirim atau disimpan.';
+        status.textContent = 'Terima kasih! Pesanmu sudah terkirim. Kami akan segera membalas.';
         contactForm.reset();
     });
 }

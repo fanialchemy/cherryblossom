@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CHERRYBLOSSOM — koleksi sepatu dan sandal pastel untuk langkah kecil dan besar. Proyek simulasi toko.">
+    <meta name="description" content="CHERRYBLOSSOM — koleksi sepatu dan sandal pastel untuk langkah kecil dan besar.">
     <title>Koleksi | CHERRYBLOSSOM</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -19,7 +19,7 @@
         <!-- ===== NAVBAR ===== -->
         <nav class="navbar navbar-expand-lg container">
             <a class="navbar-brand" href="index.html">
-                <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
                 <span class="brand-text">Cherry Blossom<span class="brand-sub">LANGKAH MANIS SETIAP HARI</span></span>
             </a>
             <!-- Tombol keranjang: ikon + tulisan (disembunyikan di layar kecil) + jumlah barang -->
@@ -56,33 +56,34 @@
         <!-- ===== KATALOG PRODUK ===== -->
         <section class="container pb-5">
             <!-- ===== FILTER & PENCARIAN ===== -->
-            <div class="catalog-toolbar row g-3 align-items-center mb-4">
+            <div class="catalog-toolbar p-3 mb-4">
 
-                <!-- Tombol filter (kategori pink, jenis biru) -->
-                <div class="col-md-7">
-                    <div class="d-flex flex-wrap gap-2 mb-2" role="group" aria-label="Filter kategori">
-                        <button class="btn rounded-pill filter filter-kategori active" type="button" data-filter-kategori="Semua">Semua</button>
-                        <button class="btn rounded-pill filter filter-kategori" type="button" data-filter-kategori="Anak">Anak</button>
-                        <button class="btn rounded-pill filter filter-kategori" type="button" data-filter-kategori="Dewasa">Dewasa</button>
-                    </div>
-                    <div class="d-flex flex-wrap gap-2" role="group" aria-label="Filter jenis">
-                        <button class="btn rounded-pill filter filter-jenis active" type="button" data-filter-jenis="Semua">Semua jenis</button>
-                        <button class="btn rounded-pill filter filter-jenis" type="button" data-filter-jenis="Sepatu">Sepatu</button>
-                        <button class="btn rounded-pill filter filter-jenis" type="button" data-filter-jenis="Sandal">Sandal</button>
-                    </div>
+                <!-- Baris 1: kolom pencarian lebar penuh, ikon di dalam input -->
+                <label for="search" class="visually-hidden">Cari produk</label>
+                <div class="search-box position-relative mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon position-absolute top-50 translate-middle-y" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    <input id="search" class="form-control" type="search" placeholder="Cari nama pasangan favoritmu...">
                 </div>
 
-                <!-- Kolom pencarian -->
-                <div class="col-md-5">
-                    <label for="search" class="form-label search-label">Cari produk</label>
-                    <!-- Input group Bootstrap: ikon kaca pembesar + kolom pencarian -->
-                    <div class="input-group search-group">
-                        <span class="input-group-text" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                            </svg>
-                        </span>
-                        <input id="search" class="form-control" type="search" placeholder="Nama pasangan favoritmu…">
+                <!-- Baris 2: filter kategori | filter jenis -->
+                <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                    <div class="d-flex flex-wrap align-items-center gap-2" role="group" aria-labelledby="label-kategori">
+                        <span id="label-kategori" class="filter-label">Kategori</span>
+                        <button class="btn rounded-pill filter active" type="button" data-filter-kategori="Semua">Semua</button>
+                        <button class="btn rounded-pill filter" type="button" data-filter-kategori="Anak">Anak</button>
+                        <button class="btn rounded-pill filter" type="button" data-filter-kategori="Dewasa">Dewasa</button>
+                    </div>
+
+                    <!-- Garis pemisah tipis (disembunyikan di HP) -->
+                    <span class="filter-divider d-none d-md-block" aria-hidden="true"></span>
+
+                    <div class="d-flex flex-wrap align-items-center gap-2" role="group" aria-labelledby="label-jenis">
+                        <span id="label-jenis" class="filter-label">Jenis</span>
+                        <button class="btn rounded-pill filter filter-biru active" type="button" data-filter-jenis="Semua">Semua</button>
+                        <button class="btn rounded-pill filter filter-biru" type="button" data-filter-jenis="Sepatu">Sepatu</button>
+                        <button class="btn rounded-pill filter filter-biru" type="button" data-filter-jenis="Sandal">Sandal</button>
                     </div>
                 </div>
             </div>
@@ -360,7 +361,6 @@
             </div>
 
             <p id="empty-results" class="empty-state" hidden>Belum ada produk yang cocok. Coba kata lain, ya.</p>
-            <p class="demo-note">Nama, harga, dan spesifikasi merupakan contoh untuk proyek. Foto produk hanya sebagai ilustrasi.</p>
         </section>
 
     </main>
@@ -371,7 +371,7 @@
             <div class="row gy-4">
                 <div class="col-md-6">
                     <a class="footer-brand" href="index.html">
-                        <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                        <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
                         <span class="brand-text">Cherry Blossom</span>
                     </a>
                     <p>Untuk langkah kecil, mimpi besar,<br>dan semua cerita di antaranya.</p>
@@ -391,7 +391,6 @@
             <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
                 <span>© 2026 CHERRYBLOSSOM</span>
                 <span>Dibuat dengan sepenuh hati ♡</span>
-                <span>Proyek Pemrograman Web 1 · Toko simulasi, tanpa transaksi nyata.</span>
             </div>
         </div>
     </footer>

@@ -337,16 +337,17 @@ header {
     color: var(--brown);
 }
 
-.brand-maskot {
-    width: 50px;
-    filter: drop-shadow(0 3px 4px rgba(242, 92, 142, .25));
+/* Logo (images/logo.png): polos tanpa efek, tinggi tetap,
+   lebar mengikuti proporsi gambar */
+.brand-logo {
+    height: 44px;
+    width: auto;
 }
 
+/* Tulisan "Cherry Blossom": polos, tanpa outline/bayangan */
 .brand-text {
     font-size: 1.5625rem;
     line-height: 1.05;
-    -webkit-text-stroke: 5px var(--white);
-    paint-order: stroke fill;
 }
 
 /* Slogan kecil di bawah logo */
@@ -922,8 +923,8 @@ footer::before {
     pointer-events: none;
 }
 
-.footer-brand .brand-maskot {
-    width: 46px;
+.footer-brand .brand-logo {
+    height: 40px;
 }
 
 .footer-brand .brand-text {
@@ -975,77 +976,81 @@ footer .col-6 a:hover {
 
 /* ===== 15. KATALOG: FILTER & PENCARIAN (produk.html) ===== */
 .catalog-toolbar {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 12px 12px 20px;
     background: var(--white);
     border-radius: 24px;
     box-shadow: var(--shadow-pink);
 }
 
-/* Tombol filter (dipakai bersama class "btn rounded-pill") */
+/* Ikon kaca pembesar di dalam kolom pencarian (kiri) */
+.search-icon {
+    left: 18px;
+    color: var(--pink-deep);
+    pointer-events: none;   /* klik tetap mengenai input */
+}
+
+.search-box .form-control {
+    padding-left: 44px;     /* beri ruang untuk ikon */
+}
+
+/* Label kecil "Kategori" dan "Jenis" */
+.filter-label {
+    font-size: 0.8125rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-right: 2px;
+}
+
+/* Garis tipis vertikal di antara dua grup filter */
+.filter-divider {
+    width: 2px;
+    height: 28px;
+    background: var(--pink-bg);
+    border-radius: 2px;
+}
+
+/* Tombol filter (dipakai bersama class "btn rounded-pill"):
+   tidak aktif = putih + border pink muda, aktif = pink tegas */
 .filter {
-    border-width: 2px;
-    padding: 8px 20px;
+    border: 2px solid var(--pink-bg);
+    background: var(--white);
+    color: var(--pink-deep);
+    padding: 6px 16px;
     font-size: 0.9375rem;
     font-weight: 600;
 }
 
-/* Filter kategori: pink */
-.filter-kategori {
+.filter:hover,
+.filter:focus-visible {
     background: var(--pink-soft);
     border-color: var(--pink-bg);
     color: var(--pink-deep);
 }
 
-.filter-kategori:hover,
-.filter-kategori:focus-visible {
-    background: var(--pink-bg);
-    border-color: var(--pink-bg);
-    color: var(--pink-deep);
-}
-
-.filter-kategori.active {
+.filter.active,
+.filter.active:hover {
     background: var(--pink-strong);
     border-color: var(--pink-strong);
     color: var(--white);
 }
 
-/* Filter jenis: biru */
-.filter-jenis {
+/* Grup "Jenis": warna biru (grup "Kategori" tetap pink) */
+.filter-biru {
+    border-color: var(--blue-sky);
+    color: var(--blue-deep);
+}
+
+.filter-biru:hover,
+.filter-biru:focus-visible {
     background: #EEF5FF;
     border-color: var(--blue-sky);
     color: var(--blue-deep);
 }
 
-.filter-jenis:hover,
-.filter-jenis:focus-visible {
-    background: var(--blue-sky);
-    border-color: var(--blue-sky);
-    color: var(--blue-deep);
-}
-
-.filter-jenis.active {
+.filter-biru.active,
+.filter-biru.active:hover {
     background: var(--blue);
     border-color: var(--blue);
     color: var(--white);
-}
-
-.search-label {
-    color: var(--pink-deep);
-}
-
-/* Ikon kaca pembesar menyatu dengan kolom pencarian */
-.search-group .input-group-text {
-    background: var(--white);
-    border: 2px solid var(--pink-bg);
-    border-right: 0;
-    border-radius: 18px 0 0 18px;
-    color: var(--pink-deep);
-}
-
-.search-group .form-control {
-    border-left: 0;
 }
 
 
@@ -1066,28 +1071,13 @@ footer .col-6 a:hover {
     box-shadow: 0 0 0 4px rgba(255, 127, 168, .25);
 }
 
-.form-label,
-.form-check-label {
+.form-label {
     font-size: 0.9375rem;
     font-weight: 800;
 }
 
-.form-check-input {
-    border: 2px solid var(--pink);
-}
-
-.form-check-input:checked {
-    background-color: var(--pink-strong);
-    border-color: var(--pink-strong);
-}
-
-.muted,
-.demo-note {
+.muted {
     font-size: 0.9375rem;
-}
-
-.demo-note {
-    margin-top: 35px;
 }
 
 /* Pesan hasil (berhasil ditambahkan, form terkirim, dll.) */
@@ -1191,12 +1181,6 @@ footer .col-6 a:hover {
 
 .summary .total strong {
     color: var(--pink-strong);
-}
-
-.summary small {
-    display: block;
-    font-size: 0.8125rem;
-    margin-top: 15px;
 }
 
 .summary p {
@@ -1352,6 +1336,18 @@ footer .col-6 a:hover {
     aspect-ratio: 1 / 1;
 }
 
+/* Kutipan di atas cerita merek (tentang.html) */
+.about-quote {
+    font-family: 'Fredoka', 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    line-height: 1.4;
+    color: var(--pink-deep);
+    border-left: 4px solid var(--pink);
+    padding-left: 18px;
+    margin: 0 0 20px;
+}
+
 .values h3 {
     font-size: 1.1875rem;
     margin: 18px 0 8px;
@@ -1377,19 +1373,6 @@ footer .col-6 a:hover {
 
 .contact-info p {
     font-size: 0.9375rem;
-}
-
-.contact-note {
-    background: var(--blue-sky);
-    border: 4px solid var(--white);
-    padding: 20px;
-    border-radius: 24px;
-    margin: 22px 0;
-}
-
-.contact-note h3 {
-    font-size: 1.0625rem;
-    color: var(--blue-deep);
 }
 
 .contact-form {
@@ -1676,8 +1659,8 @@ footer .col-6 a:hover {
         display: none;
     }
 
-    .brand-maskot {
-        width: 42px;
+    .brand-logo {
+        height: 38px;
     }
 
     .brand-text {
@@ -1816,7 +1799,12 @@ footer .col-6 a:hover {
     }
 
     .filter {
-        padding: 7px 16px;
+        padding: 5px 14px;
+    }
+
+    /* Label filter selebar sama agar tombol dua baris sejajar */
+    .filter-label {
+        min-width: 58px;
     }
 
     .contact-form {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CHERRYBLOSSOM — koleksi sepatu dan sandal pastel untuk langkah kecil dan besar. Proyek simulasi toko.">
+    <meta name="description" content="CHERRYBLOSSOM — koleksi sepatu dan sandal pastel untuk langkah kecil dan besar.">
     <title>Kontak | CHERRYBLOSSOM</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -19,7 +19,7 @@
         <!-- ===== NAVBAR ===== -->
         <nav class="navbar navbar-expand-lg container">
             <a class="navbar-brand" href="index.html">
-                <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
                 <span class="brand-text">Cherry Blossom<span class="brand-sub">LANGKAH MANIS SETIAP HARI</span></span>
             </a>
             <!-- Tombol keranjang: ikon + tulisan (disembunyikan di layar kecil) + jumlah barang -->
@@ -61,11 +61,7 @@
                 <div class="col-md-4 contact-info">
                     <img class="contact-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
                     <h2>Halo, teman blossom!</h2>
-                    <p>Gunakan formulir di samping untuk mencoba pengiriman pesan.</p>
-                    <div class="contact-note">
-                        <h3>Sebelum mengirim</h3>
-                        <p>Form ini adalah simulasi. Pesan tidak dikirim ke siapa pun dan tidak disimpan.</p>
-                    </div>
+                    <p>Gunakan formulir di samping untuk mengirim pesan.</p>
                     <a class="btn btn-sm rounded-pill btn-outline-cherry" href="panduan-ukuran.html">Lihat panduan ukuran ↗</a>
                 </div>
 
@@ -95,14 +91,7 @@
                                 <textarea id="message" name="pesan" class="form-control" rows="5" minlength="10" maxlength="1000" placeholder="Ceritakan kebutuhanmu (minimal 10 karakter)…" required></textarea>
                             </div>
                             <div class="col-12">
-                                <!-- Checkbox standar Bootstrap -->
-                                <div class="form-check">
-                                    <input id="agree" class="form-check-input" type="checkbox" required>
-                                    <label class="form-check-label" for="agree">Saya memahami bahwa ini adalah formulir simulasi.</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-cherry" type="submit">Kirim pesan simulasi ↗</button>
+                                <button class="btn btn-cherry" type="submit">Kirim pesan ↗</button>
                                 <p id="form-status" role="status" class="status-message"></p>
                             </div>
                         </div>
@@ -121,7 +110,7 @@
                     <div class="col-md-5">
                         <div class="badge eyebrow">MAMPIR, YUK!</div>
                         <h2 id="judul-toko">Kunjungi toko kami</h2>
-                        <ul class="list-unstyled info-toko">
+                        <ul class="list-unstyled info-toko mb-0">
                             <li>
                                 <strong>Alamat</strong><br>
                                 Kawasan Jl. Soekarno Hatta, Lowokwaru, Malang
@@ -140,12 +129,11 @@
                                 halo@cherryblossom.example
                             </li>
                         </ul>
-                        <p class="catatan-kecil mb-0">Data kontak hanya contoh untuk proyek simulasi.</p>
                     </div>
 
                     <!-- Peta Google Maps (lokasi diatur lewat q= pada alamat src) -->
                     <div class="col-md-7">
-                        <iframe class="peta" src="https://maps.google.com/maps?q=Jl.%20Soekarno%20Hatta%2C%20Lowokwaru%2C%20Malang&amp;z=15&amp;output=embed" title="Peta area umum Jl. Soekarno Hatta, Lowokwaru, Malang (lokasi contoh)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                        <iframe class="peta" src="https://maps.google.com/maps?q=Jl.%20Soekarno%20Hatta%2C%20Lowokwaru%2C%20Malang&amp;z=15&amp;output=embed" title="Peta area umum Jl. Soekarno Hatta, Lowokwaru, Malang" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
                     </div>
 
                 </div>
@@ -160,7 +148,7 @@
             <div class="row gy-4">
                 <div class="col-md-6">
                     <a class="footer-brand" href="index.html">
-                        <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                        <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
                         <span class="brand-text">Cherry Blossom</span>
                     </a>
                     <p>Untuk langkah kecil, mimpi besar,<br>dan semua cerita di antaranya.</p>
@@ -180,7 +168,6 @@
             <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
                 <span>© 2026 CHERRYBLOSSOM</span>
                 <span>Dibuat dengan sepenuh hati ♡</span>
-                <span>Proyek Pemrograman Web 1 · Toko simulasi, tanpa transaksi nyata.</span>
             </div>
         </div>
     </footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CHERRYBLOSSOM — koleksi sepatu dan sandal pastel untuk langkah kecil dan besar. Proyek simulasi toko.">
+    <meta name="description" content="CHERRYBLOSSOM — koleksi sepatu dan sandal pastel untuk langkah kecil dan besar.">
     <title>Detail Produk | CHERRYBLOSSOM</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -19,7 +19,7 @@
         <!-- ===== NAVBAR ===== -->
         <nav class="navbar navbar-expand-lg container">
             <a class="navbar-brand" href="index.html">
-                <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
                 <span class="brand-text">Cherry Blossom<span class="brand-sub">LANGKAH MANIS SETIAP HARI</span></span>
             </a>
             <!-- Tombol keranjang: ikon + tulisan (disembunyikan di layar kecil) + jumlah barang -->
@@ -67,11 +67,11 @@
                         <img id="detail-image" src="images/produk/sakura-puni.jpg" alt="Sakura Puni berwarna merah muda">
                     </div>
 
-                    <!-- ===== PERAWATAN & UKURAN ===== -->
+                    <!-- ===== BAHAN & PERAWATAN (diisi js/script.js dari data produk) ===== -->
                     <div class="detail-extra">
-                        <h2>Perawatan &amp; ukuran</h2>
-                        <p>Lap dengan kain lembut, keringkan di tempat teduh, dan hindari merendam terlalu lama.</p>
-                        <p class="mb-0">Cek tabel lengkap di halaman <a href="panduan-ukuran.html">Panduan ukuran</a>.</p>
+                        <h2>Bahan &amp; perawatan</h2>
+                        <p>Bahan: <strong id="detail-material">Kulit sintetis, sol karet</strong></p>
+                        <p id="detail-care" class="mb-0">Lap bagian luar dengan kain lembap, lalu keringkan di tempat teduh.</p>
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@
             <div class="row gy-4">
                 <div class="col-md-6">
                     <a class="footer-brand" href="index.html">
-                        <img class="brand-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                        <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
                         <span class="brand-text">Cherry Blossom</span>
                     </a>
                     <p>Untuk langkah kecil, mimpi besar,<br>dan semua cerita di antaranya.</p>
@@ -130,7 +130,6 @@
             <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
                 <span>© 2026 CHERRYBLOSSOM</span>
                 <span>Dibuat dengan sepenuh hati ♡</span>
-                <span>Proyek Pemrograman Web 1 · Toko simulasi, tanpa transaksi nyata.</span>
             </div>
         </div>
     </footer>
