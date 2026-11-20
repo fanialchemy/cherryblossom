@@ -36,10 +36,28 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="produk.html">Koleksi</a></li>
+                    <li class="nav-item dropdown">
+                        <!-- Dropdown Bootstrap (dibuka oleh bootstrap.bundle.min.js, tanpa JS tambahan) -->
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Koleksi</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="produk.html">Semua koleksi</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Anak">Koleksi anak</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Dewasa">Koleksi dewasa</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" aria-current="page" href="panduan-ukuran.html">Panduan ukuran</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
                 </ul>
+                <!-- Pencarian navbar: mengirim ?cari= ke produk.html -->
+                <form class="nav-search position-relative me-lg-3" action="produk.html" method="get" role="search">
+                    <label for="nav-cari" class="visually-hidden">Cari produk</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search nav-search-icon position-absolute top-50 translate-middle-y" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    <input id="nav-cari" class="form-control" type="search" name="cari" placeholder="Cari produk...">
+                </form>
             </div>
         </nav>
     </header>

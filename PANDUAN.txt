@@ -15,7 +15,7 @@ HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline).
   Bootstrap (d-flex, py-5, mb-4, text-center, d-none d-md-inline, dll.).
 - Komponen Bootstrap: navbar, carousel, card, badge,
   btn / btn-sm rounded-pill, breadcrumb, table table-striped, form-control,
-  form-select.
+  form-select, modal, dropdown.
 - Hiasan awan & kelopak hanya di hero, kartu kategori, banner promo, dan
   cerita singkat; disembunyikan di HP dengan class "d-none d-md-block".
 - Ikon tas belanja "bag-heart" (navbar) dan kaca pembesar "search" (kolom
@@ -25,7 +25,7 @@ HTML5, CSS3, JavaScript dasar, dan Bootstrap 5.3.9 (offline).
 - js/script.js memakai function biasa, for loop, dan localStorage.
 Tidak ada framework aplikasi, proses build, atau permintaan API.
 
-TUJUH HALAMAN & FITUR
+DELAPAN HALAMAN & FITUR
 index.html     : urutan section: carousel Bootstrap 5 slide (berganti
                  setiap 3,5 detik, tombol prev/next, 5 titik indikator)
                  -> 4 kartu keunggulan -> kartu kategori Anak & Dewasa
@@ -40,7 +40,9 @@ panduan-ukuran.html : 2 kolom (col-md-6). Kiri: tabel ukuran dewasa 36–40
                  dari footer semua halaman, detail.html (di dekat pilihan
                  ukuran), kartu langkah 2 "Cara belanja", dan kontak.html.
 Semua halaman  : header menempel saat di-scroll; menu aktif berbentuk pill
-                 pink; tombol keranjang dengan ikon tas (di HP hanya ikon +
+                 pink; menu "Koleksi" berupa dropdown (Semua koleksi, Koleksi
+                 anak, Koleksi dewasa, Panduan ukuran); kolom "Cari produk..."
+                 yang membuka produk.html?cari=...; tombol keranjang dengan ikon tas (di HP hanya ikon +
                  angka); footer berisi link "Panduan ukuran" dan baris
                  bawah "Dibuat dengan sepenuh hati ♡".
 produk.html    : katalog 16 produk (card + grid), filter kategori
@@ -53,14 +55,20 @@ detail.html    : detail produk diisi JavaScript dari ?id= di URL
                  jumlah, tambah ke keranjang, kotak "Bahan & perawatan"
                  di bawah foto (diisi dari field material & care).
 keranjang.html : daftar belanja, ubah jumlah (1–10), hapus barang,
-                 total Rupiah, dan form "Data pengiriman" (nama, nomor HP,
-                 alamat, metode pembayaran, catatan) yang divalidasi
-                 atribut HTML; tombol "Buat pesanan" = tombol submit. Setelah
-                 dikirim, keranjang dikosongkan dan muncul pesan terima kasih.
+                 total Rupiah, dan tombol "Lanjut ke pengiriman" ke
+                 checkout.html (disembunyikan jika keranjang kosong).
+checkout.html  : penanda langkah (1 Keranjang - 2 Pengiriman - 3 Selesai),
+                 form "Data pengiriman" (nama, nomor HP, alamat, metode
+                 pembayaran, catatan) yang divalidasi atribut HTML, dan
+                 kartu "Ringkasan pesanan" dari keranjang. Setelah "Buat
+                 pesanan": keranjang dikosongkan, angka navbar jadi 0, dan
+                 pop-up (Modal Bootstrap) "Pesanan berhasil!" muncul.
+                 Jika keranjang kosong, form diganti pesan kosong.
 tentang.html   : kolase foto produk + cerita merek, tiga nilai merek,
                  tombol "Jelajahi koleksi", dan penjelasan proyek.
 kontak.html    : formulir (required, email, minlength) dengan
-                 validasi tambahan JavaScript; section "Kunjungi toko kami"
+                 validasi tambahan JavaScript dan pop-up (Modal Bootstrap)
+                 "Pesan terkirim!"; section "Kunjungi toko kami"
                  berisi alamat, jam buka, nomor contoh, dan peta Google Maps.
 
 ALAMAT TOKO (SIMULASI)
@@ -83,8 +91,8 @@ ISI CAROUSEL BERANDA (5 SLIDE)
 STRUKTUR FOLDER
 CHERRYBLOSSOM/
 ├── index.html, produk.html, detail.html, keranjang.html,
-│   tentang.html, kontak.html,
-│   panduan-ukuran.html            -> 7 halaman HTML di root
+│   checkout.html, tentang.html, kontak.html,
+│   panduan-ukuran.html            -> 8 halaman HTML di root
 ├── PANDUAN.txt
 ├── css/
 │   ├── bootstrap.min.css          -> Bootstrap 5.3.9 (offline)
@@ -94,13 +102,13 @@ CHERRYBLOSSOM/
 │   ├── bootstrap.bundle.min.js    -> Bootstrap 5.3.9 (offline)
 │   └── script.js                  -> data produk, filter, detail, keranjang, form
 ├── images/
-│   ├── logo.png                   -> logo di navbar & footer semua halaman
+│   ├── logo.png                   -> logo navbar & footer + semua hiasan maskot
 │   ├── banner/
 │   │   └── hero-1.jpg ... hero-5.jpg   -> gambar 5 slide carousel
 │   ├── produk/
 │   │   └── <id-produk>.jpg        -> 16 file, satu per produk
 │   └── dekor/
-│       ├── maskot.svg             -> maskot bunga sakura (hiasan, banner promo)
+│       ├── maskot.svg             -> sumber awal logo.png (tidak dipakai halaman)
 │       ├── awan.svg               -> awan putih
 │       └── kelopak.svg            -> kelopak sakura
 ├── fonts/                         -> 9 file .ttf (Fredoka & Nunito)

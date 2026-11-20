@@ -7,7 +7,8 @@
    4. Filter & pencarian produk (produk.html)
    5. Halaman detail produk (detail.html)
    6. Halaman keranjang (keranjang.html)
-   7. Form kontak (kontak.html)
+   6b. Halaman pengiriman + pop-up pesanan (checkout.html)
+   7. Form kontak + pop-up (kontak.html)
    Setiap bagian hanya berjalan jika elemennya ada di halaman itu.
    ========================================================= */
 
@@ -298,6 +299,13 @@ if (search) {
     var kategoriDipilih = params.get('kategori') || 'Semua';
     var jenisDipilih = params.get('jenis') || 'Semua';
 
+    // Kata dari pencarian navbar, contoh: produk.html?cari=sakura
+    // Jika ada, isi kolom pencarian halaman ini (lalu disaring di bawah)
+    var kataDariUrl = params.get('cari');
+    if (kataDariUrl) {
+        search.value = kataDariUrl;
+    }
+
     var tombolKategori = document.querySelectorAll('[data-filter-kategori]');
     var tombolJenis = document.querySelectorAll('[data-filter-jenis]');
     var semuaKartu = document.querySelectorAll('.product-item');
@@ -493,10 +501,10 @@ if (cartItems) {
             cartItems.appendChild(row);
         }
 
-        // Tampilkan total dan matikan tombol jika keranjang kosong
+        // Tampilkan total; sembunyikan tombol "Lanjut ke pengiriman" jika kosong
         document.getElementById('subtotal').textContent = rupiah(total);
         document.getElementById('total').textContent = rupiah(total);
-        document.getElementById('simulate').disabled = (cart.length === 0);
+        document.getElementById('to-checkout').hidden = (cart.length === 0);
     }
 
     // Saat jumlah barang diubah (angka 1 sampai 10)
@@ -510,7 +518,6 @@ if (cartItems) {
                 saveCart();
             }
             renderCart();
-            document.getElementById('checkout-status').textContent = '';
         }
     });
 
@@ -521,13 +528,58 @@ if (cartItems) {
             cart.splice(index, 1); // buang 1 barang pada posisi index
             saveCart();
             renderCart();
-            document.getElementById('checkout-status').textContent = '';
         }
     });
 
-    // Form "Data pengiriman": browser sudah memeriksa required, pattern,
-    // dan minlength. Event submit hanya terjadi jika semua kolom valid.
-    var checkoutForm = document.getElementById('checkout-form');
+    // Gambar keranjang saat halaman dibuka
+    renderCart();
+}
+
+
+/* ===== 6b. HALAMAN PENGIRIMAN (checkout.html) =====
+   Menampilkan ringkasan pesanan dari keranjang, lalu saat form
+   pengiriman valid dan dikirim: keranjang dikosongkan dan pop-up
+   (Modal Bootstrap) "Pesanan berhasil!" ditampilkan. */
+var checkoutForm = document.getElementById('checkout-form');
+
+if (checkoutForm) {
+    var orderItems = document.getElementById('order-items');
+    var orderTotal = 0;
+
+    // Buat daftar barang singkat: foto kecil, nama, ukuran, jumlah, harga
+    for (var i = 0; i < cart.length; i++) {
+        var item = cart[i];
+        var p = cariProduk(item.id);
+
+        if (!p) {
+            continue; // lewati produk yang sudah tidak ada di data
+        }
+
+        var subtotalBarang = p.price * item.quantity;
+        orderTotal = orderTotal + subtotalBarang;
+
+        var li = document.createElement('li');
+        li.className = 'order-item d-flex align-items-center gap-3';
+        li.innerHTML = `
+            <img src="${p.image}" alt="${p.name}">
+            <div class="flex-grow-1">
+                <strong>${p.name}</strong>
+                <small>Ukuran ${item.size} · ${item.quantity} pasang</small>
+            </div>
+            <span class="order-price">${rupiah(subtotalBarang)}</span>
+        `;
+        orderItems.appendChild(li);
+    }
+    document.getElementById('order-total').textContent = rupiah(orderTotal);
+
+    // Keranjang kosong: sembunyikan form, tampilkan pesan kosong
+    if (cart.length === 0) {
+        document.getElementById('checkout-content').hidden = true;
+        document.getElementById('checkout-empty').hidden = false;
+    }
+
+    // Browser sudah memeriksa required, pattern, dan minlength.
+    // Event submit hanya terjadi jika semua kolom valid.
     checkoutForm.addEventListener('submit', function (event) {
         event.preventDefault(); // jangan muat ulang halaman
 
@@ -535,23 +587,30 @@ if (cartItems) {
             return;
         }
 
-        // Simpan total dulu, sebelum keranjang dikosongkan
-        var totalPesanan = document.getElementById('total').textContent;
+        // Simpan nama dan total dulu, sebelum keranjang dikosongkan
+        var nama = document.getElementById('co-name').value.trim();
+        var totalTeks = document.getElementById('order-total').textContent;
 
-        // Kosongkan keranjang: simpan ke localStorage (angka navbar ikut 0),
-        // lalu gambar ulang (tampil pesan kosong & tombol jadi nonaktif)
+        // Kosongkan keranjang (saveCart juga membuat angka navbar jadi 0)
         cart = [];
         saveCart();
-        renderCart();
 
-        // Pesan sukses tetap tampil setelah keranjang kosong
-        document.getElementById('checkout-status').textContent =
-            'Terima kasih! Pesananmu senilai ' + totalPesanan + ' sudah kami terima.';
+        // Penanda langkah: langkah 2 selesai, langkah 3 "Selesai" aktif
+        var step2 = document.getElementById('step-2');
+        var step3 = document.getElementById('step-3');
+        step2.className = 'step done';
+        step2.removeAttribute('aria-current');
+        step3.className = 'step active';
+        step3.setAttribute('aria-current', 'step');
+
+        // Isi teks pop-up lalu tampilkan
+        document.getElementById('order-modal-text').textContent =
+            'Terima kasih, ' + nama + '! Pesananmu senilai ' + totalTeks + ' sudah kami terima.';
         checkoutForm.reset();
-    });
 
-    // Gambar keranjang saat halaman dibuka
-    renderCart();
+        var modal = new bootstrap.Modal(document.getElementById('order-modal'));
+        modal.show();
+    });
 }
 
 
@@ -574,7 +633,14 @@ if (contactForm) {
             return;
         }
 
-        status.textContent = 'Terima kasih! Pesanmu sudah terkirim. Kami akan segera membalas.';
+        // Lolos validasi: kosongkan pesan error, isi teks pop-up, lalu tampilkan
+        status.textContent = '';
+        document.getElementById('contact-modal-text').textContent =
+            'Terima kasih, ' + nama + '! Kami akan segera membalas pesanmu.';
+
+        var modal = new bootstrap.Modal(document.getElementById('contact-modal'));
+        modal.show();
+
         contactForm.reset();
     });
 }

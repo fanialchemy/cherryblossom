@@ -36,10 +36,28 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="produk.html">Koleksi</a></li>
+                    <li class="nav-item dropdown">
+                        <!-- Dropdown Bootstrap (dibuka oleh bootstrap.bundle.min.js, tanpa JS tambahan) -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Koleksi</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="produk.html">Semua koleksi</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Anak">Koleksi anak</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Dewasa">Koleksi dewasa</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="panduan-ukuran.html">Panduan ukuran</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
                 </ul>
+                <!-- Pencarian navbar: mengirim ?cari= ke produk.html -->
+                <form class="nav-search position-relative me-lg-3" action="produk.html" method="get" role="search">
+                    <label for="nav-cari" class="visually-hidden">Cari produk</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search nav-search-icon position-absolute top-50 translate-middle-y" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    <input id="nav-cari" class="form-control" type="search" name="cari" placeholder="Cari produk...">
+                </form>
             </div>
         </nav>
     </header>
@@ -78,39 +96,10 @@
                             <span>Total</span>
                             <strong id="total">Rp0</strong>
                         </div>
+                        <!-- Disembunyikan oleh js/script.js jika keranjang kosong -->
+                        <a id="to-checkout" class="btn btn-cherry w-100" href="checkout.html">Lanjut ke pengiriman ↗</a>
                     </aside>
 
-                    <!-- Form data pengiriman (validasi cukup dengan atribut HTML) -->
-                    <form id="checkout-form" class="summary checkout-form mt-4">
-                        <h2>Data pengiriman</h2>
-                        <div class="mb-3">
-                            <label for="co-name" class="form-label">Nama lengkap</label>
-                            <input id="co-name" name="nama" type="text" class="form-control" minlength="3" required autocomplete="name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="co-phone" class="form-label">Nomor HP/WhatsApp</label>
-                            <input id="co-phone" name="hp" type="tel" class="form-control" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,13}" title="Isi 10–13 digit angka, tanpa spasi atau tanda strip" required autocomplete="tel">
-                        </div>
-                        <div class="mb-3">
-                            <label for="co-address" class="form-label">Alamat lengkap</label>
-                            <textarea id="co-address" name="alamat" class="form-control" rows="3" required autocomplete="street-address"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="co-payment" class="form-label">Metode pembayaran</label>
-                            <select id="co-payment" name="pembayaran" class="form-select" required>
-                                <option value="">Pilih metode</option>
-                                <option>Transfer bank</option>
-                                <option>E-wallet</option>
-                                <option>Bayar di tempat/COD</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label for="co-note" class="form-label">Catatan <span class="fw-normal">(opsional)</span></label>
-                            <textarea id="co-note" name="catatan" class="form-control" rows="2"></textarea>
-                        </div>
-                        <button id="simulate" class="btn btn-cherry w-100" type="submit">Buat pesanan ↗</button>
-                        <p id="checkout-status" role="status"></p>
-                    </form>
                     <a class="btn btn-sm rounded-pill btn-outline-cherry mt-4" href="produk.html">← Kembali memilih koleksi</a>
                 </div>
 

@@ -36,10 +36,28 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="produk.html">Koleksi</a></li>
+                    <li class="nav-item dropdown">
+                        <!-- Dropdown Bootstrap (dibuka oleh bootstrap.bundle.min.js, tanpa JS tambahan) -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Koleksi</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="produk.html">Semua koleksi</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Anak">Koleksi anak</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Dewasa">Koleksi dewasa</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="panduan-ukuran.html">Panduan ukuran</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
                 </ul>
+                <!-- Pencarian navbar: mengirim ?cari= ke produk.html -->
+                <form class="nav-search position-relative me-lg-3" action="produk.html" method="get" role="search">
+                    <label for="nav-cari" class="visually-hidden">Cari produk</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search nav-search-icon position-absolute top-50 translate-middle-y" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    <input id="nav-cari" class="form-control" type="search" name="cari" placeholder="Cari produk...">
+                </form>
             </div>
         </nav>
     </header>
@@ -78,7 +96,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
-                                        <img class="flower f1" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                                        <img class="flower f1" src="images/logo.png" alt="" aria-hidden="true">
                                         <span class="flower f2" aria-hidden="true">✧</span>
                                         <img class="hero-foto" src="images/banner/hero-1.jpg" alt="Sepatu merah muda dengan tali putih dari koleksi pastel">
                                     </div>
@@ -97,7 +115,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
-                                        <img class="flower f1" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                                        <img class="flower f1" src="images/logo.png" alt="" aria-hidden="true">
                                         <img class="hero-foto" src="images/banner/hero-2.jpg" alt="Sandal dengan tali berwarna pastel">
                                     </div>
                                 </div>
@@ -115,7 +133,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
-                                        <img class="flower f1" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                                        <img class="flower f1" src="images/logo.png" alt="" aria-hidden="true">
                                         <img class="hero-foto" src="images/banner/hero-3.jpg" alt="Sepatu anak berwarna biru pastel">
                                     </div>
                                 </div>
@@ -133,7 +151,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
-                                        <img class="flower f1" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                                        <img class="flower f1" src="images/logo.png" alt="" aria-hidden="true">
                                         <img class="hero-foto" src="images/banner/hero-4.jpg" alt="Sandal dewasa berwarna ungu muda dan merah muda">
                                     </div>
                                 </div>
@@ -151,7 +169,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="hero-art">
-                                        <img class="flower f1" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                                        <img class="flower f1" src="images/logo.png" alt="" aria-hidden="true">
                                         <img class="hero-foto" src="images/banner/hero-5.jpg" alt="Sandal merah muda dengan aksen mint">
                                     </div>
                                 </div>
@@ -235,7 +253,7 @@
                         <!-- Hiasan: awan besar + maskot kecil -->
                         <span class="category-art" aria-hidden="true">
                             <img class="category-awan" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-                            <img class="category-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                            <img class="category-maskot" src="images/logo.png" alt="" aria-hidden="true">
                         </span>
                     </a>
                 </div>
@@ -250,7 +268,7 @@
                         </div>
                         <!-- Hiasan: maskot besar + awan kecil -->
                         <span class="category-art" aria-hidden="true">
-                            <img class="category-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                            <img class="category-maskot" src="images/logo.png" alt="" aria-hidden="true">
                             <img class="category-awan" src="images/dekor/awan.svg" alt="" aria-hidden="true">
                         </span>
                     </a>
@@ -428,7 +446,7 @@
                     <div class="col-md-4 langkah">
                         <span class="langkah-nomor">3</span>
                         <h3>Selesaikan pesanan</h3>
-                        <p class="mb-0">Cek isi keranjang dan totalnya, lalu tekan "Buat pesanan".</p>
+                        <p class="mb-0">Cek keranjang, isi data pengiriman, lalu tekan "Buat pesanan".</p>
                     </div>
                 </div>
             </div>
@@ -454,7 +472,7 @@
                     <div class="col-md-5">
                         <div class="promo-art" aria-hidden="true">
                             <img class="promo-awan" src="images/dekor/awan.svg" alt="" aria-hidden="true">
-                            <img class="promo-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                            <img class="promo-maskot" src="images/logo.png" alt="" aria-hidden="true">
                             <img class="promo-kelopak" src="images/dekor/kelopak.svg" alt="" aria-hidden="true">
                         </div>
                     </div>
@@ -469,7 +487,7 @@
             <img class="decor decor-awan pos-tl d-none d-md-block" src="images/dekor/awan.svg" alt="" aria-hidden="true">
             <img class="decor decor-awan kecil pos-br d-none d-md-block" src="images/dekor/awan.svg" alt="" aria-hidden="true">
 
-            <img class="story-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+            <img class="story-maskot" src="images/logo.png" alt="" aria-hidden="true">
             <div class="badge eyebrow">LEBIH DARI SEPASANG SEPATU</div>
             <h2>Sedikit warna, banyak bahagia.</h2>
             <p>Kami percaya hal-hal kecil dapat membuat hari terasa istimewa.<br>CHERRYBLOSSOM hadir untuk merayakan sisi ceria dalam dirimu.</p>

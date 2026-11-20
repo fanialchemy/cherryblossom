@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHERRYBLOSSOM — koleksi sepatu dan sandal pastel untuk langkah kecil dan besar.">
+    <title>Pengiriman | CHERRYBLOSSOM</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip" href="#utama">Langsung ke konten</a>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <!-- ===== PENGUMUMAN ===== -->
+        <div class="announcement">Kelopak kecil, kebahagiaan besar. <span>Temukan pasangan favoritmu ✿</span></div>
+
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="index.html">
+                <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
+                <span class="brand-text">Cherry Blossom<span class="brand-sub">LANGKAH MANIS SETIAP HARI</span></span>
+            </a>
+            <!-- Tombol keranjang: ikon + tulisan (disembunyikan di layar kecil) + jumlah barang -->
+            <a class="bag active ms-auto me-2 me-lg-0 order-lg-last" href="keranjang.html" aria-label="Keranjang belanja" aria-current="page">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+                </svg>
+                <span class="d-none d-md-inline">Keranjang</span>
+                <span id="cart-count" class="bag-count">0</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Buka menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item dropdown">
+                        <!-- Dropdown Bootstrap (dibuka oleh bootstrap.bundle.min.js, tanpa JS tambahan) -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Koleksi</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="produk.html">Semua koleksi</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Anak">Koleksi anak</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Dewasa">Koleksi dewasa</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="panduan-ukuran.html">Panduan ukuran</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+                <!-- Pencarian navbar: mengirim ?cari= ke produk.html -->
+                <form class="nav-search position-relative me-lg-3" action="produk.html" method="get" role="search">
+                    <label for="nav-cari" class="visually-hidden">Cari produk</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search nav-search-icon position-absolute top-50 translate-middle-y" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    <input id="nav-cari" class="form-control" type="search" name="cari" placeholder="Cari produk...">
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main id="utama">
+
+        <!-- ===== PEMBUKA HALAMAN + PENANDA LANGKAH ===== -->
+        <section class="page-intro container pt-5 pb-4">
+            <!-- Penanda langkah: done = selesai, active = sedang berjalan -->
+            <ol class="checkout-steps list-unstyled d-flex flex-wrap align-items-center mb-4" aria-label="Langkah belanja">
+                <li class="step done"><a href="keranjang.html"><span class="step-num">1</span>Keranjang</a></li>
+                <li id="step-2" class="step active" aria-current="step"><span class="step-num">2</span>Pengiriman</li>
+                <li id="step-3" class="step"><span class="step-num">3</span>Selesai</li>
+            </ol>
+            <div class="badge eyebrow">SATU LANGKAH LAGI</div>
+            <h1>Data pengiriman.</h1>
+        </section>
+
+        <section class="container pb-5">
+
+            <!-- Pesan jika keranjang kosong (ditampilkan oleh js/script.js) -->
+            <div id="checkout-empty" class="empty-state" hidden>
+                <h2>Keranjangmu masih kosong</h2>
+                <p>Pilih dulu pasangan favoritmu, ya.</p>
+                <a class="btn btn-cherry" href="produk.html">Jelajahi koleksi ↗</a>
+            </div>
+
+            <div id="checkout-content" class="row g-4 g-lg-5">
+
+                <!-- Form data pengiriman (validasi cukup dengan atribut HTML) -->
+                <div class="col-lg-7">
+                    <form id="checkout-form" class="summary">
+                        <div class="mb-3">
+                            <label for="co-name" class="form-label">Nama lengkap</label>
+                            <input id="co-name" name="nama" type="text" class="form-control" minlength="3" required autocomplete="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="co-phone" class="form-label">Nomor HP/WhatsApp</label>
+                            <input id="co-phone" name="hp" type="tel" class="form-control" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,13}" title="Isi 10–13 digit angka, tanpa spasi atau tanda strip" required autocomplete="tel">
+                        </div>
+                        <div class="mb-3">
+                            <label for="co-address" class="form-label">Alamat lengkap</label>
+                            <textarea id="co-address" name="alamat" class="form-control" rows="3" required autocomplete="street-address"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="co-payment" class="form-label">Metode pembayaran</label>
+                            <select id="co-payment" name="pembayaran" class="form-select" required>
+                                <option value="">Pilih metode</option>
+                                <option>Transfer bank</option>
+                                <option>E-wallet</option>
+                                <option>Bayar di tempat/COD</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="co-note" class="form-label">Catatan <span class="fw-normal">(opsional)</span></label>
+                            <textarea id="co-note" name="catatan" class="form-control" rows="2"></textarea>
+                        </div>
+                        <div class="d-flex flex-wrap align-items-center gap-3">
+                            <button class="btn btn-cherry" type="submit">Buat pesanan ↗</button>
+                            <a class="btn btn-sm rounded-pill btn-outline-cherry" href="keranjang.html">← Kembali ke keranjang</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Ringkasan pesanan (diisi js/script.js dari keranjang) -->
+                <div class="col-lg-5">
+                    <aside class="summary">
+                        <h2>Ringkasan pesanan</h2>
+                        <ul id="order-items" class="order-list list-unstyled mb-0"></ul>
+                        <div class="total d-flex justify-content-between gap-2 mt-3">
+                            <span>Total</span>
+                            <strong id="order-total">Rp0</strong>
+                        </div>
+                    </aside>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== POP-UP PESANAN BERHASIL (Modal Bootstrap) =====
+         data-bs-backdrop="static": modal hanya ditutup lewat tombolnya -->
+    <div class="modal fade" id="order-modal" tabindex="-1" aria-labelledby="order-modal-title" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content success-modal">
+                <div class="modal-body">
+                    <img class="success-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                    <h2 class="modal-title" id="order-modal-title">Pesanan berhasil!</h2>
+                    <p id="order-modal-text">Terima kasih! Pesananmu sudah kami terima.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <a class="btn btn-cherry" href="index.html">Kembali ke beranda</a>
+                        <a class="btn rounded-pill btn-outline-cherry" href="produk.html">Belanja lagi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <a class="footer-brand" href="index.html">
+                        <img class="brand-logo" src="images/logo.png" alt="Logo Cherry Blossom">
+                        <span class="brand-text">Cherry Blossom</span>
+                    </a>
+                    <p>Untuk langkah kecil, mimpi besar,<br>dan semua cerita di antaranya.</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2>Jelajahi</h2>
+                    <a href="produk.html">Semua koleksi</a>
+                    <a href="tentang.html">Cerita kami</a>
+                    <a href="keranjang.html">Keranjang belanja</a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2>Ada pertanyaan?</h2>
+                    <a href="kontak.html">Hubungi kami ↗</a>
+                    <a href="panduan-ukuran.html">Panduan ukuran</a>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+                <span>© 2026 CHERRYBLOSSOM</span>
+                <span>Dibuat dengan sepenuh hati ♡</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -390,6 +390,62 @@ header {
     color: var(--pink-strong);
 }
 
+/* Pencarian kecil di navbar: pill, ikon di dalam kolom */
+.nav-search {
+    width: 200px;
+}
+
+.nav-search-icon {
+    left: 14px;
+    color: var(--pink-deep);
+    pointer-events: none;   /* klik tetap mengenai input */
+}
+
+.nav-search .form-control {
+    border-radius: 50px;
+    padding: 7px 14px 7px 36px;
+    font-size: 0.9375rem;
+}
+
+/* Cincin fokus menu navbar: pink (menimpa biru bawaan Bootstrap) */
+.navbar .nav-link:focus-visible {
+    box-shadow: 0 0 0 4px rgba(255, 127, 168, .35);
+}
+
+/* Dropdown "Koleksi": menu putih bersudut bulat, hover pink lembut */
+.navbar .dropdown-menu {
+    border: 0;
+    border-radius: 18px;
+    padding: 8px;
+    box-shadow: var(--shadow-pink);
+}
+
+.navbar .dropdown-item {
+    font-family: 'Fredoka', 'Nunito', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    border-radius: 12px;
+    padding: 8px 14px;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background: var(--pink-soft);
+    color: var(--text);
+}
+
+/* Item halaman yang sedang dibuka (menimpa biru bawaan Bootstrap) */
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+    background: #FFE3EC;
+    color: var(--pink-strong);
+}
+
+.navbar .dropdown-divider {
+    border-color: var(--pink-soft);
+    margin: 6px 4px;
+}
+
 .navbar-toggler {
     border: 2px solid var(--pink-bg);
     border-radius: 14px;
@@ -1270,6 +1326,147 @@ footer .col-6 a:hover {
 }
 
 
+/* ===== 18b. HALAMAN PENGIRIMAN (checkout.html) ===== */
+
+/* Penanda langkah: 1 Keranjang — 2 Pengiriman — 3 Selesai */
+.checkout-steps {
+    gap: 8px;
+}
+
+.checkout-steps li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9375rem;
+    font-weight: 800;
+    color: var(--text);
+    opacity: .6;
+}
+
+.checkout-steps li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+}
+
+/* Garis pendek di antara dua langkah */
+.checkout-steps li + li::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--pink-bg);
+    margin-right: 2px;
+}
+
+/* Lingkaran nomor langkah */
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--pink-bg);
+    font-size: 0.8125rem;
+}
+
+/* Langkah selesai & aktif tampil jelas */
+.checkout-steps .done,
+.checkout-steps .active {
+    opacity: 1;
+}
+
+.checkout-steps .done {
+    color: var(--pink-deep);
+}
+
+.checkout-steps .active {
+    color: var(--pink-strong);
+}
+
+.checkout-steps .done .step-num {
+    background: var(--pink-soft);
+    border-color: var(--pink);
+}
+
+.checkout-steps .active .step-num {
+    background: var(--pink-strong);
+    border-color: var(--pink-strong);
+    color: var(--white);
+}
+
+/* Daftar barang di kartu "Ringkasan pesanan" */
+.order-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--pink-soft);
+}
+
+.order-item img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.order-item strong,
+.order-item small {
+    display: block;
+}
+
+.order-item strong {
+    color: var(--pink-deep);
+}
+
+.order-item small {
+    font-size: 0.8125rem;
+}
+
+.order-price {
+    font-weight: 800;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+}
+
+
+/* ===== 18c. POP-UP BERHASIL (modal checkout & kontak) ===== */
+.success-modal {
+    border: 0;
+    border-radius: 28px;
+    background: var(--white);
+    text-align: center;
+}
+
+.success-modal .modal-body {
+    padding: 36px 28px 32px;
+}
+
+.success-maskot {
+    width: 80px;
+    margin-bottom: 12px;
+}
+
+.success-modal .modal-title {
+    font-size: 1.75rem;
+    color: var(--pink-strong);
+    -webkit-text-stroke: 0;
+    margin-bottom: 10px;
+}
+
+.success-modal p {
+    color: var(--text);
+    margin-bottom: 24px;
+}
+
+/* Tombol kedua (outline) setinggi tombol utama */
+.success-modal .btn-outline-cherry {
+    padding: 14px 26px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
 /* ===== 19. TENTANG KAMI (tentang.html) ===== */
 .about-maskot {
     display: block;
@@ -1593,6 +1790,24 @@ footer .col-6 a:hover {
 }
 
 
+/* ===== 21b. LAPTOP KECIL (992px - 1199px) =====
+   Navbar memuat logo, menu, pencarian, dan keranjang dalam satu baris,
+   jadi jarak antar menu dan lebar pencarian sedikit dikecilkan. */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar-nav {
+        gap: 0;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        padding: 8px 11px;
+    }
+
+    .nav-search {
+        width: 170px;
+    }
+}
+
+
 /* ===== 22. TABLET (lebar maksimal 991px) ===== */
 @media (max-width: 991px) {
     .navbar {
@@ -1611,6 +1826,16 @@ footer .col-6 a:hover {
 
     .navbar-collapse {
         padding-bottom: 18px;
+    }
+
+    .nav-search {
+        width: 100%;
+    }
+
+    .navbar .dropdown-menu {
+        box-shadow: none;
+        border: 2px solid var(--pink-soft);
+        margin: 4px 0 8px;
     }
 
     .brand-text {
@@ -1799,7 +2024,7 @@ footer .col-6 a:hover {
     }
 
     .filter {
-        padding: 5px 14px;
+        padding: 5px 12px;
     }
 
     /* Label filter selebar sama agar tombol dua baris sejajar */
@@ -1835,6 +2060,20 @@ footer .col-6 a:hover {
         flex: 1 1 0;
         min-width: 0;
         white-space: normal;
+    }
+
+    /* Penanda langkah checkout: tanpa garis penghubung agar muat satu baris */
+    .checkout-steps li {
+        font-size: 0.875rem;
+        gap: 6px;
+    }
+
+    .checkout-steps li + li::before {
+        display: none;
+    }
+
+    .checkout-steps {
+        gap: 14px;
     }
 }
 

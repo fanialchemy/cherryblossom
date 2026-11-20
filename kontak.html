@@ -36,10 +36,28 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="produk.html">Koleksi</a></li>
+                    <li class="nav-item dropdown">
+                        <!-- Dropdown Bootstrap (dibuka oleh bootstrap.bundle.min.js, tanpa JS tambahan) -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Koleksi</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="produk.html">Semua koleksi</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Anak">Koleksi anak</a></li>
+                            <li><a class="dropdown-item" href="produk.html?kategori=Dewasa">Koleksi dewasa</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="panduan-ukuran.html">Panduan ukuran</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link active" href="kontak.html" aria-current="page">Kontak</a></li>
                 </ul>
+                <!-- Pencarian navbar: mengirim ?cari= ke produk.html -->
+                <form class="nav-search position-relative me-lg-3" action="produk.html" method="get" role="search">
+                    <label for="nav-cari" class="visually-hidden">Cari produk</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search nav-search-icon position-absolute top-50 translate-middle-y" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    <input id="nav-cari" class="form-control" type="search" name="cari" placeholder="Cari produk...">
+                </form>
             </div>
         </nav>
     </header>
@@ -59,7 +77,7 @@
 
                 <!-- Info kontak -->
                 <div class="col-md-4 contact-info">
-                    <img class="contact-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                    <img class="contact-maskot" src="images/logo.png" alt="" aria-hidden="true">
                     <h2>Halo, teman blossom!</h2>
                     <p>Gunakan formulir di samping untuk mengirim pesan.</p>
                     <a class="btn btn-sm rounded-pill btn-outline-cherry" href="panduan-ukuran.html">Lihat panduan ukuran ↗</a>
@@ -141,6 +159,23 @@
         </section>
 
     </main>
+
+    <!-- ===== POP-UP PESAN TERKIRIM (Modal Bootstrap) ===== -->
+    <div class="modal fade" id="contact-modal" tabindex="-1" aria-labelledby="contact-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content success-modal">
+                <div class="modal-body">
+                    <img class="success-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                    <h2 class="modal-title" id="contact-modal-title">Pesan terkirim!</h2>
+                    <p id="contact-modal-text">Terima kasih! Kami akan segera membalas pesanmu.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <a class="btn btn-cherry" href="index.html">Kembali ke beranda</a>
+                        <button class="btn rounded-pill btn-outline-cherry" type="button" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer>
