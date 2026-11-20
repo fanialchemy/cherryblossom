@@ -109,17 +109,43 @@
                         <p class="catatan-kecil mb-3">Bingung ukuran? <a href="panduan-ukuran.html">Lihat panduan ukuran</a></p>
                         <label for="quantity" class="form-label">Jumlah</label>
                         <input id="quantity" type="number" min="1" max="10" value="1" class="form-control quantity mb-4" required>
-                        <button class="btn btn-cherry w-100" type="submit">Tambahkan ke keranjang ♡</button>
+                        <!-- Dua tombol submit: keduanya tetap melewati validasi HTML (ukuran required, jumlah min/max).
+                             js/script.js membedakan tombol yang diklik lewat event.submitter.
+                             Di HP bertumpuk, mulai layar kecil (sm) berdampingan. -->
+                        <div class="d-flex flex-column flex-sm-row gap-2">
+                            <button id="btn-tambah" class="btn btn-outline-cherry flex-fill" type="submit">Tambah ke keranjang</button>
+                            <button id="btn-beli" class="btn btn-cherry flex-fill" type="submit">Beli sekarang</button>
+                        </div>
                     </form>
 
+                    <!-- Hanya untuk pesan error (misalnya melebihi 10 pasang).
+                         Pesan berhasil tampil di pop-up. -->
                     <p id="add-status" class="status-message" role="status"></p>
-                    <a class="btn btn-sm rounded-pill btn-outline-cherry" href="keranjang.html">Lihat keranjang ↗</a>
                 </div>
 
             </div>
         </section>
 
     </main>
+
+    <!-- ===== POP-UP BERHASIL DITAMBAHKAN (Modal Bootstrap) =====
+         Gaya sama dengan pop-up di checkout.html dan kontak.html.
+         Teksnya diisi js/script.js sesuai produk, ukuran, dan jumlah. -->
+    <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="add-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content success-modal">
+                <div class="modal-body">
+                    <img class="success-maskot" src="images/dekor/maskot.svg" alt="" aria-hidden="true">
+                    <h2 class="modal-title" id="add-modal-title">Berhasil ditambahkan!</h2>
+                    <p id="add-modal-text">Produk sudah masuk ke keranjangmu.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <button class="btn rounded-pill btn-outline-cherry" type="button" data-bs-dismiss="modal">Lanjut belanja</button>
+                        <a class="btn btn-cherry" href="keranjang.html">Lihat keranjang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer>

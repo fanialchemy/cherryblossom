@@ -460,7 +460,7 @@ if (addForm) {
         pilihanUkuran.appendChild(option);
     }
 
-    // Saat tombol "Tambahkan ke keranjang" ditekan
+    // Saat tombol "Tambah ke keranjang" atau "Beli sekarang" ditekan
     addForm.addEventListener('submit', function (event) {
         event.preventDefault(); // jangan muat ulang halaman
 
@@ -468,7 +468,18 @@ if (addForm) {
         var jumlah = Number(document.getElementById('quantity').value);
         var pesan = document.getElementById('add-status');
 
-        // Cek apakah produk dengan ukuran yang sama sudah ada di keranjang
+        // event.submitter = tombol yang diklik.
+        // "Beli sekarang": keranjang TIDAK diubah. Barang ini disimpan dengan
+        // kunci terpisah, lalu pindah ke checkout dalam mode beli.
+        if (event.submitter && event.submitter.id === 'btn-beli') {
+            var barangBeli = { id: product.id, size: ukuran, quantity: jumlah };
+            localStorage.setItem('cherryblossom-beli-sekarang', JSON.stringify(barangBeli));
+            window.location.href = 'checkout.html?mode=beli';
+            return;
+        }
+
+        // "Tambah ke keranjang":
+        // cek apakah produk dengan ukuran yang sama sudah ada di keranjang
         var barangLama = null;
         for (var i = 0; i < cart.length; i++) {
             if (cart[i].id === product.id && cart[i].size === ukuran) {
@@ -489,7 +500,14 @@ if (addForm) {
         }
 
         saveCart();
-        pesan.textContent = product.name + ' berhasil ditambahkan. Lihat keranjang untuk melanjutkan.';
+        pesan.textContent = ''; // hapus pesan error sebelumnya (jika ada)
+
+        // Isi teks pop-up lalu tampilkan
+        document.getElementById('add-modal-text').textContent =
+            product.name + ' · Ukuran ' + ukuran + ' · ' + jumlah + ' pasang sudah masuk ke keranjangmu.';
+
+        var modal = new bootstrap.Modal(document.getElementById('add-modal'));
+        modal.show();
     });
 }
 
@@ -602,9 +620,28 @@ if (checkoutForm) {
     var orderItems = document.getElementById('order-items');
     var orderTotal = 0;
 
+    // Baca ?mode= dari URL (sama seperti ?id= di halaman detail).
+    // mode=beli  -> hanya barang dari tombol "Beli sekarang"
+    // tanpa mode -> seluruh isi keranjang
+    var modeCheckout = new URLSearchParams(window.location.search).get('mode');
+    var modeBeli = (modeCheckout === 'beli');
+    var daftarPesanan = cart;
+
+    if (modeBeli) {
+        var barangBeli = JSON.parse(localStorage.getItem('cherryblossom-beli-sekarang'));
+        daftarPesanan = barangBeli ? [barangBeli] : [];
+
+        // Tombol kembali mengarah ke halaman detail produk tersebut
+        if (barangBeli) {
+            var tombolKembali = document.getElementById('checkout-back');
+            tombolKembali.href = 'detail.html?id=' + barangBeli.id;
+            tombolKembali.textContent = '← Kembali ke produk';
+        }
+    }
+
     // Buat daftar barang singkat: foto kecil, nama, ukuran, jumlah, harga
-    for (var i = 0; i < cart.length; i++) {
-        var item = cart[i];
+    for (var i = 0; i < daftarPesanan.length; i++) {
+        var item = daftarPesanan[i];
         var p = cariProduk(item.id);
 
         if (!p) {
@@ -628,8 +665,8 @@ if (checkoutForm) {
     }
     document.getElementById('order-total').textContent = rupiah(orderTotal);
 
-    // Keranjang kosong: sembunyikan form, tampilkan pesan kosong
-    if (cart.length === 0) {
+    // Tidak ada barang: sembunyikan form, tampilkan pesan kosong
+    if (daftarPesanan.length === 0) {
         document.getElementById('checkout-content').hidden = true;
         document.getElementById('checkout-empty').hidden = false;
     }
@@ -639,7 +676,7 @@ if (checkoutForm) {
     checkoutForm.addEventListener('submit', function (event) {
         event.preventDefault(); // jangan muat ulang halaman
 
-        if (cart.length === 0) {
+        if (daftarPesanan.length === 0) {
             return;
         }
 
@@ -657,9 +694,14 @@ if (checkoutForm) {
         var nama = document.getElementById('co-name').value.trim();
         var totalTeks = document.getElementById('order-total').textContent;
 
-        // Kosongkan keranjang (saveCart juga membuat angka navbar jadi 0)
-        cart = [];
-        saveCart();
+        if (modeBeli) {
+            // Mode beli: hapus data "beli sekarang" saja, keranjang tetap utuh
+            localStorage.removeItem('cherryblossom-beli-sekarang');
+        } else {
+            // Dari keranjang: kosongkan keranjang (saveCart juga membuat angka navbar jadi 0)
+            cart = [];
+            saveCart();
+        }
 
         // Penanda langkah: langkah 2 selesai, langkah 3 "Selesai" aktif
         var step2 = document.getElementById('step-2');
