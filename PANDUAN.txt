@@ -71,8 +71,8 @@ checkout.html  : penanda langkah (1 Keranjang - 2 Pengiriman - 3 Selesai),
                  dan pop-up (modal) "Pesanan berhasil!" muncul. Jika keranjang
                  kosong, form diganti pesan "Keranjangmu masih kosong".
 tentang.html   : kolase 3 foto produk, kutipan, cerita merek, tiga nilai
-                 merek, tombol "Jelajahi koleksi", dan keterangan bahwa
-                 CHERRYBLOSSOM adalah merek fiktif untuk proyek ujian.
+                 merek, tombol "Jelajahi koleksi", dan paragraf ajakan
+                 menghubungi kami (link ke kontak.html).
 kontak.html    : FAQ 5 pertanyaan (accordion, satu terbuka sekaligus);
                  formulir (nama, email, topik, pesan, checkbox persetujuan
                  wajib) dengan validasi HTML + JavaScript dan pop-up (modal)
@@ -197,7 +197,7 @@ Tidak ada pembayaran atau pengiriman nyata, dan form kontak tidak mengirim
 maupun menyimpan data.
 
 CATATAN KONTEN
-CHERRYBLOSSOM adalah merek fiktif untuk proyek ujian Pemrograman Web 1.
+Website CHERRYBLOSSOM dibuat untuk proyek ujian Pemrograman Web 1.
 Nama, harga, ukuran, deskripsi produk, dan data kontak merupakan contoh.
 Maskot, awan, dan kelopak digambar sendiri (SVG).
 
